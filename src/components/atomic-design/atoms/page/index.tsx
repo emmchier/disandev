@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Head from 'next/head';
 
 type PageTypes = {
@@ -9,7 +9,7 @@ type PageTypes = {
   keywords: string;
 };
 
-const Page = ({ children, title, description, tag, keywords }: PageTypes) => {
+const Page: FC<PageTypes> = ({ children, title, description, tag, keywords }) => {
   return (
     <>
       <Head>
@@ -20,9 +20,9 @@ const Page = ({ children, title, description, tag, keywords }: PageTypes) => {
         {keywords && <meta name="keywords" content={keywords} />}
         {tag && <meta itemProp="image" content={tag} />}
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://clinicaviland.com/" />
-        <meta name="author" content="https://cromacdevs.com/" />
-        <meta name="owner" content="Nicolás Villagrán, Daniel Villagrán" />
+        <link rel="canonical" href="https://disandev.com/" />
+        <meta name="author" content="https://disandev.com/" />
+        <meta name="owner" content="Disandev" />
         <meta httpEquiv="content-lenguage" content="es-ES" />
         <meta name="distribution" content="global" />
         <meta property="og:type" content="website" />
@@ -33,7 +33,7 @@ const Page = ({ children, title, description, tag, keywords }: PageTypes) => {
         {tag && <meta property="og:image:width" content="1200" />}
         {tag && <meta property="og:image:height" content="630" />}
       </Head>
-      <main role="main">{children}</main>
+      {children}
     </>
   );
 };

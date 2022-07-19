@@ -25,31 +25,43 @@ export interface KeywordInterface {
 
 export interface SocialMedia {
   [x: string]: any;
-  title: string;
-  slug: string;
-  icon: string;
-  link: string;
-  order: number;
+  title?: string;
+  slug?: string;
+  icon?: string;
+  link?: string;
+  order?: number;
+}
+
+export interface Phones {
+  [x: string]: any;
+  number?: number;
+  type?: string;
+  order?: number;
+}
+
+export interface Address {
+  [x: string]: any;
+  address?: string;
+  slug?: string;
 }
 
 export interface InfoTypes {
   [x: string]: any;
   email?: string;
-  socialNetworks?: SocialMedia[];
+  socialMedia?: SocialMedia[];
+  phones?: Phones[];
+  address?: Address[];
 }
 
 export interface GlobalData {
   [x: string]: any;
-  info?: InfoTypes;
+  information?: InfoTypes;
 }
 
 export interface MetaTagI {
   [x: string]: any;
   title?: string;
   description?: string;
+  keywords?: string;
   image?: string;
-  url?: string;
-  viewport?: string;
-  type?: string;
-  charSet?: string;
 }

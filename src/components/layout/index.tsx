@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
+import { GlobalDataContext } from '../../context';
 
 import { Main } from './styles';
 
@@ -8,6 +9,9 @@ interface Proptypes {
 }
 
 const Layout: FC<Proptypes> = ({ children }) => {
+  const context = useContext(GlobalDataContext);
+  console.log(context?.information);
+
   return (
     <Main>
       {/* <Navbar /> */}

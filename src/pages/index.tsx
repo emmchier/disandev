@@ -14,6 +14,7 @@ interface Props {
 
 const HomePage: NextPage<Props> = ({ pages }) => {
   const { title, description, keywords } = usePageMetadata(pages, 'home');
+
   return (
     <Page title={title} description={description} keywords={keywords}>
       <Container>
