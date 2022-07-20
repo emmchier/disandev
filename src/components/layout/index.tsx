@@ -9,8 +9,8 @@ interface Proptypes {
 }
 
 const Layout: FC<Proptypes> = ({ children }) => {
-  const context = useContext(GlobalDataContext);
-  console.log(context?.information);
+  // const context = useContext(GlobalDataContext);
+  // console.log(context?.information);
 
   return (
     <Main>

@@ -7,6 +7,41 @@ export interface PageInterface {
   title: string;
 }
 
+export interface ProjectI {
+  [x: string]: any;
+  header?: { fields: { file: { url?: string } } };
+  banner?: { fields: { file: { url?: string } } };
+  imageHero?: { fields: { file: { url?: string } } };
+  cover?: { fields: { file: { url?: string } } };
+  name?: string;
+  description?: string;
+  subtitle?: string;
+  urlName?: string;
+  url?: string;
+  imageList?: string;
+  type?: string;
+  slug?: string;
+  year?: string;
+  headerRes?: string;
+  techList?: TechI[];
+  pagesIn?: PageInterface[];
+  metaData?: MetaTagI;
+  order?: number;
+}
+
+export interface ServiceI {
+  [x: string]: any;
+  cover: { file: { url?: string } };
+  name?: string;
+  description?: string;
+  order?: number;
+}
+
+export type TechI = {
+  [x: string]: any;
+  technologyName?: string;
+};
+
 export type PageType = {
   [x: string]: any;
   pages: PageInterface[];
