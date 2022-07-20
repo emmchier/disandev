@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const res = await client.getEntries({ content_type: 'pages' });
   return {
     props: {
-      pages: res.items,
+      pages: res?.items,
     },
   };
 };
