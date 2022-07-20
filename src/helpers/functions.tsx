@@ -1,4 +1,4 @@
-import { KeywordInterface, PageInterface, SocialMedia } from '../interfaces/index';
+import { KeywordInterface, PageInterface, ProjectI, SocialMedia } from '../interfaces/index';
 
 export const getPage = (list: PageInterface[], slug: string) =>
   list?.filter((page) => page?.slug === slug) || [];
@@ -9,3 +9,8 @@ export const getKeywords = (keywords: KeywordInterface[]) => {
 };
 
 export const getSocialNetworks = (list: SocialMedia[]) => list?.map((item) => item?.fields) || [];
+
+export const getItemsByPage = (list: any[], slug: string) =>
+  list?.filter((item) =>
+    item.fields.pagesIn?.find((item: ProjectI) => item.fields.slug === slug)
+  ) || [];

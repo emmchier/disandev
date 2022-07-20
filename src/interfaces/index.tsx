@@ -31,7 +31,7 @@ export interface ProjectI {
 
 export interface ServiceI {
   [x: string]: any;
-  cover: { file: { url?: string } };
+  cover: { fields: { file: { url?: string } } };
   name?: string;
   description?: string;
   order?: number;
@@ -40,6 +40,9 @@ export interface ServiceI {
 export type TechI = {
   [x: string]: any;
   technologyName?: string;
+  image?: { fields: { file: { url?: string } } };
+  visibleIn?: PageInterface[];
+  order?: number;
 };
 
 export type PageType = {
@@ -99,4 +102,20 @@ export interface MetaTagI {
   description?: string;
   keywords?: string;
   image?: string;
+}
+
+export interface MemberI {
+  [x: string]: any;
+  memberImage?: { fields: { file: { url?: string } } };
+  memberName?: string;
+  memberRole?: string;
+  memberLinkedin?: string;
+  order?: number;
+}
+
+export interface StepI {
+  [x: string]: any;
+  stepTitle?: string;
+  stepDesc?: string;
+  order?: number;
 }
