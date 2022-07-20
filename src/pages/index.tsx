@@ -30,7 +30,7 @@ const HomePage: NextPage<Props> = ({ pages, projects }) => {
             <Link key={project.fields.slug} href={`/project/${project.fields.slug}`}>
               <a>
                 <Image
-                  src={`https://${project.fields.cover.fields.file.url}`}
+                  src={`https:${project.fields.cover.fields.file.url}`}
                   height={200}
                   width={200}
                   key={project.fields.slug}
