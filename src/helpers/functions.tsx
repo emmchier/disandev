@@ -5,7 +5,7 @@ export const getPage = (list: PageInterface[], slug: string) =>
 
 export const getKeywords = (keywords: KeywordInterface[]) => {
   const getKeywords = keywords?.map((keyword) => keyword?.fields?.word);
-  return getKeywords.join(',') || '';
+  return getKeywords?.join(',') || '';
 };
 
 export const getSocialNetworks = (list: SocialMedia[]) => list?.map((item) => item?.fields) || [];
