@@ -27,16 +27,16 @@ const HomePage: NextPage<Props> = ({ pages, projects }) => {
             {title}
           </Heading>
           {projects?.map((project) => (
-            <Link key={project?.fields?.slug} href={`/project/${project?.fields?.slug}`}>
+            <Link key={project.fields.slug} href={`/project/${project.fields.slug}`}>
               <a>
                 <Image
-                  src={`https://${project?.fields?.cover?.fields?.file?.url}`}
+                  src={`https://${project.fields.cover.fields.file.url}`}
                   height={200}
                   width={200}
-                  key={project?.fields?.slug}
-                  alt={project?.fields?.name}
+                  key={project.fields.slug}
+                  alt={project.fields.name}
                 />
-                <Heading variant="h4">{project?.fields?.name}</Heading>
+                <Heading variant="h4">{project.fields.name}</Heading>
               </a>
             </Link>
           ))}
@@ -55,9 +55,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      pages: res?.items,
-      projects: projects?.items,
-      services: services?.items,
+      pages: res.items,
+      projects: projects.items,
+      services: services.items,
     },
   };
 };
