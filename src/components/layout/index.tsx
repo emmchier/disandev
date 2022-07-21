@@ -1,7 +1,10 @@
 import { useRouter } from 'next/router';
-import { FC, useContext } from 'react';
+import { FC, useContext, useState } from 'react';
 import { GlobalDataContext } from '../../context';
+import ScrollToTop from '../atomic-design/atoms/scroll-to-top';
 import Footer from '../atomic-design/molecules/footer';
+import Navbar from '../atomic-design/molecules/navbar';
+import Sidenav from '../atomic-design/molecules/sidenav';
 
 import { Main } from './styles';
 
@@ -12,26 +15,19 @@ interface Proptypes {
 
 const Layout: FC<Proptypes> = ({ children }) => {
   const { pathname } = useRouter();
+  const [show, setShow] = useState(false);
+  const showSidebar = (): void => setShow(!show);
 
   // const context = useContext(GlobalDataContext);
   // console.log(context?.information);
 
   return (
     <Main>
-      {/* <Navbar /> */}
+      <Sidenav show={show} showSidebar={showSidebar} path={pathname} />
+      <Navbar showSidebar={showSidebar} />
       {children}
       <Footer path={pathname} />
-      {/* <SocialMediaContainer>
-        <SocialNetworkList
-          list={networks}
-          orientation="vertical"
-          color="default"
-          gap={3}
-          isLine={true}
-          lineSize={30}
-          hoverIconColor={theme.color.black}
-        />
-      </SocialMediaContainer> */}
+      <ScrollToTop />
     </Main>
   );
 };

@@ -24,9 +24,9 @@ export const navList = [
   //     label: 'FAQs',
   //     to: '/faqs',
   //   },
-  {
-    id: 4,
-    label: "Let's Talk",
-    to: '/lets-talk',
-  },
+  // {
+  //   id: 5,
+  //   label: "Let's Talk",
+  //   to: '/lets-talk',
+  // },
 ];
