@@ -16,7 +16,7 @@ const ServiceList: FC<Props> = ({ list, offsetColumn = false }) => (
   <Content offsetColumn={offsetColumn}>
     <Row gap={10}>
       {list?.map((item: ServiceI) => (
-        <Col xs={12} sm={6} md={4} lg={4} xlg={4}>
+        <Col xs={12} sm={6} md={4} lg={4} xlg={4} key={item?.fields?.name}>
           <Card
             img={item?.fields?.cover?.fields?.file?.url}
             title={item?.fields?.name}

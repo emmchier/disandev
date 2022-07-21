@@ -14,8 +14,8 @@ const ProjectList: FC<Props> = ({ list }) => {
   return (
     <Row gap={10}>
       {list?.map((item: ProjectI) => (
-        <Col xs={12} sm={4} md={6} lg={6} xlg={6}>
-          <CustomLink to={`/project/${item?.fields?.slug}`} key={item?.fields?.slug}>
+        <Col xs={12} sm={4} md={6} lg={6} xlg={6} key={item?.fields?.slug}>
+          <CustomLink to={`/project/${item?.fields?.slug}`}>
             <Card
               img={item?.fields?.cover?.fields?.file?.url}
               title={item?.fields?.name}

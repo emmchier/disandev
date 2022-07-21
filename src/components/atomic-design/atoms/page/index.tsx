@@ -32,7 +32,6 @@ const Page: FC<PageTypes> = ({ children, title, description, tag, keywords }) =>
         <meta property="og:image:type" content="image/png" />
         {tag && <meta property="og:image:width" content="1200" />}
         {tag && <meta property="og:image:height" content="630" />}
-
         <link
           rel="preload"
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
