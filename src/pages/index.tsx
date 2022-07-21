@@ -10,6 +10,22 @@ import Image from 'next/image';
 import { getItemsByPage } from '../helpers/functions';
 import Text from '../components/atomic-design/atoms/text';
 import CustomLink from '../components/atomic-design/atoms/custom-link';
+import {
+  ActionContent,
+  Content,
+  HomeContent,
+  ProjectSectionContent,
+  TextContent,
+} from '../styles/pages/home-styles';
+import SectionHeader from '../components/atomic-design/atoms/section-header';
+import Button from '../components/atomic-design/atoms/button';
+import Icon from '../components/atomic-design/atoms/icon';
+import Core from '../components/atomic-design/molecules/core-component';
+import { theme } from '../styles/theme';
+import ProjectList from '../components/atomic-design/organisms/project-list';
+import Box from '../components/atomic-design/atoms/box';
+import ServiceSection from '../components/atomic-design/organisms/service-section';
+import CallToAction from '../components/atomic-design/molecules/call-to-action';
 
 interface Props {
   pages: PageInterface[];
@@ -22,48 +38,63 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
   const filteredProjectList = getItemsByPage(projects, 'home');
   const filteredServicesList = getItemsByPage(services, 'home');
 
+  console.log(filteredProjectList);
+
   return (
     <Page title={title} description={description} keywords={keywords}>
-      <Container>
-        <Section>
-          <Heading variant="h2" weight="regular">
-            {title}
-          </Heading>
-          <ul>
-            {filteredProjectList?.map((project) => (
-              <li key={project.fields.slug}>
-                <CustomLink to={`/project/${project.fields.slug}`}>
-                  <Image
-                    src={`https:${project.fields.cover.fields.file.url}`}
-                    height={200}
-                    width={200}
-                    alt={project.fields.name}
-                    priority
-                  />
-                  <Heading variant="h4">{project.fields.name}</Heading>
-                </CustomLink>
-              </li>
-            ))}
-          </ul>
-        </Section>
-        <Section>
-          <ul>
-            {filteredServicesList?.map((service) => (
-              <li key={service.fields.name}>
-                <Image
-                  src={`https:${service.fields.cover.fields.file.url}`}
-                  height={200}
-                  width={200}
-                  alt={service.fields.name}
-                  priority
-                />
-                <Heading variant="h4">{service.fields.name}</Heading>
-                <Text>{service.fields.description}</Text>
-              </li>
-            ))}
-          </ul>
-        </Section>
-      </Container>
+      <Section auto={false} container="fluid">
+        <Container>
+          <Content>
+            <HomeContent>
+              <TextContent>
+                <SectionHeader variant="h1">
+                  <span>Creamos soluciones</span>
+                  digitales que dejan marca
+                </SectionHeader>
+                <Button variant="text" ariaLabel="ancla a section 2">
+                  <Heading variant="h4" weight="bold">
+                    Conocenos
+                  </Heading>
+                  <Icon ariaLabel="arrow to bottom" icon="arrow" direction="down" />
+                </Button>
+              </TextContent>
+            </HomeContent>
+          </Content>
+        </Container>
+        <Core />
+      </Section>
+
+      <Section padding={`${theme.spacing(25)} 0 ${theme.spacing(10)} 0`}>
+        <ProjectSectionContent>
+          <SectionHeader>
+            <span>What have we been</span>
+            working on
+          </SectionHeader>
+          <ProjectList list={filteredProjectList} />
+        </ProjectSectionContent>
+        <ActionContent>
+          <CustomLink to="/projects">
+            <Button variant="outlined" ariaLabel="button" iconRight={true}>
+              See all projects
+            </Button>
+          </CustomLink>
+        </ActionContent>
+      </Section>
+
+      <Section>
+        <ServiceSection list={filteredServicesList} />
+        <Box width="100%" display="flex" justifyContent="center">
+          <CustomLink to="/what-we-do">
+            <Button variant="outlined" ariaLabel="button" iconRight={true}>
+              See all services
+            </Button>
+          </CustomLink>
+        </Box>
+      </Section>
+
+      <Section>
+        <CallToAction to="/lets-talk" title="¿Have an idea?" buttonTitle="Lets talk" />
+      </Section>
     </Page>
   );
 };

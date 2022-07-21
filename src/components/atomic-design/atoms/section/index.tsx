@@ -7,11 +7,12 @@ interface SectionI {
   children: React.ReactNode;
   auto?: boolean;
   container?: string;
+  padding?: string;
 }
 
-const Section: FC<SectionI> = ({ auto = false, container = 'fluid', children }) => {
+const Section: FC<SectionI> = ({ auto = false, container = 'fluid', children, padding = '0' }) => {
   return (
-    <Content auto={auto}>
+    <Content auto={auto} padding={padding}>
       <Container size={container}>{children}</Container>
     </Content>
   );
