@@ -6,8 +6,8 @@ import Page from '../components/atomic-design/atoms/page';
 import Section from '../components/atomic-design/atoms/section';
 import { client } from '../common/contentfulClientProvider';
 import Container from '../components/atomic-design/atoms/container';
-import Link from 'next/link';
 import Image from 'next/image';
+import CustomLink from '../components/atomic-design/atoms/custom-link';
 
 interface Props {
   pages: PageInterface[];
@@ -27,18 +27,16 @@ const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
           <ul>
             {projects?.map((project) => (
               <li key={project.fields.slug}>
-                <Link href={`/project/${project.fields.slug}`}>
-                  <a>
-                    <Image
-                      src={`https:${project.fields.cover.fields.file.url}`}
-                      height={200}
-                      width={200}
-                      alt={project.fields.name}
-                      priority
-                    />
-                    <Heading variant="h4">{project.fields.name}</Heading>
-                  </a>
-                </Link>
+                <CustomLink to={`/project/${project.fields.slug}`}>
+                  <Image
+                    src={`https:${project.fields.cover.fields.file.url}`}
+                    height={200}
+                    width={200}
+                    alt={project.fields.name}
+                    priority
+                  />
+                  <Heading variant="h4">{project.fields.name}</Heading>
+                </CustomLink>
               </li>
             ))}
           </ul>

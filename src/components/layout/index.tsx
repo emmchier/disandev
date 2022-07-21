@@ -1,5 +1,7 @@
+import { useRouter } from 'next/router';
 import { FC, useContext } from 'react';
 import { GlobalDataContext } from '../../context';
+import Footer from '../atomic-design/molecules/footer';
 
 import { Main } from './styles';
 
@@ -9,6 +11,8 @@ interface Proptypes {
 }
 
 const Layout: FC<Proptypes> = ({ children }) => {
+  const { pathname } = useRouter();
+
   // const context = useContext(GlobalDataContext);
   // console.log(context?.information);
 
@@ -16,7 +20,7 @@ const Layout: FC<Proptypes> = ({ children }) => {
     <Main>
       {/* <Navbar /> */}
       {children}
-      {/* <Footer /> */}
+      <Footer path={pathname} />
       {/* <SocialMediaContainer>
         <SocialNetworkList
           list={networks}
