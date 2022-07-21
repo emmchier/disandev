@@ -1,4 +1,5 @@
 import { KeywordInterface, PageInterface, ProjectI, SocialMedia } from '../interfaces/index';
+import { theme } from '../styles/theme';
 
 export const getPage = (list: PageInterface[], slug: string) =>
   list?.filter((page) => page?.slug === slug) || [];
@@ -14,3 +15,16 @@ export const getItemsByPage = (list: any[], slug: string) =>
   list?.filter((item) =>
     item.fields.pagesIn?.find((item: ProjectI) => item.fields.slug === slug)
   ) || [];
+
+export const setVariant = (color: string) => {
+  switch (color) {
+    case 'default':
+      return theme.color.text.primary;
+    case 'primary':
+      return theme.color.primary.main;
+    case 'secondary':
+      return theme.color.secondary.main;
+    default:
+      return theme.color.text.primary;
+  }
+};

@@ -1,59 +1,24 @@
-import styled, { css, DefaultTheme } from 'styled-components';
+import styled, { css } from 'styled-components';
 
-type ParagraphI = {
-  variant: string;
-  color: string;
+interface TextProps {
   weight: string;
   cap: string;
-};
+  color: string;
+}
 
-const variantStyles = (theme: DefaultTheme, variant: string) =>
-  ({
-    body1: css`
-      font-size: ${theme.font.text.body1.desk.size};
-      line-height: ${theme.font.text.body1.desk.lineHeight};
-      @media only screen and (${theme.breakpoints.tablet}) {
-        font-size: ${theme.font.text.body2.desk.size};
-        line-height: ${theme.font.text.body2.desk.lineHeight};
-      }
-    `,
-    body2: css`
-      font-size: ${theme.font.text.body2.desk.size};
-      line-height: ${theme.font.text.body2.desk.lineHeight};
-      @media only screen and (${theme.breakpoints.tablet}) {
-        font-size: ${theme.font.text.body3.mob.size};
-        line-height: ${theme.font.text.body3.mob.lineHeight};
-      }
-    `,
-    body3: css`
-      font-size: ${theme.font.text.body3.desk.size};
-      line-height: ${theme.font.text.body3.desk.lineHeight};
-    `,
-  }[variant]);
-
-const colorStyles = (theme: DefaultTheme, color: string) =>
+const weightStyles = (weight: string) =>
   ({
     light: css`
-      color: ${theme.color.white};
+      font-weight: ${({ theme }) => theme.font.weight.light};
     `,
-    dark: css`
-      color: ${theme.color.greyText.dark};
-    `,
-    primary: css`
-      color: ${theme.color.primary.dark};
-    `,
-    secondary: css`
-      color: ${theme.color.secondary.dark};
-    `,
-  }[color]);
-
-const weightStyles = (theme: DefaultTheme, weight: string) =>
-  ({
     regular: css`
-      font-weight: ${theme.font.weight.regular};
+      font-weight: ${({ theme }) => theme.font.weight.regular};
+    `,
+    medium: css`
+      font-weight: ${({ theme }) => theme.font.weight.medium};
     `,
     bold: css`
-      font-weight: ${theme.font.weight.bold};
+      font-weight: ${({ theme }) => theme.font.weight.bold};
     `,
   }[weight]);
 
@@ -62,10 +27,10 @@ const capStyles = (cap: string) =>
     default: css`
       text-transform: none;
     `,
-    allCaps: css`
+    upper: css`
       text-transform: uppercase;
     `,
-    light: css`
+    lower: css`
       text-transform: lowercase;
     `,
     cap: css`
@@ -73,16 +38,33 @@ const capStyles = (cap: string) =>
     `,
   }[cap]);
 
-export const Paragraph = styled.p<ParagraphI>`
-  ${({ theme, variant }) => variantStyles(theme, variant)};
-  ${({ theme, weight }) => weightStyles(theme, weight)};
-  ${({ theme, color }) => colorStyles(theme, color)};
+const colorStyles = (color: string) =>
+  ({
+    primary: css`
+      color: ${({ theme }) => theme.color.text.primary};
+    `,
+    secondary: css`
+      color: ${({ theme }) => theme.color.text.secondary};
+    `,
+    success: css`
+      color: ${({ theme }) => theme.color.text.success};
+    `,
+    error: css`
+      color: ${({ theme }) => theme.color.text.error};
+    `,
+  }[color]);
+
+export const Paragraph = styled.p<TextProps>`
+  font-size: ${({ theme }) => theme.font.size.medium};
+  line-height: ${({ theme }) => theme.font.lineHeight.small};
+  ${({ weight }) => weightStyles(weight)};
   ${({ cap }) => capStyles(cap)};
-  font-weight: ${({ theme }) => theme.font.weight.regular};
+  ${({ color }) => colorStyles(color)};
+  font-style: normal;
   padding: 0;
   margin: 0;
-  b {
-    color: ${({ theme }) => theme.color.black};
-    font-weight: ${({ theme }) => theme.font.weight.bold};
+
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.font.size.small};
   }
 `;

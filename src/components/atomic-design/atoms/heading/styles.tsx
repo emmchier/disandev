@@ -1,105 +1,47 @@
-import styled, { css, DefaultTheme } from 'styled-components';
+import styled, { css } from 'styled-components';
 
-type HeadingI = {
-  variant: string;
-  weight: string;
-  color: string;
-  cap: string;
-};
+export interface HeadingProps {
+  variant?: string;
+  weight?: string;
+  cap?: string;
+}
 
-const variantStyles = (theme: DefaultTheme, variant: string) =>
+const weightStyles = (weight: string) =>
   ({
-    h1: css`
-      font-size: ${theme.font.title.heading1.desk.size};
-      line-height: ${theme.font.title.heading1.desk.lineHeight};
-      font-weight: ${theme.font.weight.regular};
-      @media only screen and (${theme.breakpoints.tablet}) {
-        font-size: ${theme.font.title.heading1.mob.size};
-        line-height: ${theme.font.title.heading1.mob.lineHeight};
-      }
+    light: css`
+      font-weight: ${({ theme }) => theme.font.weight.light};
     `,
-    h2: css`
-      font-size: ${theme.font.title.heading2.desk.size};
-      line-height: ${theme.font.title.heading2.desk.lineHeight};
-      @media only screen and (${theme.breakpoints.tablet}) {
-        font-size: ${theme.font.title.heading2.mob.size};
-        line-height: ${theme.font.title.heading2.mob.lineHeight};
-      }
-    `,
-    h3: css`
-      font-size: ${theme.font.title.heading3.desk.size};
-      line-height: ${theme.font.title.heading3.desk.lineHeight};
-      @media only screen and (${theme.breakpoints.tablet}) {
-        font-size: ${theme.font.title.heading3.mob.size};
-        line-height: ${theme.font.title.heading3.mob.lineHeight};
-      }
-    `,
-    h4: css`
-      font-size: ${theme.font.text.body1.desk.size};
-      line-height: ${theme.font.text.body1.desk.lineHeight};
-      @media only screen and (${theme.breakpoints.tablet}) {
-        font-size: ${theme.font.text.body1.mob.size};
-        line-height: ${theme.font.text.body1.mob.lineHeight};
-      }
-    `,
-    h5: css`
-      font-size: ${theme.font.text.body2.desk.size};
-      line-height: ${theme.font.text.body2.desk.lineHeight};
-      @media only screen and (${theme.breakpoints.tablet}) {
-        font-size: ${theme.font.text.body2.mob.size};
-        line-height: ${theme.font.text.body2.mob.lineHeight};
-      }
-    `,
-    h6: css`
-      font-size: ${theme.font.text.body3.desk.size};
-      line-height: ${theme.font.text.body3.desk.lineHeight};
-      @media only screen and (${theme.breakpoints.tablet}) {
-        font-size: ${theme.font.text.body3.mob.size};
-        line-height: ${theme.font.text.body3.mob.lineHeight};
-      }
-    `,
-  }[variant]);
-
-const weightStyles = (theme: DefaultTheme, weight: string) =>
-  ({
     regular: css`
-      font-weight: ${theme.font.weight.regular};
+      font-weight: ${({ theme }) => theme.font.weight.regular};
+    `,
+    medium: css`
+      font-weight: ${({ theme }) => theme.font.weight.medium};
+    `,
+    semiBold: css`
+      font-weight: ${({ theme }) => theme.font.weight.semiBold};
     `,
     bold: css`
-      font-weight: ${theme.font.weight.bold};
+      font-weight: ${({ theme }) => theme.font.weight.bold};
     `,
   }[weight]);
 
 const capStyles = (cap: string) =>
   ({
     default: css`
-      text-transform: none;
+      text-transform: none !important;
     `,
     upper: css`
-      text-transform: uppercase;
+      text-transform: uppercase !important;
     `,
     lower: css`
-      text-transform: lowercase;
+      text-transform: lowercase !important;
     `,
     cap: css`
-      text-transform: capitalize;
+      text-transform: capitalize !important;
     `,
   }[cap]);
 
-const colorStyles = (theme: DefaultTheme, color: string) =>
-  ({
-    default: css`
-      color: ${theme.color.greyText.dark};
-    `,
-    primary: css`
-      color: ${theme.color.primary.light};
-    `,
-    secondary: css`
-      color: ${theme.color.secondary.dark};
-    `,
-  }[color]);
-
-export const Content = styled.div<HeadingI>`
+export const Content = styled.div<HeadingProps>`
   h1,
   h2,
   h3,
@@ -107,29 +49,72 @@ export const Content = styled.div<HeadingI>`
   h5,
   h6 {
     font-style: normal;
-    color: ${({ theme }) => theme.color.greyText.dark};
-    text-transform: uppercase;
     padding: 0;
-    margin: 0;
-    ${({ theme, variant }) => variantStyles(theme, variant)};
-    ${({ theme, weight }) => weightStyles(theme, weight)};
-    ${({ theme, color }) => colorStyles(theme, color)};
-    ${({ cap }) => capStyles(cap)};
+    margin: 0 !important;
+    ${({ weight }) => weightStyles(weight as any)};
+    ${({ cap }) => capStyles(cap as any)};
   }
-  b {
-    color: ${({ theme }) => theme.color.black};
-    font-weight: ${({ theme }) => theme.font.weight.bold};
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0 !important;
   }
 `;
 
-export const Title1 = styled.h1``;
+export const Title1 = styled.h1`
+  font-size: ${({ theme }) => theme.font.size.largeXXX};
+  line-height: ${({ theme }) => theme.font.lineHeight.largeXXX};
 
-export const Title2 = styled.h2``;
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.font.size.largeXX};
+    line-height: ${({ theme }) => theme.font.lineHeight.largeXX};
+  }
+`;
 
-export const Title3 = styled.h3``;
+export const Title2 = styled.h2`
+  font-size: ${({ theme }) => theme.font.size.largeXXX};
+  line-height: ${({ theme }) => theme.font.lineHeight.largeXXX};
 
-export const Title4 = styled.h4``;
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.font.size.largeXX};
+    line-height: ${({ theme }) => theme.font.lineHeight.largeXX};
+  }
+`;
 
-export const Title5 = styled.h5``;
+export const Title3 = styled.h3`
+  font-size: ${({ theme }) => theme.font.size.largeXX};
+  line-height: ${({ theme }) => theme.font.lineHeight.largeXX};
 
-export const Title6 = styled.h6``;
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.font.size.largeX};
+    line-height: ${({ theme }) => theme.font.lineHeight.largeX};
+  }
+`;
+
+export const Title4 = styled.h4`
+  font-size: ${({ theme }) => theme.font.size.largeX};
+  line-height: ${({ theme }) => theme.font.lineHeight.largeX};
+
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.font.size.large};
+    line-height: ${({ theme }) => theme.font.lineHeight.large};
+  }
+`;
+
+export const Title5 = styled.h5`
+  font-size: ${({ theme }) => theme.font.size.large};
+  line-height: ${({ theme }) => theme.font.lineHeight.large};
+
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.font.size.medium};
+    line-height: ${({ theme }) => theme.font.lineHeight.medium};
+  }
+`;
+
+export const Title6 = styled.h6`
+  font-size: ${({ theme }) => theme.font.size.small};
+  line-height: ${({ theme }) => theme.font.lineHeight.small};
+
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.font.size.smallX};
+    line-height: ${({ theme }) => theme.font.lineHeight.smallX};
+  }
+`;
