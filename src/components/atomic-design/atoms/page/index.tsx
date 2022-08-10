@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
+
 import Head from 'next/head';
+import { Content } from './styles';
 
 type PageTypes = {
   children: React.ReactNode;
@@ -11,7 +13,7 @@ type PageTypes = {
 
 const Page: FC<PageTypes> = ({ children, title, description, tag, keywords }) => {
   return (
-    <>
+    <Content>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,7 +46,7 @@ const Page: FC<PageTypes> = ({ children, title, description, tag, keywords }) =>
         />
       </Head>
       {children}
-    </>
+    </Content>
   );
 };
 
