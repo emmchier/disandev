@@ -1,13 +1,24 @@
 import type { NextPage, GetStaticProps } from 'next';
 import { usePageMetadata } from '../hooks/usePageMetadata';
-import Heading from '../components/atomic-design/atoms/heading';
-import Text from '../components/atomic-design/atoms/text';
 import { PageInterface, ServiceI, StepI, TechI } from '../interfaces';
+import { client } from '../common/contentfulClientProvider';
+
 import Page from '../components/atomic-design/atoms/page';
 import Section from '../components/atomic-design/atoms/section';
-import { client } from '../common/contentfulClientProvider';
-import Container from '../components/atomic-design/atoms/container';
-import Image from 'next/image';
+import PageHeader from '../components/atomic-design/atoms/page-header';
+import Icon from '../components/atomic-design/atoms/icon';
+import ServiceSection from '../components/atomic-design/organisms/service-section';
+import SectionHeader from '../components/atomic-design/atoms/section-header';
+import StepsList from '../components/atomic-design/organisms/steps-list';
+import TechList from '../components/atomic-design/organisms/tech-list';
+import CallToAction from '../components/atomic-design/molecules/call-to-action';
+
+import {
+  PageHeaderContainer,
+  ServicesContent,
+  TechsContent,
+  WhatWeDoContent,
+} from '../styles/pages/what-we-do-styles';
 
 interface Props {
   pages: PageInterface[];
@@ -21,43 +32,47 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
 
   return (
     <Page title={title} description={description} keywords={keywords}>
-      <Container>
+      <Section>
+        <PageHeaderContainer>
+          <PageHeader>
+            ¿Querés brindarle una buena
+            <span>
+              <b>experiencia</b> a tus usuarios?
+            </span>
+            Estás en el lugar indicado
+          </PageHeader>
+          <Icon icon="teamShape" ariaLabel="geometric shape" />
+        </PageHeaderContainer>
+      </Section>
+
+      <ServicesContent>
         <Section>
-          <Heading variant="h2" weight="regular">
-            {title}
-          </Heading>
-          <ul>
-            {services?.map((service) => (
-              <li key={service.fields.name}>
-                <Image
-                  src={`https:${service.fields.cover.fields.file.url}`}
-                  height={200}
-                  width={200}
-                  alt={service.fields.name}
-                  priority
-                />
-                <Heading variant="h4">{service.fields.name}</Heading>
-                <Text>{service.fields.description}</Text>
-              </li>
-            ))}
-          </ul>
-          <ul>
-            {steps?.map((step: StepI) => (
-              <li key={step.fields.stepTitle}>
-                <Heading variant="h4">{step.fields.stepTitle}</Heading>
-                <Text>{step.fields.stepDesc}</Text>
-              </li>
-            ))}
-          </ul>
-          <ul>
-            {techs?.map((tech: TechI) => (
-              <li key={tech.fields.technologyName}>
-                <Heading variant="h4">{tech.fields.technologyName}</Heading>
-              </li>
-            ))}
-          </ul>
+          <ServiceSection list={services} offsetColumn={true} />
         </Section>
-      </Container>
+      </ServicesContent>
+
+      <WhatWeDoContent>
+        <Section>
+          <SectionHeader>How we work</SectionHeader>
+          <StepsList list={steps} />
+        </Section>
+      </WhatWeDoContent>
+
+      <TechsContent>
+        <Section>
+          <SectionHeader>Our main technologies</SectionHeader>
+          <TechList list={techs} />
+        </Section>
+      </TechsContent>
+
+      <Section>
+        <CallToAction
+          to="/lets-talk"
+          title="¿Have an idea?"
+          buttonTitle="Lets talk"
+          isLink={false}
+        />
+      </Section>
     </Page>
   );
 };

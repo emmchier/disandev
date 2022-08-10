@@ -14,7 +14,7 @@ const StepsList: FC<PropTypes> = ({ list }) => (
     <List>
       {list?.map((item, index) => (
         <StepItem
-          key={item.stepTitle}
+          key={item?.fields?.stepTitle}
           item={item}
           isBorder={index === list.length - 1 ? false : true}
         />

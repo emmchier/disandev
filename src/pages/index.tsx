@@ -38,7 +38,9 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
   const filteredProjectList = getItemsByPage(projects, 'home');
   const filteredServicesList = getItemsByPage(services, 'home');
 
-  console.log(filteredProjectList);
+  const handleAnchor = () => {
+    window.scrollTo({ top: 1300, behavior: 'smooth' });
+  };
 
   return (
     <Page title={title} description={description} keywords={keywords}>
@@ -51,7 +53,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
                   <span>Creamos soluciones</span>
                   digitales que dejan marca
                 </SectionHeader>
-                <Button variant="text" ariaLabel="ancla a section 2">
+                <Button onClick={handleAnchor} variant="text" ariaLabel="ancla a section 2">
                   <Heading variant="h4" weight="bold">
                     Conocenos
                   </Heading>
@@ -93,7 +95,12 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
       </Section>
 
       <Section>
-        <CallToAction to="/lets-talk" title="¿Have an idea?" buttonTitle="Lets talk" />
+        <CallToAction
+          to="/lets-talk"
+          title="¿Have an idea?"
+          buttonTitle="Lets talk"
+          isLink={false}
+        />
       </Section>
     </Page>
   );

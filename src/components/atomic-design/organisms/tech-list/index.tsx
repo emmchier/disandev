@@ -15,17 +15,16 @@ interface Props {
 const TechList: FC<Props> = ({ list }) => (
   <Row gap={10}>
     {list.map((item) => (
-      <Col key={item?.technologyName} xs={6} sm={3} md={2} lg={2} xlg={2}>
+      <Col key={item?.fields?.technologyName} xs={6} sm={3} md={2} lg={2} xlg={2}>
         <Content>
           <Box display="flex" alignItems="center" flexDirection="column">
-            <Image
-              src={`${item?.image}`}
-              alt={item?.technologyName}
+            <img
+              src={`https:${item?.fields?.image?.fields?.file?.url}`}
+              alt={item?.fields?.technologyName}
               width="100%"
               height="100%"
-              priority
             />
-            <Text>{item?.technologyName}</Text>
+            <Text>{item?.fields?.technologyName}</Text>
           </Box>
         </Content>
       </Col>

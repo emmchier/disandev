@@ -13,6 +13,7 @@ export interface ProjectI {
   banner?: { fields: { file: { url?: string } } };
   imageHero?: { fields: { file: { url?: string } } };
   cover?: { fields: { file: { url?: string } } };
+  hero?: { fields: { file: { url?: string } } };
   name?: string;
   description?: string;
   subtitle?: string;

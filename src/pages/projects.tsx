@@ -1,13 +1,14 @@
 import type { NextPage, GetStaticProps } from 'next';
 import { usePageMetadata } from '../hooks/usePageMetadata';
-import Heading from '../components/atomic-design/atoms/heading';
+import { client } from '../common/contentfulClientProvider';
 import { PageInterface, ProjectI } from '../interfaces';
+
 import Page from '../components/atomic-design/atoms/page';
 import Section from '../components/atomic-design/atoms/section';
-import { client } from '../common/contentfulClientProvider';
-import Container from '../components/atomic-design/atoms/container';
-import Image from 'next/image';
-import CustomLink from '../components/atomic-design/atoms/custom-link';
+import PageHeader from '../components/atomic-design/atoms/page-header';
+import ProjectList from '../components/atomic-design/organisms/project-list';
+
+import { ProjectsContent } from '../styles/pages/projects-styles';
 
 interface Props {
   pages: PageInterface[];
@@ -19,29 +20,17 @@ const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
 
   return (
     <Page title={title} description={description} keywords={keywords}>
-      <Container>
+      <PageHeader>
+        <span>
+          Mirá en que <b>proyectos</b>
+        </span>
+        estuvimos trabajando
+      </PageHeader>
+      <ProjectsContent>
         <Section>
-          <Heading variant="h2" weight="regular">
-            {title}
-          </Heading>
-          <ul>
-            {projects?.map((project) => (
-              <li key={project.fields.slug}>
-                <CustomLink to={`/project/${project.fields.slug}`}>
-                  <Image
-                    src={`https:${project.fields.cover.fields.file.url}`}
-                    height={200}
-                    width={200}
-                    alt={project.fields.name}
-                    priority
-                  />
-                  <Heading variant="h4">{project.fields.name}</Heading>
-                </CustomLink>
-              </li>
-            ))}
-          </ul>
+          <ProjectList list={projects} />
         </Section>
-      </Container>
+      </ProjectsContent>
     </Page>
   );
 };

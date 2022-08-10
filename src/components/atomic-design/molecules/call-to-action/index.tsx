@@ -10,19 +10,28 @@ type Props = {
   title?: string;
   buttonTitle?: string;
   to?: string;
+  isLink?: boolean;
 };
 
-const CallToAction: FC<Props> = ({ title, buttonTitle, to = '' }) => (
+const CallToAction: FC<Props> = ({ title, buttonTitle, to = '', isLink = true }) => (
   <Content>
     <InnerContent>
       <Heading variant="h3" weight="light">
         {title}
       </Heading>
-      <CustomLink to={to}>
-        <Heading variant="h4" weight="bold">
-          <Selected>{buttonTitle}</Selected>
-        </Heading>
-      </CustomLink>
+      {isLink === true ? (
+        <CustomLink to={to}>
+          <Heading variant="h4" weight="bold">
+            <Selected>{buttonTitle}</Selected>
+          </Heading>
+        </CustomLink>
+      ) : (
+        <a href="mailto:somos.disandev@gmail.com">
+          <Heading variant="h4" weight="bold">
+            <Selected>{buttonTitle}</Selected>
+          </Heading>
+        </a>
+      )}
     </InnerContent>
   </Content>
 );

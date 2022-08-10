@@ -58,6 +58,7 @@ const Footer: FC<Props> = ({ path }) => {
                   <DinamicContent>
                     <NavRight>
                       <NavList path={path} noSelected={true} />
+                      <a href={`mailto:somos.disandev@gmail.com`}>Let's Talk</a>
                     </NavRight>
                   </DinamicContent>
                 </Col>

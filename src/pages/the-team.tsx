@@ -1,13 +1,26 @@
 import type { NextPage, GetStaticProps } from 'next';
 import { usePageMetadata } from '../hooks/usePageMetadata';
-import Heading from '../components/atomic-design/atoms/heading';
-import Text from '../components/atomic-design/atoms/text';
 import { MemberI, PageInterface } from '../interfaces';
+import { client } from '../common/contentfulClientProvider';
+
 import Page from '../components/atomic-design/atoms/page';
 import Section from '../components/atomic-design/atoms/section';
-import { client } from '../common/contentfulClientProvider';
-import Container from '../components/atomic-design/atoms/container';
 import Image from 'next/image';
+import {
+  MembersContent,
+  OurValuesContent,
+  OurValuesImage,
+  PageHeaderContainer,
+} from '../styles/pages/the-team-styles';
+import PageHeader from '../components/atomic-design/atoms/page-header';
+import Icon from '../components/atomic-design/atoms/icon';
+import SectionHeader from '../components/atomic-design/atoms/section-header';
+import Row from '../components/atomic-design/molecules/grid/row';
+import Col from '../components/atomic-design/molecules/grid/col';
+import Text from '../components/atomic-design/atoms/text';
+import CallToAction from '../components/atomic-design/molecules/call-to-action';
+import OurValuesImg from '../../public/images/icons/our-values.png';
+import TeamList from '../components/atomic-design/organisms/team-list';
 
 interface Props {
   pages: PageInterface[];
@@ -19,27 +32,62 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
 
   return (
     <Page title={title} description={description} keywords={keywords}>
-      <Container>
+      <Section>
+        <PageHeaderContainer>
+          <PageHeader>
+            <span>Detrás de todo producto digital</span>
+            hay un gran <b>equipo humano</b>
+          </PageHeader>
+          <Icon icon="teamShape" ariaLabel="geometric shape" />
+        </PageHeaderContainer>
+      </Section>
+
+      <MembersContent>
         <Section>
-          <Heading variant="h2" weight="regular">
-            {title}
-          </Heading>
-          <ul>
-            {members?.map((member: MemberI) => (
-              <li key={member.fields.memberName}>
-                <Image
-                  src={`https:${member.fields.memberImage.fields.file.url}`}
-                  height={200}
-                  width={200}
-                  alt={member.fields.memberName}
-                  priority
-                />
-                <Heading variant="h4">{member.fields.memberName}</Heading>
-              </li>
-            ))}
-          </ul>
+          <TeamList list={members} />
         </Section>
-      </Container>
+      </MembersContent>
+
+      <OurValuesContent>
+        <Section>
+          <SectionHeader>Our Values</SectionHeader>
+          <Row>
+            <Col xs={12} sm={5} md={5} lg={5} xlg={5}>
+              <OurValuesImage>
+                {/* <Image
+                  src={OurValuesImg}
+                  alt="Our values image reference"
+                  layout="responsive"
+                  objectFit="contain"
+                  width="0"
+                  height="0"
+                /> */}
+              </OurValuesImage>
+            </Col>
+            <Col xs={12} sm={7} md={7} lg={7} xlg={7}>
+              <Text>
+                Sabemos que cada cliente presenta necesidades específicas. Por eso, somos flexibles
+                y creamos soluciones basadas en un diseño personalizado y adaptado a las
+                circunstancias de cada proyecto.
+              </Text>
+              <Text>
+                Creemos fehacientemente que no hay problema sin solución. Donde algunas personas ven
+                barreras, quienes trabnajamos en Cromac vemos posibilidades. Exploramos las
+                diferentes alternativas que nos permiten descubrir múltiples soluciones y
+                seleccionamos la más óptima.
+              </Text>
+            </Col>
+          </Row>
+        </Section>
+      </OurValuesContent>
+
+      <Section>
+        <CallToAction
+          to="/projects"
+          title="¿Querés conocer lo qué hacemos?"
+          buttonTitle="Mirá los proyectos"
+        />
+      </Section>
     </Page>
   );
 };

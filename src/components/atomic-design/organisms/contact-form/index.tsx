@@ -47,7 +47,6 @@ const ContactForm: FC<ContactFormPropTypes> = ({
               if (res.status === 200) {
                 setResponse(res.status);
                 resetForm();
-                console.log(res);
               }
             });
         } catch {

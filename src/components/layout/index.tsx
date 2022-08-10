@@ -1,6 +1,7 @@
+import { FC, useState } from 'react';
+
 import { useRouter } from 'next/router';
-import { FC, useContext, useState } from 'react';
-import { GlobalDataContext } from '../../context';
+
 import ScrollToTop from '../atomic-design/atoms/scroll-to-top';
 import Footer from '../atomic-design/molecules/footer';
 import Navbar from '../atomic-design/molecules/navbar';
@@ -17,9 +18,6 @@ const Layout: FC<Proptypes> = ({ children }) => {
   const { pathname } = useRouter();
   const [show, setShow] = useState(false);
   const showSidebar = (): void => setShow(!show);
-
-  // const context = useContext(GlobalDataContext);
-  // console.log(context?.information);
 
   return (
     <Main>

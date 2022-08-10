@@ -23,12 +23,12 @@ const StepItem: FC<PropTypes> = ({ item, isBorder }) => (
             <Spark size={3} />
           </span>
           <Heading variant="h4" weight="bold">
-            {item.node.stepTitle}
+            {item?.fields?.stepTitle}
           </Heading>
         </TitleContainer>
       </Col>
       <Col xs={12} sm={7} md={7} lg={7} xlg={7}>
-        <Text>{item.node.stepDesc}</Text>
+        <Text>{item?.fields?.stepDesc}</Text>
       </Col>
     </Row>
   </Content>
