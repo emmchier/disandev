@@ -9,6 +9,8 @@ import { client } from '../common/contentfulClientProvider';
 import Container from '../components/atomic-design/atoms/container';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useEffect, useState } from 'react';
+import Icon from '../components/atomic-design/atoms/icon/index';
+import PageHeader from '../components/atomic-design/atoms/page-header/index';
 
 interface Props {
   pages: PageInterface[];
@@ -27,6 +29,17 @@ const QualityPolicyPage: NextPage<Props> = ({ pages, content }) => {
   return (
     <Page title={title} description={description} keywords={keywords}>
       <Container>
+        <Section>
+          <PageHeader>
+            <span>
+              Because <b>we are careful</b>
+            </span>
+            to provide your best experience
+            <br />
+            meet our quality policy
+          </PageHeader>
+          <Icon icon="teamShape" ariaLabel="geometric shape" />
+        </Section>
         <Section>
           <Heading variant="h2" weight="regular">
             {title}

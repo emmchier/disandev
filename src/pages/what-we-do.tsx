@@ -35,11 +35,11 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
       <Section>
         <PageHeaderContainer>
           <PageHeader>
-            ¿Querés brindarle una buena
+            Do you want to provide a good
             <span>
-              <b>experiencia</b> a tus usuarios?
+              <b>experience</b> to your users?
             </span>
-            Estás en el lugar indicado
+            You are in the right place
           </PageHeader>
           <Icon icon="teamShape" ariaLabel="geometric shape" />
         </PageHeaderContainer>

@@ -22,9 +22,9 @@ const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
     <Page title={title} description={description} keywords={keywords}>
       <PageHeader>
         <span>
-          Mirá en que <b>proyectos</b>
+          Look at what <b>projects</b>
         </span>
-        estuvimos trabajando
+        we were working
       </PageHeader>
       <ProjectsContent>
         <Section>

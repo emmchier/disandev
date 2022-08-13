@@ -88,7 +88,7 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
             <Col xs={12} sm={7} md={5} lg={5} xlg={5}>
               <DescriptionLeft>
                 <Heading variant="h3" weight="medium">
-                  ¿De qué se trató el proyecto?
+                  What was the project about?
                 </Heading>
               </DescriptionLeft>
             </Col>

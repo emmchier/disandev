@@ -68,6 +68,9 @@ export const theme = {
             0px 0px 1px rgba(0, 0, 0, 0.04),
             0px 2px 6px rgba(76, 81, 191, 0.12),
             0px 10px 20px rgba(76, 81, 191, 0.18)`,
+    navbar: `box-shadow: 3px 7px 18px 0px rgba(76,81,191,0.15);
+    -webkit-box-shadow: 3px 7px 18px 0px rgba(76,81,191,0.15);
+    -moz-box-shadow: 3px 7px 18px 0px rgba(76,81,191,0.15);`,
   },
   transition: {
     main: '0.1s ease-in-out',

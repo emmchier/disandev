@@ -30,4 +30,6 @@ const directionStyles = (direction: string) =>
 
 export const Content = styled.figure<Props>`
   ${({ direction }) => directionStyles(direction as any)};
+  margin: 0;
+  line-height: auto !important;
 `;

@@ -5,7 +5,7 @@ interface NavbarProps {
   isFixed?: boolean;
 }
 
-export const Header = styled.div`
+export const Header = styled.header`
   position: fixed;
   z-index: 6;
   top: 0;
@@ -25,7 +25,7 @@ export const Background = styled.div<NavbarProps>`
   width: 100%;
   height: 100%;
   z-index: 1;
-  transition: all ease-in-out;
+  transition: all 0.2s ease-in;
   ${({ isFixed }) =>
     isFixed
       ? css`
@@ -35,9 +35,12 @@ export const Background = styled.div<NavbarProps>`
           -ms-animation: ${fadeIn} 0.2s;
           -o-animation: ${fadeIn} 0.2s;
           animation: ${fadeIn} 0.2s;
+          transition: all 0.2s ease-in;
+          box-shadow: ${({ theme }) => theme.shadow.navbar};
         `
       : css`
           background-color: transparent;
+          transition: all 0.2s ease-in;
         `};
 `;
 
@@ -45,26 +48,46 @@ export const Content = styled.div<NavbarProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: ${({ theme }) => theme.spacing(8)} 0;
   position: relative;
   z-index: 2;
-  transition: ${({ theme }) => theme.transition};
-  ${({ theme, isFixed }) =>
+  transition: all 0.2s ease-in;
+
+  svg {
+    a {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  ${({ isFixed }) =>
     isFixed
       ? css`
-          margin: ${theme.spacing(5)} 0;
-          transition: ${({ theme }) => theme.transition};
+          figure {
+            svg {
+              transform: scale(0.8);
+              transition: all 0.2s ease-in;
+              margin: ${({ theme }) => theme.spacing(4)} 0;
+              transform-origin: 0% 100%;
+            }
+          }
         `
       : css`
-          margin: ${theme.spacing(8)} 0;
-          transition: ${({ theme }) => theme.transition};
+          figure {
+            svg {
+              transform: scale(1);
+              transition: all 0.2s ease-in;
+              margin: ${({ theme }) => theme.spacing(6)} 0;
+            }
+          }
         `};
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    margin: ${({ theme }) => theme.spacing(3)} 0;
-
-    svg {
-      width: ${({ theme }) => theme.spacing(27)};
+    figure {
+      svg {
+        transform: scale(0.9);
+        transition: all 0.2s ease-in;
+        margin: ${({ theme }) => theme.spacing(5)} 0;
+        transform-origin: 0% 0%;
+      }
     }
   }
 `;

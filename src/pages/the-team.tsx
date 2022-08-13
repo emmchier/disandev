@@ -35,8 +35,8 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
       <Section>
         <PageHeaderContainer>
           <PageHeader>
-            <span>Detrás de todo producto digital</span>
-            hay un gran <b>equipo humano</b>
+            <span>Behind every digital product</span>
+            there is a <b>great human team</b>
           </PageHeader>
           <Icon icon="teamShape" ariaLabel="geometric shape" />
         </PageHeaderContainer>
@@ -54,27 +54,27 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
           <Row>
             <Col xs={12} sm={5} md={5} lg={5} xlg={5}>
               <OurValuesImage>
-                {/* <Image
+                <Image
                   src={OurValuesImg}
                   alt="Our values image reference"
                   layout="responsive"
                   objectFit="contain"
                   width="0"
                   height="0"
-                /> */}
+                />
               </OurValuesImage>
             </Col>
             <Col xs={12} sm={7} md={7} lg={7} xlg={7}>
               <Text>
-                Sabemos que cada cliente presenta necesidades específicas. Por eso, somos flexibles
-                y creamos soluciones basadas en un diseño personalizado y adaptado a las
-                circunstancias de cada proyecto.
+                We know that each client has specific needs. That's why we are flexible and we
+                create solutions based on a personalized design adapted to the circumstances of each
+                project.
               </Text>
               <Text>
-                Creemos fehacientemente que no hay problema sin solución. Donde algunas personas ven
-                barreras, quienes trabnajamos en Cromac vemos posibilidades. Exploramos las
-                diferentes alternativas que nos permiten descubrir múltiples soluciones y
-                seleccionamos la más óptima.
+                We firmly believe that there is no problem without a solution. where some people see
+                barriers, those of us who work at Cromac see possibilities. We explore the different
+                alternatives that allow us to discover multiple solutions and We select the most
+                optimal.
               </Text>
             </Col>
           </Row>
@@ -84,8 +84,8 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
       <Section>
         <CallToAction
           to="/projects"
-          title="¿Querés conocer lo qué hacemos?"
-          buttonTitle="Mirá los proyectos"
+          title="Do you want to know what we do?"
+          buttonTitle="Look at the projects"
         />
       </Section>
     </Page>

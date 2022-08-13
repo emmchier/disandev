@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  padding-top: ${({ theme }) => theme.spacing(20)};
+  /* padding-top: ${({ theme }) => theme.spacing(20)}; */
 `;
 
 export const SocialMediaContainer = styled.div`

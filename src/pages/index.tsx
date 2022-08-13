@@ -50,12 +50,13 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
             <HomeContent>
               <TextContent>
                 <SectionHeader variant="h1">
-                  <span>Creamos soluciones</span>
-                  digitales que dejan marca
+                  We create digital solutions
+                  <span>for your products</span>
+                  to make an impression
                 </SectionHeader>
                 <Button onClick={handleAnchor} variant="text" ariaLabel="ancla a section 2">
                   <Heading variant="h4" weight="bold">
-                    Conocenos
+                    Meet to us
                   </Heading>
                   <Icon ariaLabel="arrow to bottom" icon="arrow" direction="down" />
                 </Button>

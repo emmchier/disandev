@@ -95,7 +95,7 @@ const variantStyles = (variant: string) =>
       background-color: transparent;
       border: 2px solid transparent;
       padding: 0;
-      color: ${({ theme }) => theme.color.primary.main} !important;
+      color: ${({ theme }) => theme.color.black} !important;
 
       svg {
         filter: brightness(0) saturate(100%) invert(37%) sepia(62%) saturate(1324%)
@@ -103,7 +103,6 @@ const variantStyles = (variant: string) =>
       }
 
       &:hover {
-        text-decoration: underline;
         svg {
           filter: brightness(0) saturate(100%) invert(37%) sepia(62%) saturate(1324%)
             hue-rotate(221deg) brightness(91%) contrast(107%) !important;

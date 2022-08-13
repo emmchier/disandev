@@ -27,6 +27,9 @@ const styledSizes = (size: string) =>
         max-width: 1330px;
         padding: 0 27px;
       }
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        padding: 0 27px !important;
+      }
     `,
     lg: css`
       max-width: 1800px;
@@ -41,5 +44,5 @@ const styledSizes = (size: string) =>
 export const Content = styled.div<ContainerProps>`
   ${({ size }) => styledSizes(size)};
   margin: auto;
-  padding: 0;
+  padding: 0 !important;
 `;
