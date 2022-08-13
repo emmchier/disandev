@@ -14,7 +14,7 @@ interface Props {
 
 const ServiceList: FC<Props> = ({ list, offsetColumn = false }) => (
   <Content offsetColumn={offsetColumn}>
-    <Row gap={10}>
+    <Row gap={8}>
       {list?.map((item: ServiceI) => (
         <Col xs={12} sm={6} md={4} lg={4} xlg={4} key={item?.fields?.name}>
           <Card

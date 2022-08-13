@@ -21,6 +21,7 @@ import {
   NavRight,
   CopyrightContainer,
   FooterMainContent,
+  ContactLink,
 } from './styles';
 
 import CustomLink from '../../atoms/custom-link';
@@ -57,13 +58,19 @@ const Footer: FC<Props> = ({ path }) => {
                 <Col xs={12} sm={12} md={6} lg={6} xlg={6}>
                   <DinamicContent>
                     <NavRight>
-                      <NavList path={path} noSelected={true} />
-                      <a href={`mailto:somos.disandev@gmail.com`}>Let's Talk</a>
+                      <NavList path={path} noSelected={true} showPolicty={true} />
+                      <ContactLink>
+                        <a style={{ marginTop: '90px' }} href={`mailto:somos.disandev@gmail.com`}>
+                          Let's Talk
+                        </a>
+                        <b>.</b>
+                      </ContactLink>
                     </NavRight>
                   </DinamicContent>
                 </Col>
               </Row>
             </Col>
+
             <Col xs={12} sm={12} md={3} lg={3} xlg={3}>
               <DinamicContent>
                 <InfoContent>
@@ -84,10 +91,10 @@ const Footer: FC<Props> = ({ path }) => {
             <DinamicContent alignItems="start">
               <CopyContent>
                 <Text>{new Date().getFullYear()} © Disandev</Text>
-                <span>|</span>
+                {/* <span>|</span>
                 <CustomLink to="/quality-policy">
                   <Text>Quality policy</Text>
-                </CustomLink>
+                </CustomLink> */}
               </CopyContent>
             </DinamicContent>
             <DinamicContent alignItems="end">

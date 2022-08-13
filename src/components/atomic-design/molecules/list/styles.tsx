@@ -3,7 +3,8 @@ import styled, { css } from 'styled-components';
 export interface ListProps {
   orientation: string;
   alignItems: string;
-  gap: number;
+  spaceX: string;
+  spaceY: string;
 }
 
 const orientationStyles = (orientation: string) =>
@@ -54,8 +55,6 @@ export const ContainerList = styled.ul<ListProps>`
   width: 100%;
   padding: 0;
   margin: 0;
-
-  li {
-    margin: ${({ gap }) => `${0.25 * gap}rem`};
-  }
+  row-gap: ${({ spaceX }) => spaceX};
+  column-gap: ${({ spaceY }) => spaceY};
 `;

@@ -10,7 +10,7 @@ interface SectionI {
   padding?: string;
 }
 
-const Section: FC<SectionI> = ({ auto = false, container = 'fluid', children, padding = '0' }) => {
+const Section: FC<SectionI> = ({ auto = true, container = 'md', children, padding = '0' }) => {
   return (
     <Content auto={auto} padding={padding}>
       <Container size={container}>{children}</Container>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  margin-top: ${({ theme }) => theme.spacing(30)};
+  margin: ${({ theme }) => theme.spacing(30)} ${({ theme }) => theme.spacing(30)} 0;
 `;

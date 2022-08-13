@@ -126,6 +126,24 @@ export const NavRight = styled.div`
   }
 `;
 
+export const ContactLink = styled.div`
+  margin-top: ${({ theme }) => theme.spacing(5)};
+  a {
+    font-size: ${({ theme }) => theme.font.size.medium};
+    color: ${({ theme }) => theme.color.text.primary};
+
+    &:hover {
+      color: ${({ theme }) => theme.color.primary.main};
+    }
+  }
+  b {
+    font-size: ${({ theme }) => theme.spacing(6)};
+    margin: 2px;
+    color: ${({ theme }) => theme.color.primary.main};
+    font-weight: ${({ theme }) => theme.font.weight.semiBold};
+  }
+`;
+
 export const CopyrightContainer = styled.div`
   display: flex;
   align-items: center;

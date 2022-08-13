@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 
-import Link from 'next/link';
 import { SocialMedia } from '../../../../interfaces';
 import Icon from '../../atoms/icon';
 import List from '../../molecules/list';
@@ -11,7 +10,7 @@ import CustomLink from '../../atoms/custom-link';
 
 const SocialMediaList: FC = () => (
   <Content>
-    <List orientation="horizontal" alignItems="start" gap={2}>
+    <List orientation="horizontal" alignItems="start" gap={3}>
       {socialMediaList?.map((item: SocialMedia) => (
         <ListItem key={item.socialName}>
           <CustomLink to={item.to} target="_blank">

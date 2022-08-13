@@ -85,7 +85,7 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
         <CallToAction
           to="/projects"
           title="Do you want to know what we do?"
-          buttonTitle="Look at the projects"
+          buttonTitle="Look all projects"
         />
       </Section>
     </Page>

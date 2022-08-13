@@ -41,6 +41,10 @@ export const Content = styled.li<ContentProps>`
       }
     }
   }
+
+  p {
+    margin-left: ${({ theme }) => theme.spacing(20)};
+  }
 `;
 
 export const TitleContainer = styled.div`

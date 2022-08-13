@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-export const Main = styled.main`
-  /* padding-top: ${({ theme }) => theme.spacing(20)}; */
-`;
+export const Main = styled.main``;
 
 export const SocialMediaContainer = styled.div`
   position: fixed;

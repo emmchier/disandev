@@ -47,8 +47,8 @@ const Card: FC<PropTypes> = ({
   year = '',
   padding = '',
   isLower = true,
-  width = 200,
-  height = 200,
+  width = '100%',
+  height = '100%',
   borderRadius = false,
   boxShadow = false,
   sparks = true,
@@ -59,13 +59,7 @@ const Card: FC<PropTypes> = ({
   imgHeight,
   imgWidth,
 }) => (
-  <CardContent
-    width={width}
-    height={height}
-    padding={padding}
-    borderRadius={borderRadius}
-    boxShadow={boxShadow}
-  >
+  <CardContent padding={padding} borderRadius={borderRadius} boxShadow={boxShadow}>
     <HoverContainer
       wrapperHeight={wrapperHeight}
       wrapperWidth={wrapperWidth}
@@ -82,7 +76,14 @@ const Card: FC<PropTypes> = ({
             </ButtonContent>
           </HoverContent>
         )}
-        <Image src={`https:${img}`} alt={alt} width={width} height={height} priority />
+        <Image
+          src={`https:${img}`}
+          alt={alt}
+          width={width}
+          height={height}
+          layout="responsive"
+          priority
+        />
       </span>
     </HoverContainer>
 

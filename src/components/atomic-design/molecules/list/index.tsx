@@ -6,16 +6,18 @@ interface PropTypes {
   children: React.ReactNode;
   orientation?: string;
   alignItems?: string;
-  gap?: number;
+  spaceX?: string;
+  spaceY?: string;
 }
 
 const List: FC<PropTypes> = ({
   children,
   orientation = 'vertical',
   alignItems = 'start',
-  gap = 3,
+  spaceX = '20px',
+  spaceY = '20px',
 }) => (
-  <ContainerList orientation={orientation} alignItems={alignItems} gap={gap}>
+  <ContainerList orientation={orientation} alignItems={alignItems} spaceX={spaceX} spaceY={spaceY}>
     {children}
   </ContainerList>
 );

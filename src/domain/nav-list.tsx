@@ -19,6 +19,11 @@ export const navList = [
     label: 'The team',
     to: '/the-team',
   },
+  {
+    id: 4,
+    label: 'Quality policy',
+    to: '/quality-policy',
+  },
   //   {
   //     id: 4,
   //     label: 'FAQs',

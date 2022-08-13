@@ -19,7 +19,7 @@ export const WhatWeDoContent = styled.div`
     background-color: transparent;
   }
   background: ${({ theme }) => theme.color.gradient.primary};
-  padding: ${({ theme }) => theme.spacing(20)} 0;
+  padding: ${({ theme }) => theme.spacing(20)} 0 0;
 `;
 
 export const TechsContent = styled.div`

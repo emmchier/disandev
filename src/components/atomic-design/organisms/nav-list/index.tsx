@@ -13,6 +13,7 @@ type Props = {
   path?: string;
   orientation?: string;
   noSelected?: boolean;
+  showPolicty?: boolean;
 };
 
 interface NavlistI {
@@ -21,18 +22,26 @@ interface NavlistI {
   to: string;
 }
 
-const NavList: FC<Props> = ({ path = '', orientation = 'vertical', noSelected = false }) => {
+const NavList: FC<Props> = ({
+  path = '',
+  orientation = 'vertical',
+  noSelected = false,
+  showPolicty = false,
+}) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
+  const getFilteredList = () =>
+    showPolicty === false ? navList?.filter((item) => item.to !== '/quality-policy') : navList;
+
   return (
     <List alignItems="start" orientation={orientation}>
-      {navList?.map((item: NavlistI) => (
+      {getFilteredList()?.map((item: NavlistI) => (
         <ListItem key={item.label}>
           <CustomLink to={item.to}>
-            <div>
+            <>
               {item.to === path ? (
                 !noSelected ? (
                   <FullSelected>{item.label}</FullSelected>
@@ -42,7 +51,7 @@ const NavList: FC<Props> = ({ path = '', orientation = 'vertical', noSelected = 
               ) : (
                 <Selected noSelected={noSelected}>{item.label}</Selected>
               )}
-            </div>
+            </>
           </CustomLink>
         </ListItem>
       ))}

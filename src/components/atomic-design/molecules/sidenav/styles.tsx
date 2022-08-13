@@ -5,9 +5,10 @@ interface SidenavProps {
 }
 
 export const MenuContent = styled.div<SidenavProps>`
-  width: 25%;
+  width: 15%;
   height: 100vh;
   background-color: ${({ theme }) => theme.color.white};
+  padding: ${({ theme }) => theme.spacing(10)};
   position: fixed;
   top: 0;
   ${({ isShowing }) =>
@@ -30,7 +31,7 @@ export const MenuContent = styled.div<SidenavProps>`
   }
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    width: 100%;
+    width: auto;
   }
 
   @keyframes fadeIn {
@@ -56,7 +57,6 @@ export const CloseBtn = styled.div`
   cursor: pointer;
   position: absolute;
   z-index: 999;
-  padding: ${({ theme }) => theme.spacing(10)};
 
   &:hover {
     opacity: 0.7;
@@ -65,11 +65,15 @@ export const CloseBtn = styled.div`
 
 export const Content = styled.div`
   height: 100vh;
+  width: 100% !important;
   position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing(10)};
+
+  div {
+    width: 100%;
+  }
 
   button {
     margin: ${({ theme }) => theme.spacing(10)} 0;
@@ -88,10 +92,12 @@ export const Content = styled.div`
 
 export const SocialMediaContent = styled.div`
   ul {
-    li:nth-child(5) {
-      svg {
-        margin-right: 0 !important;
-      }
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      justify-content: space-between;
     }
   }
 `;

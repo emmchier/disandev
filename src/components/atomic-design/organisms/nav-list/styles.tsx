@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const FullSelected = styled.span`
   display: inline-block;
-  pointer-events: none;
-  margin: 0;
+  pointer-events: none !important;
   font-weight: ${({ theme }) => theme.font.weight.bold};
   &:after {
     display: block;
@@ -14,6 +13,7 @@ export const FullSelected = styled.span`
     transform-origin: 0% 100%;
     transition: transform 250ms ease-in-out;
     width: 100%;
+
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       border-bottom: 3px solid transparent;
     }
