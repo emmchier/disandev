@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Box from '../../atoms/box';
 
 import Container from '../../atoms/container';
 import DinamicContent from '../../atoms/dinamic-content';
@@ -23,8 +24,6 @@ import {
   FooterMainContent,
   ContactLink,
 } from './styles';
-
-import CustomLink from '../../atoms/custom-link';
 
 type Props = {
   path?: string;
@@ -85,21 +84,17 @@ const Footer: FC<Props> = ({ path }) => {
           </Row>
         </FooterMainContent>
       </Container>
+
       <Copyright>
         <Container>
           <CopyrightContainer>
-            <DinamicContent alignItems="start">
-              <CopyContent>
-                <Text>{new Date().getFullYear()} © Disandev</Text>
-                {/* <span>|</span>
+            <Text>{new Date().getFullYear()} © Disandev</Text>
+            {/* <span>|</span>
                 <CustomLink to="/quality-policy">
                   <Text>Quality policy</Text>
                 </CustomLink> */}
-              </CopyContent>
-            </DinamicContent>
-            <DinamicContent alignItems="end">
-              <SocialMediaList />
-            </DinamicContent>
+
+            <SocialMediaList />
           </CopyrightContainer>
         </Container>
       </Copyright>

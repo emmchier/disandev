@@ -23,7 +23,7 @@ const Sidenav: FC<PropTypes> = ({ path, show, showSidebar }) => {
         </CloseBtn>
         <Content>
           <div>
-            <NavList path={path} />
+            <NavList path={path} showSidebar={showSidebar} />
             <ButtonContact onClick={showSidebar} />
             <SocialMediaContent>
               <SocialMediaList />

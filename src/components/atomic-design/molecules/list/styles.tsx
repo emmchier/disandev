@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 export interface ListProps {
   orientation: string;
   alignItems: string;
+  justifyContent: string;
   spaceX: string;
   spaceY: string;
 }
@@ -52,9 +53,16 @@ export const ContainerList = styled.ul<ListProps>`
   ${({ orientation }) => orientationStyles(orientation)};
   ${({ alignItems }) => alignItemsStyles(alignItems)};
   display: flex;
+  justify-content: ${({ justifyContent }) => justifyContent};
   width: 100%;
   padding: 0;
   margin: 0;
   row-gap: ${({ spaceX }) => spaceX};
   column-gap: ${({ spaceY }) => spaceY};
+
+  li:nth-child(3) {
+    svg {
+      transform: translateY(2px);
+    }
+  }
 `;

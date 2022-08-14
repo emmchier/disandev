@@ -33,7 +33,7 @@ const ScrollToTop: FC = () => {
     <>
       {isVisible && (
         <ScrollButton onClick={scrollToTop} aria-label="scroll to top" isShowing={isVisible}>
-          <Icon ariaLabel="Arrow to top" icon="arrow" direction="up" />
+          <Icon ariaLabel="Arrow to top icon" icon="arrow" direction="up" />
         </ScrollButton>
       )}
     </>

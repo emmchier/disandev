@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import React, { FC } from 'react';
+import Image from 'next/image';
 
 import Heading from '../../atoms/heading';
 import SparkList from '../../atoms/spark/spark-list';
@@ -14,7 +15,6 @@ import {
   HoverContent,
   ButtonContent,
 } from './styles';
-import Image from 'next/image';
 
 interface PropTypes {
   img?: string;

@@ -82,6 +82,7 @@ export const Content = styled.div<NavbarProps>`
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     figure {
+      display: flex;
       svg {
         transform: scale(0.9);
         transition: all 0.2s ease-in;

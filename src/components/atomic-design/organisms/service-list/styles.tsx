@@ -26,8 +26,12 @@ export const Content = styled.div<ContentProps>`
     height: 200px;
 
     img {
-      object-fit: scale-down !important;
+      object-fit: scale-down;
     }
+  }
+
+  h4 {
+    margin-top: 0 !important;
   }
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {

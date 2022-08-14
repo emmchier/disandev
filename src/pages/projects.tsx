@@ -9,6 +9,7 @@ import PageHeader from '../components/atomic-design/atoms/page-header';
 import ProjectList from '../components/atomic-design/organisms/project-list';
 
 import { ProjectsContent } from '../styles/pages/projects-styles';
+import CallToAction from '../components/atomic-design/molecules/call-to-action';
 
 interface Props {
   pages: PageInterface[];
@@ -31,6 +32,14 @@ const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
           <ProjectList list={projects} />
         </Section>
       </ProjectsContent>
+      <Section>
+        <CallToAction
+          to="/lets-talk"
+          title="¿Have an idea?"
+          buttonTitle="Lets talk"
+          isLink={false}
+        />
+      </Section>
     </Page>
   );
 };

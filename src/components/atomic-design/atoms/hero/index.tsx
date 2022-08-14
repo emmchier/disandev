@@ -1,17 +1,17 @@
 import React, { FC } from 'react';
 
 import Image from 'next/image';
+import { Content } from './styles';
 
 interface Props {
   alt?: string;
   img?: string;
-  size?: string;
-  width?: string;
-  height?: string;
 }
 
-const Hero: FC<Props> = ({ img = '', alt = '', width = '100%', height = '100vh' }) => (
-  <Image src={`https:${img}`} alt={alt} width={width} height={height} priority />
+const Hero: FC<Props> = ({ img = '', alt = '' }) => (
+  <Content>
+    <Image alt={alt} src={`https:${img}`} layout="fill" objectFit="cover" />
+  </Content>
 );
 
 export default Hero;

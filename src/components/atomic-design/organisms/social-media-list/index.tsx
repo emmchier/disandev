@@ -10,7 +10,7 @@ import CustomLink from '../../atoms/custom-link';
 
 const SocialMediaList: FC = () => (
   <Content>
-    <List orientation="horizontal" alignItems="start" gap={3}>
+    <List orientation="horizontal" alignItems="end">
       {socialMediaList?.map((item: SocialMedia) => (
         <ListItem key={item.socialName}>
           <CustomLink to={item.to} target="_blank">

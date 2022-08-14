@@ -10,7 +10,12 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     font-family: ${({ theme }) => theme.font.family};
     font-size: ${({ theme }) => theme.font.size.small};
-    line-height: ${({ theme }) => theme.font.lineHeight};
+    line-height: ${({ theme }) => theme.font.lineHeight.small};
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: ${({ theme }) => theme.font.size.medium};
+      line-height: ${({ theme }) => theme.font.lineHeight.medium};
+    }
   }
   * {
     text-decoration: none;

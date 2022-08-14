@@ -1,6 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
 
-import Text from '../../atoms/text';
 import List from '../../molecules/list';
 import ListItem from '../../molecules/list/item-list';
 
@@ -14,6 +13,7 @@ type Props = {
   orientation?: string;
   noSelected?: boolean;
   showPolicty?: boolean;
+  showSidebar?: () => any;
 };
 
 interface NavlistI {
@@ -27,6 +27,7 @@ const NavList: FC<Props> = ({
   orientation = 'vertical',
   noSelected = false,
   showPolicty = false,
+  showSidebar,
 }) => {
   const [mounted, setMounted] = useState(false);
 
@@ -39,7 +40,7 @@ const NavList: FC<Props> = ({
   return (
     <List alignItems="start" orientation={orientation}>
       {getFilteredList()?.map((item: NavlistI) => (
-        <ListItem key={item.label}>
+        <ListItem key={item.label} onClick={showSidebar}>
           <CustomLink to={item.to}>
             <>
               {item.to === path ? (

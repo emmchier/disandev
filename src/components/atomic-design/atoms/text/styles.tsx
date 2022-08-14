@@ -65,6 +65,6 @@ export const Paragraph = styled.p<TextProps>`
   margin: 0;
 
   @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: ${({ theme }) => theme.font.size.small};
+    font-size: ${({ theme }) => theme.font.size.medium};
   }
 `;

@@ -18,20 +18,20 @@ export const MenuContent = styled.div<SidenavProps>`
           transition: 0.3s;
           z-index: 0;
           box-shadow: ${({ theme }) => theme.shadow.main};
+          z-index: 999;
+
+          @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+            width: 100%;
+          }
         `
       : css`
           right: -100%;
           transition: 0.3s;
           box-shadow: none;
         `};
-  z-index: 999;
 
   @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
     width: 50%;
-  }
-
-  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    width: auto;
   }
 
   @keyframes fadeIn {
