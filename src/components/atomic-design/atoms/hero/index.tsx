@@ -10,7 +10,12 @@ interface Props {
 
 const Hero: FC<Props> = ({ img = '', alt = '' }) => (
   <Content>
-    <Image alt={alt} src={`https:${img}`} layout="fill" objectFit="cover" />
+    <Image
+      alt={alt}
+      src={img ? `https:${img}` : '/images/default-bg.svg'}
+      layout="fill"
+      objectFit="cover"
+    />
   </Content>
 );
 

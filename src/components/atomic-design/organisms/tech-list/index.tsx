@@ -19,7 +19,11 @@ const TechList: FC<Props> = ({ list }) => (
         <Content>
           <Box display="flex" alignItems="center" flexDirection="column">
             <Image
-              src={`https:${item?.fields?.image?.fields?.file?.url}`}
+              src={
+                item?.fields?.image?.fields?.file?.url
+                  ? `https:${item?.fields?.image?.fields?.file?.url}`
+                  : '/images/default-img.svg'
+              }
               alt={item?.fields?.technologyName}
               width={80}
               height={80}

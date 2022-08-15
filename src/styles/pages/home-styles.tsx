@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { swing } from '../../components/ui/animations';
 
 export const Content = styled.div`
   height: 100vh;
@@ -24,6 +23,16 @@ export const HomeContent = styled.div`
     justify-content: center;
     margin: 0;
   }
+
+  button {
+    svg {
+      transform: translateY(4px) rotate(-90deg) !important;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    margin-left: 0;
+  }
 `;
 
 export const TextContent = styled.div`
@@ -43,6 +52,8 @@ export const TextContent = styled.div`
 
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       margin-right: ${({ theme }) => theme.spacing(5)} !important;
+      font-size: ${({ theme }) => theme.font.size.large};
+      line-height: ${({ theme }) => theme.font.lineHeight.medium};
     }
   }
 
@@ -52,30 +63,11 @@ export const TextContent = styled.div`
   }
 
   button {
-    position: relative;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-top: ${({ theme }) => theme.spacing(3)};
+    margin-top: ${({ theme }) => theme.spacing(5)};
     transform: translateX(-10px);
 
-    span {
-      transform: translateY(3px) !important;
-      transition: all 0.2s ease-in-out;
-    }
-
-    &:hover,
-    &:active {
-      transition: 0.2s ease-in-out;
-      color: ${({ theme }) => theme.color.black};
-
-      svg {
-        filter: none;
-      }
-
-      span {
-        animation: ${swing} 0.5s;
-        transition: all 0.2s ease-in-out;
-      }
+    &:hover {
+      opacity: 0.7;
     }
   }
 `;
@@ -132,5 +124,11 @@ export const ActionContent = styled.div`
     button {
       margin: ${({ theme }) => theme.spacing(15)} 0;
     }
+  }
+`;
+
+export const ServiceContainer = styled.div`
+  button {
+    margin-top: ${({ theme }) => theme.spacing(15)};
   }
 `;

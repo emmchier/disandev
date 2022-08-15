@@ -64,8 +64,8 @@ export const Technologies = styled.div`
     display: inline-block;
     align-items: flex-start;
     li {
-      margin-left: 0;
-      margin-bottom: 0;
+      margin-right: ${({ theme }) => theme.spacing(5)};
+      margin-bottom: ${({ theme }) => theme.spacing(5)};
       display: inline-block;
     }
   }

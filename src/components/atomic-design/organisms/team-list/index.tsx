@@ -18,7 +18,11 @@ const TeamList: FC<Props> = ({ list }) => (
     {list?.map((item) => (
       <Col key={item?.fields?.slug} xs={12} sm={4} md={4} lg={4} xlg={4}>
         <Card
-          img={item?.fields?.memberImage?.fields?.file?.url}
+          img={
+            item?.fields?.memberImage?.fields?.file?.url
+              ? `https:${item?.fields?.memberImage?.fields?.file?.url}`
+              : '/images/default-img.svg'
+          }
           title={item?.fields?.memberName}
           alt={item?.fields?.memberName}
           wrapperHeight="100%"

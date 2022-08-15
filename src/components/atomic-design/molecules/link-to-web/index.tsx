@@ -12,7 +12,7 @@ interface PropTypes {
 
 const LinkToWeb: FC<PropTypes> = ({ url, urlName }) => (
   <Content>
-    <Text weight="light">Do you want to see how it turned out?</Text>
+    <Text weight="light">See how it turned out</Text>
     <a href={url} target="_blank" rel="noopener noreferrer">
       {urlName}
       <Icon icon="arrow" ariaLabel="arrow icon to open link" variant="primary" direction="right" />

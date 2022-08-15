@@ -1,4 +1,5 @@
 import type { NextPage, GetStaticProps } from 'next';
+
 import { usePageMetadata } from '../hooks/usePageMetadata';
 import Heading from '../components/atomic-design/atoms/heading';
 import { PageInterface, ProjectI, ServiceI } from '../interfaces';
@@ -6,26 +7,25 @@ import Page from '../components/atomic-design/atoms/page';
 import Section from '../components/atomic-design/atoms/section';
 import { client } from '../common/contentfulClientProvider';
 import Container from '../components/atomic-design/atoms/container';
-import Image from 'next/image';
 import { getItemsByPage } from '../helpers/functions';
-import Text from '../components/atomic-design/atoms/text';
 import CustomLink from '../components/atomic-design/atoms/custom-link';
+import SectionHeader from '../components/atomic-design/atoms/section-header';
+import Button from '../components/atomic-design/atoms/button';
+import Icon from '../components/atomic-design/atoms/icon';
+import Core from '../components/atomic-design/molecules/core-component';
+import ProjectList from '../components/atomic-design/organisms/project-list';
+import Box from '../components/atomic-design/atoms/box';
+import ServiceSection from '../components/atomic-design/organisms/service-section';
+import CallToAction from '../components/atomic-design/molecules/call-to-action';
+
 import {
   ActionContent,
   Content,
   HomeContent,
   ProjectSectionContent,
   TextContent,
+  ServiceContainer,
 } from '../styles/pages/home-styles';
-import SectionHeader from '../components/atomic-design/atoms/section-header';
-import Button from '../components/atomic-design/atoms/button';
-import Icon from '../components/atomic-design/atoms/icon';
-import Core from '../components/atomic-design/molecules/core-component';
-import { theme } from '../styles/theme';
-import ProjectList from '../components/atomic-design/organisms/project-list';
-import Box from '../components/atomic-design/atoms/box';
-import ServiceSection from '../components/atomic-design/organisms/service-section';
-import CallToAction from '../components/atomic-design/molecules/call-to-action';
 
 interface Props {
   pages: PageInterface[];
@@ -39,7 +39,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
   const filteredServicesList = getItemsByPage(services, 'home');
 
   const handleAnchor = () => {
-    window.scrollTo({ top: 1300, behavior: 'smooth' });
+    window.scrollTo({ top: 680, behavior: 'smooth' });
   };
 
   return (
@@ -89,14 +89,16 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
       </Section>
 
       <Section>
-        <ServiceSection list={filteredServicesList} />
-        <Box width="100%" display="flex" justifyContent="center">
-          <CustomLink to="/what-we-do">
-            <Button variant="outlined" ariaLabel="button" iconRight={true}>
-              See all services
-            </Button>
-          </CustomLink>
-        </Box>
+        <ServiceContainer>
+          <ServiceSection list={filteredServicesList} />
+          <Box width="100%" display="flex" justifyContent="center">
+            <CustomLink to="/what-we-do">
+              <Button variant="outlined" ariaLabel="button" iconRight={true}>
+                See all services
+              </Button>
+            </CustomLink>
+          </Box>
+        </ServiceContainer>
       </Section>
 
       <Section>

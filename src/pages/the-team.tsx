@@ -11,6 +11,7 @@ import {
   OurValuesContent,
   OurValuesImage,
   PageHeaderContainer,
+  TeamCallToAction,
 } from '../styles/pages/the-team-styles';
 import PageHeader from '../components/atomic-design/atoms/page-header';
 import Icon from '../components/atomic-design/atoms/icon';
@@ -88,13 +89,15 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
         </Section>
       </OurValuesContent>
 
-      <Section>
-        <CallToAction
-          to="/projects"
-          title="Do you want to know what we do?"
-          buttonTitle="Look all projects"
-        />
-      </Section>
+      <TeamCallToAction>
+        <Section>
+          <CallToAction
+            to="/projects"
+            title="Do you want to know what we do?"
+            buttonTitle="Look all projects"
+          />
+        </Section>
+      </TeamCallToAction>
     </Page>
   );
 };

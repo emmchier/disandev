@@ -41,7 +41,6 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
       <Hero
         img={`${project?.fields?.header?.fields?.file?.url}`}
         alt={`${project?.fields?.name} image header`}
-        width="100"
       />
       <Section>
         <ActionContent>
@@ -78,7 +77,6 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
         <Hero
           img={`${project?.fields?.banner?.fields?.file?.url}`}
           alt={`${project?.fields?.name} multidevise picture`}
-          width="100"
         />
       </Container>
 
@@ -90,12 +88,12 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
                 <Heading variant="h3" weight="medium">
                   What was the project about?
                 </Heading>
+                <LinkToWeb url={project?.fields?.url} urlName={project?.fields?.urlName} />
               </DescriptionLeft>
             </Col>
             <Col xs={12} sm={7} md={7} lg={7} xlg={7}>
               <DescriptionRight>
                 {documentToReactComponents(project?.fields?.description)}
-                <LinkToWeb url={project?.fields?.url} urlName={project?.fields?.urlName} />
               </DescriptionRight>
             </Col>
           </Row>

@@ -58,6 +58,6 @@ export const ScrollButton = styled.button<ScrollButtonPropTypes>`
   }
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    margin: ${({ theme }) => theme.spacing(4)};
+    margin: ${({ theme }) => theme.spacing(3)};
   }
 `;

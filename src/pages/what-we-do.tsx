@@ -30,6 +30,10 @@ interface Props {
 const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
   const { title, description, keywords } = usePageMetadata(pages, 'what-we-do');
 
+  console.log(techs);
+
+  const filterTechs = techs?.filter((tech) => tech?.fields?.showLogo === true);
+
   return (
     <Page title={title} description={description} keywords={keywords}>
       <Section>
@@ -66,7 +70,7 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
           <SectionHeader>
             Our main technologies<b>.</b>
           </SectionHeader>
-          <TechList list={techs} />
+          <TechList list={filterTechs} />
         </Section>
       </TechsContent>
 

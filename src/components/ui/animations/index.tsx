@@ -28,29 +28,3 @@ export const expand = keyframes`
       transition: all 0.5s ease-in;
   }
 `;
-
-export const swing = keyframes`
-  0% {
-    transform: translateY(3px);
-  }
-
-  20% {
-    transform: translateY(-20px);
-  }
-
-  30% {
-    transform: translateY(-10px);
-  }
-
-  50% {
-    transform: translateY(3px);
-  }
-
-  80% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(3px);
-  }
-`;

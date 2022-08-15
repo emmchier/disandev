@@ -6,6 +6,17 @@ export const PageHeaderContainer = styled.div`
   h2 {
     position: relative;
     z-index: 1;
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      text-align: start;
+      span {
+        display: block;
+        div {
+          margin: 0;
+          text-align: start;
+        }
+      }
+    }
   }
 
   svg {
@@ -17,6 +28,10 @@ export const PageHeaderContainer = styled.div`
 
 export const MembersContent = styled.div`
   margin: ${({ theme }) => theme.spacing(30)} 0;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    margin: ${({ theme }) => theme.spacing(10)} 0;
+  }
 `;
 
 export const OurValuesContent = styled.div`
@@ -54,5 +69,29 @@ export const OurValuesImage = styled.div`
 
   img {
     height: ${({ theme }) => theme.spacing(48)};
+  }
+`;
+
+export const TeamCallToAction = styled.div`
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    section {
+      div {
+        div {
+          div {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    h3 {
+      font-size: ${({ theme }) => theme.font.size.large} !important;
+    }
+    h4 {
+      div {
+        span {
+          font-size: ${({ theme }) => theme.font.size.large} !important;
+        }
+      }
+    }
   }
 `;

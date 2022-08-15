@@ -6,11 +6,30 @@ export const PageHeaderContainer = styled.div`
   h2 {
     position: relative;
     z-index: 1;
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      text-align: start;
+
+      span {
+        display: block;
+
+        div {
+          margin: 0;
+          text-align: start;
+        }
+      }
+    }
   }
+
   svg {
     position: absolute;
     top: 33%;
     right: -15%;
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      top: 15%;
+      right: -15%;
+    }
   }
 `;
 
@@ -20,6 +39,10 @@ export const WhatWeDoContent = styled.div`
   }
   background: ${({ theme }) => theme.color.gradient.primary};
   padding: ${({ theme }) => theme.spacing(20)} 0 0;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    padding: ${({ theme }) => theme.spacing(10)} 0 ${({ theme }) => theme.spacing(10)};
+  }
 `;
 
 export const TechsContent = styled.div`
@@ -27,6 +50,14 @@ export const TechsContent = styled.div`
 
   h3 {
     margin-bottom: ${({ theme }) => theme.spacing(25)} !important;
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      margin-bottom: ${({ theme }) => theme.spacing(15)} !important;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    padding-top: ${({ theme }) => theme.spacing(10)};
   }
 `;
 

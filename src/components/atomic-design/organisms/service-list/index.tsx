@@ -18,7 +18,11 @@ const ServiceList: FC<Props> = ({ list, offsetColumn = false }) => (
       {list?.map((item: ServiceI) => (
         <Col xs={12} sm={6} md={4} lg={4} xlg={4} key={item?.fields?.name}>
           <Card
-            img={item?.fields?.cover?.fields?.file?.url}
+            img={
+              item?.fields?.cover?.fields?.file?.url
+                ? `https:${item?.fields?.cover?.fields?.file?.url}`
+                : '/images/default-img.svg'
+            }
             title={item?.fields?.name}
             description={item?.fields?.description}
             alt={item?.fields?.name}

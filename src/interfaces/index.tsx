@@ -44,6 +44,7 @@ export type TechI = {
   image?: { fields: { file: { url?: string } } };
   visibleIn?: PageInterface[];
   order?: number;
+  showLogo?: boolean;
 };
 
 export type PageType = {

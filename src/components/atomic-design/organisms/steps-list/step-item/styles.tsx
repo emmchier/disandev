@@ -30,13 +30,28 @@ export const Content = styled.li<ContentProps>`
 
       p {
         margin-bottom: ${({ theme }) => theme.spacing(20)};
-      }
 
-      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-        p {
-          transform: translateX(35px);
-          margin-right: ${({ theme }) => theme.spacing(5)};
-          margin-bottom: ${({ theme }) => theme.spacing(10)};
+        @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+          margin-left: ${({ theme }) => theme.spacing(8)} !important;
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+
+    li:nth-child(1) {
+      span {
+        div {
+          transform: translateY(16px) !important;
+        }
+      }
+    }
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      li:nth-child(1) {
+        span {
+          div {
+            transform: translateY(16px) !important;
+          }
         }
       }
     }
@@ -49,7 +64,7 @@ export const Content = styled.li<ContentProps>`
 
 export const TitleContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
 
   span {

@@ -17,7 +17,11 @@ const ProjectList: FC<Props> = ({ list }) => {
         <Col xs={12} sm={4} md={6} lg={6} xlg={6} key={item?.fields?.slug}>
           <CustomLink to={`/project/${item?.fields?.slug}`}>
             <Card
-              img={item?.fields?.cover?.fields?.file?.url}
+              img={
+                item?.fields?.cover?.fields?.file?.url
+                  ? `https:${item?.fields?.cover?.fields?.file?.url}`
+                  : '/images/default-img.svg'
+              }
               title={item?.fields?.name}
               year={item?.fields?.year}
               type={item?.fields?.type}

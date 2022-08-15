@@ -66,4 +66,8 @@ export const GridCol = styled.li<GridItemProps>`
 
 export const ColContent = styled.div`
   width: 100%;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0 !important;
+  }
 `;

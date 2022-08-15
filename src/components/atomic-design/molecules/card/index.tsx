@@ -76,14 +76,7 @@ const Card: FC<PropTypes> = ({
             </ButtonContent>
           </HoverContent>
         )}
-        <Image
-          src={`https:${img}`}
-          alt={alt}
-          width={width}
-          height={height}
-          layout="responsive"
-          priority
-        />
+        <Image src={img} alt={alt} width={width} height={height} layout="responsive" priority />
       </span>
     </HoverContainer>
 

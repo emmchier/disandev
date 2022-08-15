@@ -8,11 +8,11 @@ export const MemberRole = styled.h5`
 `;
 
 export const SocialMember = styled.div`
-  height: ${({ theme }) => theme.spacing(0)};
-  width: ${({ theme }) => theme.spacing(0)};
+  height: ${({ theme }) => theme.spacing(10)};
+  width: ${({ theme }) => theme.spacing(10)};
   background: ${({ theme }) => theme.color.gradient.primary};
   border-radius: ${({ theme }) => theme.border.radius.full};
-  padding: ${({ theme }) => theme.spacing(8)};
+  padding: ${({ theme }) => theme.spacing(3)};
   margin-top: ${({ theme }) => theme.spacing(8)};
   display: flex;
   align-items: center;
