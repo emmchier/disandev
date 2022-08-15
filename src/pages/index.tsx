@@ -53,6 +53,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
                   We create digital solutions
                   <span>for your products</span>
                   to make an impression
+                  <b>.</b>
                 </SectionHeader>
                 <Button onClick={handleAnchor} variant="text" ariaLabel="ancla a section 2">
                   <Heading variant="h4" weight="bold">
@@ -67,11 +68,14 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
         <Core />
       </Section>
 
-      <Section padding={`${theme.spacing(25)} 0 ${theme.spacing(10)} 0`}>
+      <Section padding={`-bottom: 60px`}>
         <ProjectSectionContent>
           <SectionHeader>
             <span>What have we been</span>
-            working on
+            <p>
+              working on
+              <b>.</b>
+            </p>
           </SectionHeader>
           <ProjectList list={filteredProjectList} />
         </ProjectSectionContent>

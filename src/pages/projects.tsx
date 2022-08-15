@@ -8,8 +8,9 @@ import Section from '../components/atomic-design/atoms/section';
 import PageHeader from '../components/atomic-design/atoms/page-header';
 import ProjectList from '../components/atomic-design/organisms/project-list';
 
-import { ProjectsContent } from '../styles/pages/projects-styles';
+import { PageHeaderContainer, ProjectsContent } from '../styles/pages/projects-styles';
 import CallToAction from '../components/atomic-design/molecules/call-to-action';
+import Icon from '../components/atomic-design/atoms/icon';
 
 interface Props {
   pages: PageInterface[];
@@ -21,12 +22,19 @@ const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
 
   return (
     <Page title={title} description={description} keywords={keywords}>
-      <PageHeader>
-        <span>
-          Look at what <b>projects</b>
-        </span>
-        we were working
-      </PageHeader>
+      <Section>
+        <PageHeaderContainer>
+          <PageHeader>
+            <span>
+              Look at what <div>projects</div>
+            </span>
+            we were working
+            <b>.</b>
+          </PageHeader>
+          <Icon icon="teamShape" ariaLabel="geometric shape" />
+        </PageHeaderContainer>
+      </Section>
+
       <ProjectsContent>
         <Section>
           <ProjectList list={projects} />

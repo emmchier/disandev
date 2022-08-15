@@ -20,8 +20,8 @@ export const InnerContent = styled.div`
     line-height: ${({ theme }) => theme.font.lineHeight.largeXXX};
 
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-      font-size: ${({ theme }) => theme.font.size.largeXX};
-      line-height: ${({ theme }) => theme.font.lineHeight.largeXX};
+      font-size: ${({ theme }) => theme.font.size.largeX};
+      line-height: ${({ theme }) => theme.font.lineHeight.largeX};
     }
   }
 
@@ -35,12 +35,14 @@ export const InnerContent = styled.div`
     }
 
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-      font-size: ${({ theme }) => theme.font.size.large};
-      line-height: ${({ theme }) => theme.font.lineHeight.large};
+      span {
+        font-size: ${({ theme }) => theme.font.size.largeX};
+        line-height: ${({ theme }) => theme.font.lineHeight.largeX};
+      }
     }
   }
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    margin: ${({ theme }) => `${theme.spacing(15)} 0`};
+    margin: ${({ theme }) => `${theme.spacing(25)} 0`};
   }
 `;

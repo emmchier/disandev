@@ -1,7 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next';
 import { usePageMetadata } from '../hooks/usePageMetadata';
 import Heading from '../components/atomic-design/atoms/heading';
-import Text from '../components/atomic-design/atoms/text';
 import { PageInterface } from '../interfaces';
 import Page from '../components/atomic-design/atoms/page';
 import Section from '../components/atomic-design/atoms/section';
@@ -11,6 +10,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { useEffect, useState } from 'react';
 import Icon from '../components/atomic-design/atoms/icon/index';
 import PageHeader from '../components/atomic-design/atoms/page-header/index';
+import { PageHeaderContainer } from '../styles/pages/quality-policy-styles';
 
 interface Props {
   pages: PageInterface[];
@@ -30,15 +30,17 @@ const QualityPolicyPage: NextPage<Props> = ({ pages, content }) => {
     <Page title={title} description={description} keywords={keywords}>
       <Container>
         <Section>
-          <PageHeader>
-            <span>
-              Because <b>we are careful</b>
-            </span>
-            to provide your best experience
-            <br />
-            meet our quality policy
-          </PageHeader>
-          <Icon icon="teamShape" ariaLabel="geometric shape" />
+          <PageHeaderContainer>
+            <PageHeader>
+              <span>
+                Because <div>we are careful</div>
+              </span>
+              to provide your best experience
+              <br />
+              meet our quality policy<b>.</b>
+            </PageHeader>
+            <Icon icon="teamShape" ariaLabel="geometric shape" />
+          </PageHeaderContainer>
         </Section>
         <Section>
           <Heading variant="h2" weight="regular">

@@ -27,7 +27,7 @@ const styledSizes = (size: string) =>
         max-width: 1330px;
         padding: 0 27px;
       }
-      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {
         padding: 0 27px !important;
       }
     `,

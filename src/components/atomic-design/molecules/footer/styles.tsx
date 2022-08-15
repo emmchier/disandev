@@ -34,7 +34,6 @@ export const FooterMainContent = styled.div`
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     padding: ${({ theme }) => theme.spacing(5)} 0;
-    margin-top: ${({ theme }) => theme.spacing(15)};
   }
 `;
 
@@ -172,8 +171,18 @@ export const CopyrightContainer = styled.div`
     font-size: ${({ theme }) => theme.font.size.small};
   }
 
+  @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {
+    ul {
+      transform: translateX(-30px);
+    }
+  }
+
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     flex-direction: column;
+
+    ul {
+      transform: translateX(0);
+    }
 
     li {
       svg {

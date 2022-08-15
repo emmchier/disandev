@@ -37,6 +37,10 @@ export const TextContent = styled.div`
     font-weight: ${({ theme }) => theme.font.weight.regular};
     margin-right: ${({ theme }) => theme.spacing(25)};
 
+    span {
+      color: ${({ theme }) => theme.color.black} !important;
+    }
+
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       margin-right: ${({ theme }) => theme.spacing(5)} !important;
     }
@@ -77,12 +81,32 @@ export const TextContent = styled.div`
 `;
 
 export const ProjectSectionContent = styled.div`
+  margin-top: ${({ theme }) => theme.spacing(25)} !important;
+
   h3 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
     margin-bottom: ${({ theme }) => theme.spacing(20)} !important;
+
+    p {
+      display: flex;
+      margin: 0;
+    }
+
+    b {
+      display: flex;
+    }
 
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       margin-bottom: ${({ theme }) => theme.spacing(10)} !important;
+      font-size: ${({ theme }) => theme.font.size.large};
+      line-height: ${({ theme }) => theme.font.lineHeight.large};
     }
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: ${({ theme }) => theme.spacing(5)} !important;
   }
 
   li:nth-child(even) {
@@ -101,6 +125,12 @@ export const ActionContent = styled.div`
   justify-content: center;
 
   button {
-    margin: ${({ theme }) => theme.spacing(25)} 0;
+    margin: ${({ theme }) => theme.spacing(15)} 0;
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    button {
+      margin: ${({ theme }) => theme.spacing(15)} 0;
+    }
   }
 `;

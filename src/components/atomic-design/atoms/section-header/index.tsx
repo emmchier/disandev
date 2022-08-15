@@ -13,7 +13,6 @@ const SectionHeader: FC<SectionHeaderProps> = ({ children, variant = 'h3', cap =
   <Content>
     <Heading variant={variant} cap={cap}>
       {children}
-      <b>.</b>
     </Heading>
   </Content>
 );

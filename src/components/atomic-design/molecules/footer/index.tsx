@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import Box from '../../atoms/box';
 
 import Container from '../../atoms/container';
 import DinamicContent from '../../atoms/dinamic-content';

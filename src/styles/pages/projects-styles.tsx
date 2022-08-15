@@ -8,3 +8,19 @@ export const ProjectsContent = styled.div`
     }
   }
 `;
+
+export const PageHeaderContainer = styled.div`
+  position: relative;
+
+  h2 {
+    position: relative;
+    z-index: 9;
+  }
+
+  svg {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    transform: rotate(-10deg);
+  }
+`;

@@ -8,8 +8,8 @@ interface PropTypes {
 }
 
 const CustomLink: FC<PropTypes> = ({ children, to = '', target = '' }) => (
-  <Link href={to} target={target} passHref>
-    <a>{children}</a>
+  <Link href={to} passHref>
+    <a target={target}>{children}</a>
   </Link>
 );
 

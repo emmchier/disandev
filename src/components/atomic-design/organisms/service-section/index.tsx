@@ -13,7 +13,9 @@ interface PropTypes {
 
 const ServiceSection: FC<PropTypes> = ({ list, offsetColumn = false }) => (
   <Content>
-    <SectionHeader>What we do?</SectionHeader>
+    <SectionHeader>
+      What we do?<b>.</b>
+    </SectionHeader>
     <Heading variant="h4" weight="regular">
       We...
     </Heading>

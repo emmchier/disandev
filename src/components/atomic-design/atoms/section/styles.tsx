@@ -9,7 +9,7 @@ interface ContentI {
 const Content = styled.section<ContentI>`
   height: ${({ auto }) => (auto ? 'auto' : '100vh')};
   width: 100%;
-  padding: ${({ padding }) => padding || '0'};
+  ${({ padding }) => `padding${padding}` || `:0`};
   margin: 0;
 `;
 

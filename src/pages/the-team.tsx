@@ -35,8 +35,13 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
       <Section>
         <PageHeaderContainer>
           <PageHeader>
-            <span>Behind every digital product</span>
-            there is a <b>great human team</b>
+            Behind every digital product
+            <span>
+              there is a
+              <div>
+                great human team <b>.</b>
+              </div>
+            </span>
           </PageHeader>
           <Icon icon="teamShape" ariaLabel="geometric shape" />
         </PageHeaderContainer>
@@ -50,7 +55,9 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
 
       <OurValuesContent>
         <Section>
-          <SectionHeader>Our Values</SectionHeader>
+          <SectionHeader>
+            Our Values<b>.</b>
+          </SectionHeader>
           <Row>
             <Col xs={12} sm={5} md={5} lg={5} xlg={5}>
               <OurValuesImage>

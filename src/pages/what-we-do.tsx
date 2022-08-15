@@ -37,9 +37,10 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
           <PageHeader>
             Do you want to provide a good
             <span>
-              <b>experience</b> to your users?
+              <div>experience</div> to your users?
             </span>
             You are in the right place
+            <b>.</b>
           </PageHeader>
           <Icon icon="teamShape" ariaLabel="geometric shape" />
         </PageHeaderContainer>
@@ -53,14 +54,18 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
 
       <WhatWeDoContent>
         <Section>
-          <SectionHeader>How we work</SectionHeader>
+          <SectionHeader>
+            How we work<b>.</b>
+          </SectionHeader>
           <StepsList list={steps} />
         </Section>
       </WhatWeDoContent>
 
       <TechsContent>
         <Section>
-          <SectionHeader>Our main technologies</SectionHeader>
+          <SectionHeader>
+            Our main technologies<b>.</b>
+          </SectionHeader>
           <TechList list={techs} />
         </Section>
       </TechsContent>
