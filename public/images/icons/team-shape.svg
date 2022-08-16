@@ -7,9 +7,9 @@
 </g>
 <defs>
 <linearGradient id="paint0_linear_254_8" x1="147.278" y1="639.727" x2="395.994" y2="-15.8016" gradientUnits="userSpaceOnUse">
-<stop stop-color="#B2C7F4" stop-opacity="0.3"/>
-<stop stop-color="#B2C7F4" stop-opacity="0.3"/>
-<stop offset="0.757478" stop-color="#E9FFFF" stop-opacity="0.8"/>
+<stop stopColor="#B2C7F4" stopOpacity="0.3"/>
+<stop stopColor="#B2C7F4" stopOpacity="0.3"/>
+<stop offset="0.757478" stopColor="#E9FFFF" stopOpacity="0.8"/>
 </linearGradient>
 </defs>
 </svg>
