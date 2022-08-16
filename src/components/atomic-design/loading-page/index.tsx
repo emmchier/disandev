@@ -1,13 +1,34 @@
 import React, { FC } from 'react';
-import { Balls, Screen } from './styles';
+import {
+  Ball,
+  Circle,
+  CircleLeft,
+  CircleRight,
+  InnerCircle,
+  InnerCircleLeft,
+  InnerCircleRight,
+  LineLeft,
+  LineRight,
+  Logo,
+  Screen,
+} from './styles';
 
 const LoadingPage: FC = () => (
   <Screen>
-    <Balls>
-      <div className="ball one"></div>
-      <div className="ball two"></div>
-      <div className="ball three"></div>
-    </Balls>
+    <Logo>
+      <CircleLeft>
+        <InnerCircleLeft>
+          <Ball />
+        </InnerCircleLeft>
+        <LineLeft />
+      </CircleLeft>
+      <CircleRight>
+        <InnerCircleRight>
+          <Ball />
+        </InnerCircleRight>
+        <LineRight />
+      </CircleRight>
+    </Logo>
   </Screen>
 );
 
