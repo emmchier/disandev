@@ -25,10 +25,18 @@ export const MainInfoContent = styled.div`
       width: 100%;
     }
   }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    margin-bottom: ${({ theme }) => theme.spacing(10)} !important;
+  }
 `;
 
 export const PaddingContent = styled.div`
   padding: ${({ theme }) => theme.spacing(15)} 0 !important;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0 !important;
+  }
 `;
 
 export const DescriptionLeft = styled.div`
@@ -38,14 +46,28 @@ export const DescriptionLeft = styled.div`
   flex-direction: column;
   height: 100%;
 
+  a {
+    display: flex;
+  }
+
   p {
     margin: ${({ theme }) => theme.spacing(3)} 0;
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      margin-top: ${({ theme }) => theme.spacing(10)} !important;
+    }
   }
 
   span {
     display: block;
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       display: none;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    h3 {
+      margin-top: ${({ theme }) => theme.spacing(10)} !important;
     }
   }
 `;
@@ -55,6 +77,11 @@ export const DescriptionRight = styled.div`
     display: none;
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       display: block;
+      margin: ${({ theme }) => theme.spacing(10)} 0 !important;
+
+      a {
+        font-size: ${({ theme }) => theme.font.size.medium} !important;
+      }
     }
   }
 `;
@@ -67,6 +94,16 @@ export const Technologies = styled.div`
       margin-right: ${({ theme }) => theme.spacing(5)};
       margin-bottom: ${({ theme }) => theme.spacing(5)};
       display: inline-block;
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        margin-right: ${({ theme }) => theme.spacing(2)};
+        margin-bottom: ${({ theme }) => theme.spacing(2)};
+      }
     }
   }
+`;
+
+export const DevicesContainer = styled.div`
+  width: 100%;
+  position: relative;
 `;

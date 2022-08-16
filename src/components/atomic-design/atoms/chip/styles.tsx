@@ -7,4 +7,9 @@ export const Content = styled.div`
   background-color: ${({ theme }) => theme.color.background.tag};
   color: ${({ theme }) => theme.color.text.tag};
   border-radius: ${({ theme }) => theme.border.radius.full};
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: ${({ theme }) => theme.font.size.smallX};
+    line-height: ${({ theme }) => theme.font.lineHeight.smallXX};
+  }
 `;

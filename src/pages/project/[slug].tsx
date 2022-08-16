@@ -25,7 +25,9 @@ import {
   MainInfoContent,
   PaddingContent,
   Technologies,
+  DevicesContainer,
 } from '../../styles/pages/project-detail-styles';
+import Image from 'next/image';
 
 interface Props {
   pages: PageInterface[];
@@ -74,10 +76,20 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
       </Section>
 
       <Container>
-        <Hero
-          img={`${project?.fields?.banner?.fields?.file?.url}`}
-          alt={`${project?.fields?.name} multidevise picture`}
-        />
+        <DevicesContainer>
+          <Image
+            alt={`${project?.fields?.name} multidevise picture`}
+            src={
+              project?.fields?.banner?.fields?.file?.url
+                ? `https:${project?.fields?.banner?.fields?.file?.url}`
+                : '/images/default-bg.svg'
+            }
+            height="50%"
+            width="100%"
+            layout="responsive"
+            objectFit="contain"
+          />
+        </DevicesContainer>
       </Container>
 
       <Section>
@@ -88,12 +100,17 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
                 <Heading variant="h3" weight="medium">
                   What was the project about?
                 </Heading>
-                <LinkToWeb url={project?.fields?.url} urlName={project?.fields?.urlName} />
+                <span>
+                  <LinkToWeb url={project?.fields?.url} urlName={project?.fields?.urlName} />
+                </span>
               </DescriptionLeft>
             </Col>
             <Col xs={12} sm={7} md={7} lg={7} xlg={7}>
               <DescriptionRight>
                 {documentToReactComponents(project?.fields?.description)}
+                <span>
+                  <LinkToWeb url={project?.fields?.url} urlName={project?.fields?.urlName} />
+                </span>
               </DescriptionRight>
             </Col>
           </Row>
@@ -104,7 +121,6 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
         <Hero
           img={`${project?.fields?.hero?.fields?.file?.url}`}
           alt={`${project?.fields?.name} hero image project`}
-          width="100"
         />
       </PaddingContent>
     </Page>
