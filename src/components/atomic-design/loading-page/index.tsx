@@ -1,16 +1,14 @@
-import React, { FC, useEffect, useState } from 'react';
-import { Content } from './styles';
+import React, { FC } from 'react';
+import { Balls, Screen } from './styles';
 
-const LoadingPage: FC = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
-
-  return <Content isLoading={loading}>LoadingPage</Content>;
-};
+const LoadingPage: FC = () => (
+  <Screen>
+    <Balls>
+      <div className="ball one"></div>
+      <div className="ball two"></div>
+      <div className="ball three"></div>
+    </Balls>
+  </Screen>
+);
 
 export default LoadingPage;
