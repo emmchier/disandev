@@ -28,18 +28,20 @@ export const PageHeaderContainer = styled.div`
 `;
 
 export const QualityContent = styled.div`
+  margin-top: ${({ theme }) => theme.spacing(30)} !important;
   background-color: ${({ theme }) => theme.color.background.copy};
-  padding: ${({ theme }) => theme.spacing(20)} 0 !important;
+  padding: ${({ theme }) => theme.spacing(20)} ${({ theme }) => theme.spacing(80)} !important;
 
-  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    margin-top: ${({ theme }) => theme.spacing(20)} !important;
     padding: ${({ theme }) => theme.spacing(5)} 0 !important;
   }
 `;
 
 export const ValuesContent = styled.div`
-  padding: ${({ theme }) => theme.spacing(20)} 0 !important;
+  padding: ${({ theme }) => theme.spacing(20)} ${({ theme }) => theme.spacing(80)} !important;
 
-  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
     padding: ${({ theme }) => theme.spacing(5)} 0 !important;
   }
 `;

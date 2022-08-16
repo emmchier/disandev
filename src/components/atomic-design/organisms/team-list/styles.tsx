@@ -22,9 +22,12 @@ export const SocialMember = styled.div`
     height: ${({ theme }) => theme.spacing(5)} !important;
     width: ${({ theme }) => theme.spacing(5)} !important;
     svg {
-      transform: translateY(-6px) translateX(3px);
       height: ${({ theme }) => theme.spacing(5)} !important;
       width: ${({ theme }) => theme.spacing(5)} !important;
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        transform: translateY(-6px) translateX(2px);
+      }
     }
   }
 
