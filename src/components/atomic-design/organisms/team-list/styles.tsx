@@ -17,4 +17,18 @@ export const SocialMember = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  figure {
+    height: ${({ theme }) => theme.spacing(5)} !important;
+    width: ${({ theme }) => theme.spacing(5)} !important;
+    svg {
+      transform: translateY(-6px) translateX(3px);
+      height: ${({ theme }) => theme.spacing(5)} !important;
+      width: ${({ theme }) => theme.spacing(5)} !important;
+    }
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: ${({ theme }) => theme.spacing(3)};
+  }
 `;

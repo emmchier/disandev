@@ -18,10 +18,6 @@ export const Text = styled.span`
     transform-origin: 0% 100%;
     transition: transform 250ms ease-in-out;
     width: 50%;
-
-    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-      border-bottom: 3px solid transparent;
-    }
   }
   &:hover:after {
     transform: scaleX(2);

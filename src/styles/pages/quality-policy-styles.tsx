@@ -28,9 +28,18 @@ export const PageHeaderContainer = styled.div`
 `;
 
 export const QualityContent = styled.div`
-  p {
-    position: relative;
-    display: inline-block;
-    width: 100%;
+  background-color: ${({ theme }) => theme.color.background.copy};
+  padding: ${({ theme }) => theme.spacing(20)} 0 !important;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    padding: ${({ theme }) => theme.spacing(5)} 0 !important;
+  }
+`;
+
+export const ValuesContent = styled.div`
+  padding: ${({ theme }) => theme.spacing(20)} 0 !important;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    padding: ${({ theme }) => theme.spacing(5)} 0 !important;
   }
 `;

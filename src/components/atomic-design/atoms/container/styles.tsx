@@ -23,6 +23,10 @@ const styledSizes = (size: string) =>
     `,
     md: css`
       max-width: 1500px;
+      @media only screen and (${({ theme }) => theme.breakpoints.desktopXL}) {
+        max-width: 1700px;
+        padding: 0 27px;
+      }
       @media only screen and (${({ theme }) => theme.breakpoints.desktop}) {
         max-width: 1330px;
         padding: 0 27px;

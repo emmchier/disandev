@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import Image from 'next/image';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useRouter } from 'next/router';
@@ -17,6 +19,7 @@ import Col from '../../components/atomic-design/molecules/grid/col';
 import Row from '../../components/atomic-design/molecules/grid/row';
 import LinkToWeb from '../../components/atomic-design/molecules/link-to-web';
 import List from '../../components/atomic-design/molecules/list';
+import useIsMobile from '../../hooks/useIsMobile';
 
 import {
   ActionContent,
@@ -27,7 +30,6 @@ import {
   Technologies,
   DevicesContainer,
 } from '../../styles/pages/project-detail-styles';
-import Image from 'next/image';
 
 interface Props {
   pages: PageInterface[];
@@ -37,13 +39,31 @@ interface Props {
 const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
   const { title, description, keywords } = usePageMetadata(pages, project?.fields?.slug);
   const router = useRouter();
+  const isMobile = useIsMobile();
+
+  console.log(project);
 
   return (
     <Page title={`Projects | ${title}`} description={description} keywords={keywords}>
-      <Hero
-        img={`${project?.fields?.header?.fields?.file?.url}`}
-        alt={`${project?.fields?.name} image header`}
-      />
+      {isMobile ? (
+        <Image
+          alt={`${project?.fields?.name} image header responsive`}
+          src={
+            project?.fields?.headerRes?.fields?.file?.url
+              ? `https:${project?.fields?.headerRes?.fields?.file?.url}`
+              : '/images/default-bg.svg'
+          }
+          height="100%"
+          width="80%"
+          layout="responsive"
+          objectFit="cover"
+        />
+      ) : (
+        <Hero
+          img={`${project?.fields?.header?.fields?.file?.url}`}
+          alt={`${project?.fields?.name} image header desk`}
+        />
+      )}
       <Section>
         <ActionContent>
           <BackButton navigate={() => router.back()} />

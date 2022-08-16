@@ -39,6 +39,13 @@ export const TitleContent = styled.div<CardProps>`
     }
   }
 
+  p {
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: ${({ theme }) => theme.font.size.smallX};
+      font-weight: ${({ theme }) => theme.font.lineHeight.smallXX};
+    }
+  }
+
   li {
     transform: translateY(0) !important;
   }

@@ -7,7 +7,7 @@ import { Content, InnerContent } from './styles';
 import CustomLink from '../../atoms/custom-link/index';
 
 type Props = {
-  title?: string;
+  title?: string | React.ReactNode;
   buttonTitle?: string;
   to?: string;
   isLink?: boolean;

@@ -19,6 +19,10 @@ export const InnerContent = styled.div`
     font-size: ${({ theme }) => theme.font.size.largeXXX};
     line-height: ${({ theme }) => theme.font.lineHeight.largeXXX};
 
+    span {
+      display: block;
+    }
+
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       font-size: ${({ theme }) => theme.font.size.largeX};
       line-height: ${({ theme }) => theme.font.lineHeight.largeX};
@@ -29,6 +33,7 @@ export const InnerContent = styled.div`
     font-size: ${({ theme }) => theme.font.size.largeX};
     line-height: ${({ theme }) => theme.font.lineHeight.largeX};
     color: ${({ theme }) => theme.color.text.primary};
+    margin-top: ${({ theme }) => theme.spacing(5)} !important;
 
     span:nth-child(2) {
       font-weight: ${({ theme }) => theme.font.weight.regular} !important;

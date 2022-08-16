@@ -12,4 +12,10 @@ export const Content = styled.div`
   h4 {
     font-size: ${({ theme }) => theme.font.size.large};
   }
+
+  p {
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: ${({ theme }) => theme.font.size.medium};
+    }
+  }
 `;

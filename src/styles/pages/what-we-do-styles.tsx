@@ -12,8 +12,8 @@ export const PageHeaderContainer = styled.div`
 
       span {
         display: block;
-
         div {
+          display: inline-flex !important;
           margin: 0;
           text-align: start;
         }

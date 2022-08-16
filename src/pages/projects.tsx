@@ -40,6 +40,7 @@ const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
           <ProjectList list={projects} />
         </Section>
       </ProjectsContent>
+
       <Section>
         <CallToAction
           to="/lets-talk"

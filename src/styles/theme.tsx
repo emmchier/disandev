@@ -86,7 +86,8 @@ export const theme = {
     smallMobile: 'max-width: 479px',
     mobile: 'max-width: 767px',
     tablet: 'max-width: 991px',
-    tabletLandscape: 'max-width: 1199px',
+    tabletLandscape: 'max-width: 1999px',
     desktop: 'max-width: 1700px',
+    desktopXL: 'max-width: 1899px',
   },
 };

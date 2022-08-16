@@ -29,8 +29,21 @@ export const PageHeaderContainer = styled.div`
 export const MembersContent = styled.div`
   margin: ${({ theme }) => theme.spacing(30)} 0;
 
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    h4 {
+      font-size: ${({ theme }) => theme.font.size.large};
+      line-height: ${({ theme }) => theme.font.lineHeight.smallXX};
+    }
+
+    h5 {
+      font-size: ${({ theme }) => theme.font.size.small};
+      line-height: ${({ theme }) => theme.font.lineHeight.small};
+    }
+  }
+
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    margin: ${({ theme }) => theme.spacing(10)} 0;
+    margin-top: ${({ theme }) => theme.spacing(10)};
+    margin-bottom: ${({ theme }) => theme.spacing(2)} !important;
   }
 `;
 
@@ -49,6 +62,10 @@ export const OurValuesContent = styled.div`
 
     p {
       width: 95%;
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        margin-top: ${({ theme }) => theme.spacing(8)};
+      }
     }
 
     p:nth-child(1) {
@@ -67,8 +84,12 @@ export const OurValuesImage = styled.div`
   position: absolute;
   transform: translateY(100px);
 
-  img {
-    height: ${({ theme }) => theme.spacing(48)};
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    width: 45% !important;
+    height: 115% !important;
+    position: absolute;
+    transform: translateY(0) !important;
+    transform: translateX(70px) !important;
   }
 `;
 

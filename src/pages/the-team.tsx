@@ -20,7 +20,6 @@ import Row from '../components/atomic-design/molecules/grid/row';
 import Col from '../components/atomic-design/molecules/grid/col';
 import Text from '../components/atomic-design/atoms/text';
 import CallToAction from '../components/atomic-design/molecules/call-to-action';
-import OurValuesImg from '../../public/images/icons/our-values.png';
 import TeamList from '../components/atomic-design/organisms/team-list';
 
 interface Props {
@@ -30,6 +29,8 @@ interface Props {
 
 const TeamPage: NextPage<Props> = ({ pages, members }) => {
   const { title, description, keywords } = usePageMetadata(pages, 'the-team');
+
+  const callToActionText = [<span>Do you want to know</span>, 'what we do?'];
 
   return (
     <Page title={title} description={description} keywords={keywords}>
@@ -63,12 +64,12 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
             <Col xs={12} sm={5} md={5} lg={5} xlg={5}>
               <OurValuesImage>
                 <Image
-                  src={OurValuesImg}
+                  src={'/images/icons/our-values.png' || '/images/default-bg.svg'}
                   alt="Our values image reference"
-                  layout="responsive"
+                  height="200%"
+                  width="250%"
                   objectFit="contain"
-                  width="0"
-                  height="0"
+                  priority
                 />
               </OurValuesImage>
             </Col>
@@ -80,9 +81,9 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
               </Text>
               <Text>
                 We firmly believe that there is no problem without a solution. where some people see
-                barriers, those of us who work at Cromac see possibilities. We explore the different
-                alternatives that allow us to discover multiple solutions and We select the most
-                optimal.
+                barriers, those of us who work at Disandev see possibilities. We explore the
+                different alternatives that allow us to discover multiple solutions and select the
+                most optimal of them.
               </Text>
             </Col>
           </Row>
@@ -91,11 +92,7 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
 
       <TeamCallToAction>
         <Section>
-          <CallToAction
-            to="/projects"
-            title="Do you want to know what we do?"
-            buttonTitle="Look all projects"
-          />
+          <CallToAction to="/projects" title={callToActionText} buttonTitle="Look all projects" />
         </Section>
       </TeamCallToAction>
     </Page>

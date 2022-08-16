@@ -18,6 +18,10 @@ export const Header = styled.header`
     width: 40px;
     background-color: transparent !important;
   }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    z-index: 99;
+  }
 `;
 
 export const Background = styled.div<NavbarProps>`
@@ -84,9 +88,9 @@ export const Content = styled.div<NavbarProps>`
     figure {
       display: flex;
       svg {
-        transform: scale(0.9);
+        transform: scale(0.8);
         transition: all 0.2s ease-in;
-        margin: ${({ theme }) => theme.spacing(5)} 0;
+        margin: ${({ theme }) => theme.spacing(3)} 0;
         transform-origin: 0% 0%;
       }
     }

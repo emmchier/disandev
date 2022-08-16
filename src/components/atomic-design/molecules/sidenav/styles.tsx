@@ -7,6 +7,7 @@ interface SidenavProps {
 export const MenuContent = styled.div<SidenavProps>`
   position: fixed;
   background-color: ${({ theme }) => theme.color.white};
+
   ${({ isShowing }) =>
     isShowing
       ? css`
@@ -55,6 +56,10 @@ export const CloseBtn = styled.div`
   &:hover {
     opacity: 0.7;
   }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    margin: ${({ theme }) => theme.spacing(5)};
+  }
 `;
 
 export const Content = styled.div`
@@ -63,7 +68,7 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 ${({ theme }) => theme.spacing(30)} 0 ${({ theme }) => theme.spacing(10)} !important;
+  padding: 0 ${({ theme }) => theme.spacing(50)} 0 ${({ theme }) => theme.spacing(10)} !important;
 
   div {
     button {

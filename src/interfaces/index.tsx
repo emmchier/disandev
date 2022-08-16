@@ -10,6 +10,7 @@ export interface PageInterface {
 export interface ProjectI {
   [x: string]: any;
   header?: { fields: { file: { url?: string } } };
+  headerRes?: { fields: { file: { url?: string } } };
   banner?: { fields: { file: { url?: string } } };
   imageHero?: { fields: { file: { url?: string } } };
   cover?: { fields: { file: { url?: string } } };
@@ -23,7 +24,6 @@ export interface ProjectI {
   type?: string;
   slug?: string;
   year?: string;
-  headerRes?: string;
   techList?: TechI[];
   pagesIn?: PageInterface[];
   metaData?: MetaTagI;

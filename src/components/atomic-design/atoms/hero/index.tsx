@@ -15,6 +15,7 @@ const Hero: FC<Props> = ({ img = '', alt = '' }) => (
       src={img ? `https:${img}` : '/images/default-bg.svg'}
       layout="fill"
       objectFit="cover"
+      priority
     />
   </Content>
 );
