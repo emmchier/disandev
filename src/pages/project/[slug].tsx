@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import Image from 'next/image';
 
@@ -10,7 +9,6 @@ import { PageInterface, ProjectI, TechI } from '../../interfaces';
 
 import BackButton from '../../components/atomic-design/atoms/back-button';
 import Chip from '../../components/atomic-design/atoms/chip';
-import Container from '../../components/atomic-design/atoms/container';
 import Heading from '../../components/atomic-design/atoms/heading';
 import Hero from '../../components/atomic-design/atoms/hero';
 import Page from '../../components/atomic-design/atoms/page';
@@ -21,6 +19,8 @@ import LinkToWeb from '../../components/atomic-design/molecules/link-to-web';
 import List from '../../components/atomic-design/molecules/list';
 import useIsMobile from '../../hooks/useIsMobile';
 import SkelletonHeader from '../../components/atomic-design/atoms/skelleton/skelleton-header';
+import SkelletonDevices from '../../components/atomic-design/atoms/skelleton/skelleton-devices';
+import SkelletonHero from '../../components/atomic-design/atoms/skelleton/skelleton-hero';
 
 import {
   ActionContent,
@@ -32,8 +32,6 @@ import {
   DevicesContainer,
   BannerContainer,
 } from '../../styles/pages/project-detail-styles';
-import SkelletonDevices from '../../components/atomic-design/atoms/skelleton/skelleton-devices';
-import SkelletonHero from '../../components/atomic-design/atoms/skelleton/skelleton-hero';
 
 interface Props {
   pages: PageInterface[];
@@ -44,8 +42,6 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
   const { title, description, keywords } = usePageMetadata(pages, project?.fields?.slug);
   const router = useRouter();
   const isMobile = useIsMobile();
-
-  console.log(project);
 
   return (
     <Page title={`Projects | ${title}`} description={description} keywords={keywords}>
@@ -62,6 +58,7 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
             width="80%"
             layout="responsive"
             objectFit="cover"
+            priority
           />
         ) : (
           <Hero
@@ -115,6 +112,7 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
             width="80%"
             layout="responsive"
             objectFit="contain"
+            priority
           />
         </DevicesContainer>
         <SkelletonDevices />
@@ -158,6 +156,7 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
             width="80%"
             layout="responsive"
             objectFit="contain"
+            priority
           />
         </PaddingContent>
         <SkelletonHero />

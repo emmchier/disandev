@@ -66,7 +66,7 @@ const QualityPolicyPage: NextPage<Props> = ({ pages }) => {
         <Section>
           <p>
             We firmly believe that there is no problem without a solution. Where some people see
-            barriers, those of us who work at Cromac see possibilities. We explore the different
+            barriers, those of us who work at Disandev see possibilities. We explore the different
             alternatives that allow us to discover multiple solutions and select the most optimal.
           </p>
           <p>
