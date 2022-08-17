@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+export const BannerContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden !important;
+
+  img {
+    position: absolute;
+    z-index: 2;
+  }
+`;
+
 export const ActionContent = styled.div`
   button {
     margin: ${({ theme }) => theme.spacing(10)} 0 !important;

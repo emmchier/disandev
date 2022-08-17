@@ -20,6 +20,7 @@ import Row from '../../components/atomic-design/molecules/grid/row';
 import LinkToWeb from '../../components/atomic-design/molecules/link-to-web';
 import List from '../../components/atomic-design/molecules/list';
 import useIsMobile from '../../hooks/useIsMobile';
+import SkelletonHeader from '../../components/atomic-design/atoms/skelleton/skelleton-header';
 
 import {
   ActionContent,
@@ -29,7 +30,10 @@ import {
   PaddingContent,
   Technologies,
   DevicesContainer,
+  BannerContainer,
 } from '../../styles/pages/project-detail-styles';
+import SkelletonDevices from '../../components/atomic-design/atoms/skelleton/skelleton-devices';
+import SkelletonHero from '../../components/atomic-design/atoms/skelleton/skelleton-hero';
 
 interface Props {
   pages: PageInterface[];
@@ -45,25 +49,28 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
 
   return (
     <Page title={`Projects | ${title}`} description={description} keywords={keywords}>
-      {isMobile ? (
-        <Image
-          alt={`${project?.fields?.name} image header responsive`}
-          src={
-            project?.fields?.headerRes?.fields?.file?.url
-              ? `https:${project?.fields?.headerRes?.fields?.file?.url}`
-              : '/images/default-bg.svg'
-          }
-          height="100%"
-          width="80%"
-          layout="responsive"
-          objectFit="cover"
-        />
-      ) : (
-        <Hero
-          img={`${project?.fields?.header?.fields?.file?.url}`}
-          alt={`${project?.fields?.name} image header desk`}
-        />
-      )}
+      <BannerContainer>
+        {isMobile ? (
+          <Image
+            alt={`${project?.fields?.name} image header responsive`}
+            src={
+              project?.fields?.headerRes?.fields?.file?.url
+                ? `https:${project?.fields?.headerRes?.fields?.file?.url}`
+                : '/images/default-bg.svg'
+            }
+            height="100%"
+            width="80%"
+            layout="responsive"
+            objectFit="cover"
+          />
+        ) : (
+          <Hero
+            img={`${project?.fields?.header?.fields?.file?.url}`}
+            alt={`${project?.fields?.name} image header desk`}
+          />
+        )}
+        <SkelletonHeader />
+      </BannerContainer>
       <Section>
         <ActionContent>
           <BackButton navigate={() => router.back()} />
@@ -95,7 +102,7 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
         </MainInfoContent>
       </Section>
 
-      <Container>
+      <BannerContainer>
         <DevicesContainer>
           <Image
             alt={`${project?.fields?.name} multidevise picture`}
@@ -105,12 +112,13 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
                 : '/images/default-bg.svg'
             }
             height="50%"
-            width="100%"
+            width="80%"
             layout="responsive"
             objectFit="contain"
           />
         </DevicesContainer>
-      </Container>
+        <SkelletonDevices />
+      </BannerContainer>
 
       <Section>
         <PaddingContent>
@@ -137,12 +145,23 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
         </PaddingContent>
       </Section>
 
-      <PaddingContent>
-        <Hero
-          img={`${project?.fields?.hero?.fields?.file?.url}`}
-          alt={`${project?.fields?.name} hero image project`}
-        />
-      </PaddingContent>
+      <BannerContainer>
+        <PaddingContent>
+          <Image
+            src={
+              project?.fields?.hero?.fields?.file?.url
+                ? `https:${project?.fields?.hero?.fields?.file?.url}`
+                : '/images/default-bg.svg'
+            }
+            alt={`${project?.fields?.name} hero image project`}
+            height="50%"
+            width="80%"
+            layout="responsive"
+            objectFit="contain"
+          />
+        </PaddingContent>
+        <SkelletonHero />
+      </BannerContainer>
     </Page>
   );
 };

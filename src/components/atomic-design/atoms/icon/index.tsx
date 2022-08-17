@@ -3,6 +3,8 @@ import React, { FC } from 'react';
 import {
   ArrowIcon,
   Behance,
+  BgDevices,
+  BgHero,
   Brand,
   CloseIcon,
   Facebook,
@@ -87,6 +89,10 @@ const Icon: FC<IconI> = ({
         return <TeamShape ariaLabel={ariaLabel} />;
       case 'texture':
         return <Texture ariaLabel={ariaLabel} />;
+      case 'devices':
+        return <BgDevices ariaLabel={ariaLabel} />;
+      case 'hero':
+        return <BgHero ariaLabel={ariaLabel} />;
       default:
         break;
     }

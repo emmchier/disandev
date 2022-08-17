@@ -115,11 +115,9 @@ export const CircleLeft = styled(Circle)`
 `;
 
 export const InnerCircleLeft = styled(InnerCircle)`
-  /* animation-delay: 2s !important; */
   animation: spin 0.7s ease-in forwards infinite;
 `;
 
 export const InnerCircleRight = styled(InnerCircle)`
-  /* animation-delay: 2s !important; */
   animation: spin 0.7s ease-in forwards infinite;
 `;
