@@ -34,7 +34,7 @@ interface Props {
 }
 
 const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
-  const { title, description, keywords } = usePageMetadata(pages, 'home');
+  const { title, description, keywords, tag } = usePageMetadata(pages, 'home');
   const filteredProjectList = getItemsByPage(projects, 'home');
   const filteredServicesList = getItemsByPage(services, 'home');
 
@@ -43,7 +43,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
   };
 
   return (
-    <Page title={title} description={description} keywords={keywords}>
+    <Page title={title} description={description} keywords={keywords} tag={tag}>
       <Section auto={false} container="fluid">
         <Container>
           <Content>

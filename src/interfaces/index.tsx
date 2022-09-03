@@ -1,6 +1,5 @@
 export interface PageInterface {
   [x: string]: any;
-  keywords: KeywordInterface[];
   metaData: MetaDataInterface;
   orden: number;
   slug: string;
@@ -54,8 +53,10 @@ export type PageType = {
 
 export interface MetaDataInterface {
   [x: string]: any;
-  description: string;
   title: string;
+  description: string;
+  keywords: KeywordInterface[];
+  tag: { fields: { file: { url?: string } } };
 }
 
 export interface KeywordInterface {

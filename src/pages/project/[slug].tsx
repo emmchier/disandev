@@ -39,12 +39,12 @@ interface Props {
 }
 
 const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
-  const { title, description, keywords } = usePageMetadata(pages, project?.fields?.slug);
+  const { title, description, keywords, tag } = usePageMetadata(pages, project?.fields?.slug);
   const router = useRouter();
   const isMobile = useIsMobile();
 
   return (
-    <Page title={`Projects | ${title}`} description={description} keywords={keywords}>
+    <Page title={`Projects | ${title}`} description={description} keywords={keywords} tag={tag}>
       <BannerContainer>
         {isMobile ? (
           <Image
