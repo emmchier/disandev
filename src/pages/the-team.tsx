@@ -30,8 +30,6 @@ interface Props {
 const TeamPage: NextPage<Props> = ({ pages, members }) => {
   const { title, description, keywords } = usePageMetadata(pages, 'the-team');
 
-  const callToActionText = [<span>Do you want to know</span>, 'what we do?'];
-
   return (
     <Page title={title} description={description} keywords={keywords}>
       <Section>
@@ -92,7 +90,11 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
 
       <TeamCallToAction>
         <Section>
-          <CallToAction to="/projects" title={callToActionText} buttonTitle="Look all projects" />
+          <CallToAction
+            to="/projects"
+            title="Do you want to know what we do?"
+            buttonTitle="Look all projects"
+          />
         </Section>
       </TeamCallToAction>
     </Page>

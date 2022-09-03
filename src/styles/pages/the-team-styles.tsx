@@ -94,8 +94,19 @@ export const OurValuesImage = styled.div`
 `;
 
 export const TeamCallToAction = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  section {
+    width: ${({ theme }) => theme.spacing(150)};
+  }
+
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     section {
+      width: 100%;
+
       div {
         div {
           div {
@@ -104,13 +115,21 @@ export const TeamCallToAction = styled.div`
         }
       }
     }
+
     h3 {
       font-size: ${({ theme }) => theme.font.size.large} !important;
+      margin-top: ${({ theme }) => theme.spacing(10)} !important;
     }
-    h4 {
+
+    a {
       div {
-        span {
-          font-size: ${({ theme }) => theme.font.size.large} !important;
+        h4 {
+          margin-top: 0 !important;
+          div {
+            span {
+              font-size: ${({ theme }) => theme.font.size.large} !important;
+            }
+          }
         }
       }
     }

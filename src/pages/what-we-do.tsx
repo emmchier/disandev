@@ -30,8 +30,6 @@ interface Props {
 const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
   const { title, description, keywords } = usePageMetadata(pages, 'what-we-do');
 
-  console.log(techs);
-
   const filterTechs = techs?.filter((tech) => tech?.fields?.showLogo === true);
 
   return (

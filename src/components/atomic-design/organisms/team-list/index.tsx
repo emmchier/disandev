@@ -15,8 +15,8 @@ interface Props {
 
 const TeamList: FC<Props> = ({ list }) => (
   <Row gap={10}>
-    {list?.map((item) => (
-      <Col key={item?.fields?.slug} xs={12} sm={4} md={4} lg={4} xlg={4}>
+    {list?.map((item: MemberI, index: number) => (
+      <Col key={index} xs={12} sm={4} md={4} lg={4} xlg={4}>
         <Card
           img={
             item?.fields?.memberImage?.fields?.file?.url
