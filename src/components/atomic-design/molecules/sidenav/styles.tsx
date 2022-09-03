@@ -12,7 +12,7 @@ export const MenuContent = styled.div<SidenavProps>`
     isShowing
       ? css`
           right: 0;
-          transition: 0.2s;
+          transition: 0.3s;
           box-shadow: ${({ theme }) => theme.shadow.main};
           z-index: 999;
           background-color: ${({ theme }) => theme.color.white};
@@ -23,7 +23,7 @@ export const MenuContent = styled.div<SidenavProps>`
         `
       : css`
           right: -100%;
-          transition: 0.2s;
+          transition: 0.3s;
           box-shadow: none;
           background-color: ${({ theme }) => theme.color.white};
         `};

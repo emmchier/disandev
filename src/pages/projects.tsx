@@ -11,7 +11,6 @@ import ProjectList from '../components/atomic-design/organisms/project-list';
 import { PageHeaderContainer, ProjectsContent } from '../styles/pages/projects-styles';
 import CallToAction from '../components/atomic-design/molecules/call-to-action';
 import Icon from '../components/atomic-design/atoms/icon';
-import Head from 'next/head';
 
 interface Props {
   pages: PageInterface[];
@@ -19,21 +18,10 @@ interface Props {
 }
 
 const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
-  // const { title, description, keywords, tag } = usePageMetadata(pages, 'projects');
+  const { title, description, keywords, tag } = usePageMetadata(pages, 'projects');
 
   return (
-    // <Page
-    //   title="Proyectos"
-    //   description="lalala desc"
-    //   keywords="key1, key2"
-    //   tag="/images/projects-tag.png"
-    // >
-    <>
-      <Head>
-        <title>Projects</title>
-        <meta name="description" content="Description projects" />
-        <meta itemProp="image" content="/images/projects-tag.png" />
-      </Head>
+    <Page title={title} description={description} keywords={keywords} tag={tag}>
       <Section>
         <PageHeaderContainer>
           <PageHeader>
@@ -61,8 +49,7 @@ const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
           isLink={false}
         />
       </Section>
-    </>
-    // </Page>
+    </Page>
   );
 };
 

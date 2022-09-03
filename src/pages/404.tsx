@@ -19,9 +19,10 @@ interface Props {
 const NotFound: NextPage<Props> = () => {
   return (
     <Page
-      title={'Upsss...'}
-      description={'An error has occurred. Please back to home.'}
-      keywords={'Error 404'}
+      title="Upsss..."
+      description="An error has occurred. Please back to home."
+      keywords="Error 404"
+      tag=""
     >
       <Section>
         <Container>
