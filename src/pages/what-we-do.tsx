@@ -28,12 +28,12 @@ interface Props {
 }
 
 const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
-  const { title, description, keywords } = usePageMetadata(pages, 'what-we-do');
+  const { title, description, keywords, tag } = usePageMetadata(pages, 'what-we-do');
 
   const filterTechs = techs?.filter((tech) => tech?.fields?.showLogo === true);
 
   return (
-    <Page title={title} description={description} keywords={keywords}>
+    <Page title={title} description={description} keywords={keywords} tag={tag}>
       <Section>
         <PageHeaderContainer>
           <PageHeader>

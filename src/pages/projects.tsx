@@ -18,10 +18,15 @@ interface Props {
 }
 
 const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
-  const { title, description, keywords, tag } = usePageMetadata(pages, 'projects');
+  // const { title, description, keywords, tag } = usePageMetadata(pages, 'projects');
 
   return (
-    <Page title={title} description={description} keywords={keywords} tag={tag}>
+    <Page
+      title="Proyectos"
+      description="lalala desc"
+      keywords="key1, key2"
+      tag="/images/projects-tag.png"
+    >
       <Section>
         <PageHeaderContainer>
           <PageHeader>
