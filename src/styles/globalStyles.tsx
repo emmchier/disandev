@@ -18,21 +18,30 @@ export const GlobalStyles = createGlobalStyle`
       line-height: ${({ theme }) => theme.font.lineHeight.medium};
     }
   }
+
+  .overflow-hidden {
+    overflow: hidden !important;
+  }
+
   * {
     text-decoration: none;
     list-style: none;
   }
+
   ul {
     padding: 0;
   }
+
   p {
     color: ${({ theme }) => theme.color.black};
   }
+
   a {
     list-style: none;
     text-decoration: none;
     color: ${({ theme }) => theme.color.black};
   }
+
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     ::-webkit-scrollbar {
       display: none;

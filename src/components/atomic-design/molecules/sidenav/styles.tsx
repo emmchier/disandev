@@ -14,7 +14,7 @@ export const MenuContent = styled.div<SidenavProps>`
           right: 0;
           transition: 0.3s;
           box-shadow: ${({ theme }) => theme.shadow.main};
-          z-index: 999;
+          z-index: 9999;
           background-color: ${({ theme }) => theme.color.white};
 
           @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {

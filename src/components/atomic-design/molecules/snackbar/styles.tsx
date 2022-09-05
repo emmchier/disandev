@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 interface SnackbarProps {
   position: string;
   show: boolean;
+  background: string;
 }
 
 const positionStyles = (position: string) =>
@@ -36,16 +37,6 @@ const positionStyles = (position: string) =>
       border: 0 !important;
       background-color: ${({ theme }) => theme.color.black} !important;
 
-      p {
-        padding: ${({ theme }) => theme.spacing(3)} !important;
-        color: ${({ theme }) => theme.color.white} !important;
-      }
-
-      a {
-        color: ${({ theme }) => theme.color.white} !important;
-        text-decoration: underline;
-      }
-
       svg {
         filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(11%) hue-rotate(331deg)
           brightness(101%) contrast(101%) !important;
@@ -63,6 +54,28 @@ const positionStyles = (position: string) =>
       }
     `,
   }[position]);
+
+const backgroundStyles = (background: string) =>
+  ({
+    light: css`
+      background-color: ${({ theme }) => theme.color.white} !important;
+
+      p {
+        color: ${({ theme }) => theme.color.black} !important;
+      }
+
+      a {
+        color: ${({ theme }) => theme.color.primary.main} !important;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    `,
+    dark: css`
+      background-color: ${({ theme }) => theme.color.black} !important;
+      color: ${({ theme }) => theme.color.white} !important;
+    `,
+  }[background]);
 
 export const Content = styled.div<SnackbarProps>`
   ${({ show }) =>
@@ -82,10 +95,10 @@ export const Content = styled.div<SnackbarProps>`
           transform: translateY(0);
         `};
   ${({ position }) => positionStyles(position)};
+  ${({ background }) => backgroundStyles(background)};
   transition: all 0.2s ease-in-out;
   position: fixed;
   margin: ${({ theme }) => theme.spacing(10)};
-  background: ${({ theme }) => theme.color.white};
   padding: ${({ theme }) => theme.spacing(5)};
   box-shadow: ${({ theme }) => theme.shadow.main};
   border-radius: ${({ theme }) => theme.border.radius.main};
@@ -96,11 +109,36 @@ export const Content = styled.div<SnackbarProps>`
   border: 1px solid ${({ theme }) => theme.color.disabled};
 
   p {
-    margin-right: ${({ theme }) => theme.spacing(10)};
+    margin: 0 ${({ theme }) => theme.spacing(5)};
     font-size: ${({ theme }) => theme.font.size.small};
   }
 
-  button {
+  a {
+    margin-left: ${({ theme }) => theme.spacing(3)};
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+
+    a {
+      margin-left: 0;
+    }
+
+    p {
+      margin-top: ${({ theme }) => theme.spacing(5)};
+    }
+
+    button {
+      margin-bottom: ${({ theme }) => theme.spacing(8)} !important;
+    }
+  }
+
+  /* button {
     svg {
       height: 14px;
       width: 18px;
@@ -113,5 +151,5 @@ export const Content = styled.div<SnackbarProps>`
           brightness(93%) contrast(95%);
       }
     }
-  }
+  } */
 `;

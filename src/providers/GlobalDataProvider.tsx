@@ -9,6 +9,8 @@ interface Proptypes {
 }
 
 const GlobalDataProvider: FC<Proptypes> = ({ children }) => {
+  const [allowCookies, setAllowCookies] = useState(false);
+
   const [data, setData] = useState<GlobalData>({
     info: {},
   });
@@ -25,7 +27,9 @@ const GlobalDataProvider: FC<Proptypes> = ({ children }) => {
   const information = data?.info?.fields;
 
   return (
-    <GlobalDataContext.Provider value={{ information }}>{children}</GlobalDataContext.Provider>
+    <GlobalDataContext.Provider value={{ information, allowCookies, setAllowCookies }}>
+      {children}
+    </GlobalDataContext.Provider>
   );
 };
 

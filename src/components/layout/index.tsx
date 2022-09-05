@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { useRouter } from 'next/router';
 
@@ -8,6 +8,7 @@ import Navbar from '../atomic-design/molecules/navbar';
 import Sidenav from '../atomic-design/molecules/sidenav';
 
 import { Main } from './styles';
+import CookiesSnackbar from '../atomic-design/molecules/cookies-snackbar';
 
 interface Proptypes {
   children: React.ReactNode;
@@ -18,9 +19,11 @@ const Layout: FC<Proptypes> = ({ children }) => {
   const { pathname } = useRouter();
   const [show, setShow] = useState(false);
   const showSidebar = (): void => setShow(!show);
+  const [showCookiesMessage, setShowCookiesMessage] = useState(false);
 
   return (
     <Main>
+      <CookiesSnackbar show={showCookiesMessage} setShow={setShowCookiesMessage} />
       <Sidenav show={show} showSidebar={showSidebar} path={pathname} />
       <Navbar showSidebar={showSidebar} />
       {children}

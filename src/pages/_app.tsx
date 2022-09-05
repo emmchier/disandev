@@ -1,10 +1,14 @@
 import type { AppProps } from 'next/app';
-import { useEffect, useState } from 'react';
+import { Router, useRouter } from 'next/router';
+import { useContext, useEffect, useState } from 'react';
 import LoadingPage from '../components/atomic-design/loading-page';
 import Layout from '../components/layout';
 import GlobalDataProvider from '../providers/GlobalDataProvider';
 
 import { StyledThemeProvider } from '../providers/StyledThemeProvider';
+import { gtmVirtualPageView } from '../utils';
+import { MainContext } from '../context/index';
+import MainProvider from '../providers/MainContextProvider';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [loading, setLoading] = useState(true);
@@ -19,9 +23,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <>
           <GlobalDataProvider>
             <StyledThemeProvider>
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
+              <MainProvider>
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
+              </MainProvider>
             </StyledThemeProvider>
           </GlobalDataProvider>
         </>

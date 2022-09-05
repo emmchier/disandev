@@ -26,6 +26,7 @@ import {
   TextContent,
   ServiceContainer,
 } from '../styles/pages/home-styles';
+import { useEffect } from 'react';
 
 interface Props {
   pages: PageInterface[];

@@ -2,16 +2,17 @@ import styled, { css } from 'styled-components';
 
 type OverlayI = {
   isShowing?: boolean;
+  opacity?: number;
 };
 
 export const Content = styled.div<OverlayI>`
   width: 100%;
   height: 100vh;
   position: fixed;
-  z-index: 99;
-  opacity: 0.5;
+  z-index: 999;
+  opacity: ${({ opacity }) => opacity};
   ${({ isShowing }) =>
-    isShowing
+    isShowing === true
       ? css`
           animation: fadeIn 0.2s;
           display: inherit;
