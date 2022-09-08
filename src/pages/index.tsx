@@ -46,7 +46,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
 
   return (
     <Page title={title} description={description} keywords={keywords} tag={tag}>
-      <Section auto={false} container="fluid">
+      <Section auto={false} container="full">
         <Container>
           <Content>
             <HomeContent>

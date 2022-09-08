@@ -1,52 +1,62 @@
 import styled, { css } from 'styled-components';
 
 export interface ContainerProps {
-  size: string;
+  size: 'sm' | 'md' | 'lg' | 'none';
 }
 
 const styledSizes = (size: string) =>
   ({
     sm: css`
-      max-width: 1156px;
-      @media only screen and (${({ theme }) => theme.breakpoints.desktop}) {
-        max-width: 1156px;
-        padding: 0;
-      }
+      max-width: 767px;
+
       @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {
-        max-width: 1156px;
-        padding: 0 27px;
+        max-width: 600px;
       }
+
       @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
-        max-width: 1110px;
-        padding: 0 27px;
+        max-width: 550px;
+      }
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        padding: 0 ${({ theme }) => theme.spacing(5)};
+        max-width: 100%;
       }
     `,
     md: css`
       max-width: 1500px;
-      @media only screen and (${({ theme }) => theme.breakpoints.desktopXL}) {
-        max-width: 1700px;
-        padding: 0 27px;
-      }
-      @media only screen and (${({ theme }) => theme.breakpoints.desktop}) {
-        max-width: 1330px;
-        padding: 0 27px;
-      }
+
       @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {
-        padding: 0 27px !important;
+        padding: 0 ${({ theme }) => theme.spacing(15)};
+      }
+
+      @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+        padding: 0 ${({ theme }) => theme.spacing(8)};
+      }
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        padding: 0 ${({ theme }) => theme.spacing(5)};
       }
     `,
     lg: css`
-      max-width: 1800px;
-      padding: 0 27px !important;
+      // same as full
+      max-width: 100%;
+      padding: 0 ${({ theme }) => theme.spacing(8)} !important;
+
+      @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {
+        max-width: 1700px;
+      }
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        padding: 0 ${({ theme }) => theme.spacing(5)} !important;
+      }
     `,
-    fluid: css`
-      width: 100%;
-      margin: 0;
+    none: css`
+      width: 100% !important;
     `,
   }[size]);
 
 export const Content = styled.div<ContainerProps>`
   ${({ size }) => styledSizes(size)};
-  margin: auto;
-  padding: 0 !important;
+  margin: 0 auto;
+  padding: 0;
 `;

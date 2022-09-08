@@ -60,6 +60,11 @@ export const DescriptionLeft = styled.div`
 
   a {
     display: flex;
+    font-size: ${({ theme }) => theme.font.size.medium};
+  }
+
+  h3 {
+    max-width: ${({ theme }) => theme.spacing(80)};
   }
 
   p {
@@ -72,6 +77,13 @@ export const DescriptionLeft = styled.div`
 
   span {
     display: block;
+
+    @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+      a {
+        font-size: ${({ theme }) => theme.font.size.small} !important;
+      }
+    }
+
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       display: none;
     }

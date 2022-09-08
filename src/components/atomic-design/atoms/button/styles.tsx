@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
 interface ButtonI {
-  color?: string;
-  variant?: string;
+  color?: 'primary' | 'secondary';
+  variant?: 'contained' | 'outlined' | 'text' | 'icon';
   fullWidth?: boolean;
   ariaLabel?: string;
   iconRight?: boolean;
@@ -96,6 +96,7 @@ const variantStyles = (variant: string) =>
       border: 2px solid transparent;
       padding: 0;
       color: ${({ theme }) => theme.color.black} !important;
+      display: inline !important;
 
       svg {
         filter: brightness(0) saturate(100%) invert(37%) sepia(62%) saturate(1324%)
@@ -166,7 +167,7 @@ const variantStyles = (variant: string) =>
     `,
   }[variant]);
 
-export const Container = styled.button<ButtonI>`
+export const Content = styled.button<ButtonI>`
   position: relative;
   display: flex;
   align-items: center;

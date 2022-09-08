@@ -3,11 +3,7 @@ import { usePageMetadata } from '../hooks/usePageMetadata';
 import Heading from '../components/atomic-design/atoms/heading';
 import { PageInterface } from '../interfaces';
 import Page from '../components/atomic-design/atoms/page';
-import Section from '../components/atomic-design/atoms/section';
-// import { client } from '../common/contentfulClientProvider';
 import Container from '../components/atomic-design/atoms/container';
-// import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-// import { useEffect, useState } from 'react';
 import Icon from '../components/atomic-design/atoms/icon/index';
 import PageHeader from '../components/atomic-design/atoms/page-header/index';
 import {
@@ -20,14 +16,18 @@ import Text from '../components/atomic-design/atoms/text';
 import Link from 'next/link';
 import Button from '../components/atomic-design/atoms/button';
 import { client } from '../common/contentfulClientProvider';
+import useIsMobile from '../hooks/useIsMobile';
 
 interface Props {
   pages: PageInterface[];
   content: PageInterface[];
 }
 
-const QualityPolicyPage: NextPage<Props> = ({ pages }) => {
-  const { title, description, keywords, tag } = usePageMetadata(pages, 'quality-policy');
+const CookiesPage: NextPage<Props> = ({ pages }) => {
+  const { title, description, keywords, tag } = usePageMetadata(pages, 'cookies');
+  console.log(pages);
+
+  const isMobile = useIsMobile();
 
   return (
     <Page title={title} description={description} keywords={keywords} tag={tag}>
@@ -36,15 +36,14 @@ const QualityPolicyPage: NextPage<Props> = ({ pages }) => {
           <PageHeaderContainer>
             <PageHeader>
               <span>
-                This is our <div>quality policy</div>
-                <b>.</b>
+                Why we use <div>cookies</div>?<b>.</b>
               </span>
             </PageHeader>
             <Icon icon="teamShape" ariaLabel="geometric shape" />
           </PageHeaderContainer>
         </Container>
         <QualityContent>
-          <Container size="sm">
+          <Container size={!isMobile ? 'sm' : 'md'}>
             <Heading variant="h5">Who are we?</Heading>
             <Text>
               We are Disandev, a Start up with offices in Spain and Argentina, dedicated to digital
@@ -117,7 +116,7 @@ const QualityPolicyPage: NextPage<Props> = ({ pages }) => {
   );
 };
 
-export default QualityPolicyPage;
+export default CookiesPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await client.getEntries({ content_type: 'pages' });

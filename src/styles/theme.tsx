@@ -83,11 +83,10 @@ export const theme = {
     },
   },
   breakpoints: {
-    smallMobile: 'max-width: 479px',
-    mobile: 'max-width: 767px',
-    tablet: 'max-width: 991px',
-    tabletLandscape: 'max-width: 1999px',
-    desktop: 'max-width: 1700px',
-    desktopXL: 'max-width: 1899px',
+    smallMobile: 'max-width: 479px', // small smarth phone
+    mobile: 'max-width: 767px', // smath phone
+    tablet: 'max-width: 1200px', // iphone, tablet
+    tabletLandscape: 'max-width: 1500px', // macbook pro
+    desktop: 'max-width: 2500px', // largest screen monitors
   },
 };

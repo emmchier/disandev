@@ -6,7 +6,7 @@ import Content from './styles';
 interface SectionI {
   children: React.ReactNode;
   auto?: boolean;
-  container?: string;
+  container?: 'sm' | 'md' | 'lg' | 'none';
   padding?: string;
 }
 

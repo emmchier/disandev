@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import Icon from '../icon';
 
-import { Container, IconLeft, IconRight } from './styles';
+import { Content, IconLeft, IconRight } from './styles';
 
 interface PropTypes {
   children: React.ReactNode;
   type?: 'submit' | 'reset' | 'button';
-  color?: string;
-  variant?: string;
+  color?: 'primary' | 'secondary';
+  variant?: 'contained' | 'outlined' | 'text' | 'icon';
   fullWidth?: boolean;
   ariaLabel?: string;
   iconRight?: boolean;
@@ -28,7 +28,7 @@ const Button: FC<PropTypes> = ({
   iconRight = false,
   onClick,
 }) => (
-  <Container
+  <Content
     type={type}
     color={color}
     variant={variant}
@@ -44,7 +44,7 @@ const Button: FC<PropTypes> = ({
     <IconRight>
       {iconRight && <Icon ariaLabel="arrow to the left" icon="arrow" direction="right" />}
     </IconRight>
-  </Container>
+  </Content>
 );
 
 export default Button;

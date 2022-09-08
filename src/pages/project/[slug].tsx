@@ -32,6 +32,7 @@ import {
   DevicesContainer,
   BannerContainer,
 } from '../../styles/pages/project-detail-styles';
+import Text from '../../components/atomic-design/atoms/text';
 
 interface Props {
   pages: PageInterface[];
@@ -133,7 +134,7 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
             </Col>
             <Col xs={12} sm={7} md={7} lg={7} xlg={7}>
               <DescriptionRight>
-                {documentToReactComponents(project?.fields?.description)}
+                <Text>{documentToReactComponents(project?.fields?.description)}</Text>
                 <span>
                   <LinkToWeb url={project?.fields?.url} urlName={project?.fields?.urlName} />
                 </span>
