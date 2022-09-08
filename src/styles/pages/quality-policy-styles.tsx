@@ -42,6 +42,7 @@ export const MainContent = styled.div`
     font-size: ${({ theme }) => theme.font.size.medium};
     color: ${({ theme }) => theme.color.primary.main} !important;
     line-height: 0;
+    display: inline !important;
   }
 `;
 

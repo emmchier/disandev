@@ -96,7 +96,6 @@ const variantStyles = (variant: string) =>
       border: 2px solid transparent;
       padding: 0;
       color: ${({ theme }) => theme.color.black} !important;
-      display: inline !important;
 
       svg {
         filter: brightness(0) saturate(100%) invert(37%) sepia(62%) saturate(1324%)
