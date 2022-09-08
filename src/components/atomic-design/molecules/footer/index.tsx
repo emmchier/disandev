@@ -16,7 +16,6 @@ import {
   InfoContent,
   Copyright,
   IsoContent,
-  CopyContent,
   NavLeft,
   NavRight,
   CopyrightContainer,
@@ -28,77 +27,70 @@ type Props = {
   path?: string;
 };
 
-const Footer: FC<Props> = ({ path }) => {
-  return (
-    <FooterContent>
+const Footer: FC<Props> = ({ path }) => (
+  <FooterContent>
+    <Container>
+      <FooterMainContent>
+        <Row>
+          <Col xs={12} sm={12} md={3} lg={3} xlg={3}>
+            <DinamicContent>
+              <BrandContent>
+                <IsoContent>
+                  <Icon ariaLabel="Disandev isotype" icon="iso" />
+                </IsoContent>
+                <Icon ariaLabel="Disandev branding" icon="brand" />
+              </BrandContent>
+            </DinamicContent>
+          </Col>
+          <Col xs={12} sm={12} md={6} lg={6} xlg={6}>
+            <Row>
+              <Col xs={12} sm={12} md={6} lg={6} xlg={6}>
+                <DinamicContent>
+                  <NavLeft>
+                    <NavList path={path} noSelected={true} />
+                  </NavLeft>
+                </DinamicContent>
+              </Col>
+              <Col xs={12} sm={12} md={6} lg={6} xlg={6}>
+                <DinamicContent>
+                  <NavRight>
+                    <NavList path={path} noSelected={true} showPolicty={true} />
+                    <ContactLink>
+                      <a style={{ marginTop: '90px' }} href={`mailto:somos.disandev@gmail.com`}>
+                        Contact
+                      </a>
+                      <b>.</b>
+                    </ContactLink>
+                  </NavRight>
+                </DinamicContent>
+              </Col>
+            </Row>
+          </Col>
+
+          <Col xs={12} sm={12} md={3} lg={3} xlg={3}>
+            <DinamicContent>
+              <InfoContent>
+                <Heading variant="h6" weight="medium" cap="upper">
+                  We are in
+                </Heading>
+                <Text>Buenos Aires. Argentina</Text>
+                <Text>Barcelona. España</Text>
+              </InfoContent>
+            </DinamicContent>
+          </Col>
+        </Row>
+      </FooterMainContent>
+    </Container>
+
+    <Copyright>
       <Container>
-        <FooterMainContent>
-          <Row>
-            <Col xs={12} sm={12} md={3} lg={3} xlg={3}>
-              <DinamicContent>
-                <BrandContent>
-                  <IsoContent>
-                    <Icon ariaLabel="Disandev isotype" icon="iso" />
-                  </IsoContent>
-                  <Icon ariaLabel="Disandev branding" icon="brand" />
-                </BrandContent>
-              </DinamicContent>
-            </Col>
-            <Col xs={12} sm={12} md={6} lg={6} xlg={6}>
-              <Row>
-                <Col xs={12} sm={12} md={6} lg={6} xlg={6}>
-                  <DinamicContent>
-                    <NavLeft>
-                      <NavList path={path} noSelected={true} />
-                    </NavLeft>
-                  </DinamicContent>
-                </Col>
-                <Col xs={12} sm={12} md={6} lg={6} xlg={6}>
-                  <DinamicContent>
-                    <NavRight>
-                      <NavList path={path} noSelected={true} showPolicty={true} />
-                      <ContactLink>
-                        <a style={{ marginTop: '90px' }} href={`mailto:somos.disandev@gmail.com`}>
-                          Let's Talk
-                        </a>
-                        <b>.</b>
-                      </ContactLink>
-                    </NavRight>
-                  </DinamicContent>
-                </Col>
-              </Row>
-            </Col>
-
-            <Col xs={12} sm={12} md={3} lg={3} xlg={3}>
-              <DinamicContent>
-                <InfoContent>
-                  <Heading variant="h6" weight="medium" cap="upper">
-                    We are in
-                  </Heading>
-                  <Text>Buenos Aires. Argentina</Text>
-                  <Text>Barcelona. España</Text>
-                </InfoContent>
-              </DinamicContent>
-            </Col>
-          </Row>
-        </FooterMainContent>
+        <CopyrightContainer>
+          <Text>{new Date().getFullYear()} © Disandev</Text>
+          <SocialMediaList />
+        </CopyrightContainer>
       </Container>
-
-      <Copyright>
-        <Container>
-          <CopyrightContainer>
-            <Text>{new Date().getFullYear()} © Disandev</Text>
-            {/* <span>|</span>
-                <CustomLink to="/quality-policy">
-                  <Text>Quality policy</Text>
-                </CustomLink> */}
-
-            <SocialMediaList />
-          </CopyrightContainer>
-        </Container>
-      </Copyright>
-    </FooterContent>
-  );
-};
+    </Copyright>
+  </FooterContent>
+);
 
 export default Footer;

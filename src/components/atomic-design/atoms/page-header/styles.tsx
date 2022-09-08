@@ -26,9 +26,13 @@ export const Content = styled.div`
     }
   }
 
-  b:nth-child(1) {
-    color: ${({ theme }) => theme.color.black};
+  span {
+    div {
+      margin-right: ${({ theme }) => theme.spacing(3)};
+    }
   }
+
+  b:nth-child(1),
   b:nth-child(2) {
     color: ${({ theme }) => theme.color.black};
   }

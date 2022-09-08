@@ -16,8 +16,8 @@ export const navList = [
   },
   {
     id: 3,
-    label: 'The team',
-    to: '/the-team',
+    label: 'Team',
+    to: '/team',
   },
   {
     id: 4,

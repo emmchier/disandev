@@ -49,7 +49,7 @@ export const MembersContent = styled.div`
 
 export const OurValuesContent = styled.div`
   background: ${({ theme }) => theme.color.gradient.primary};
-  padding: ${({ theme }) => theme.spacing(20)} 0 ${({ theme }) => theme.spacing(15)};
+  padding: ${({ theme }) => theme.spacing(20)} 0 ${({ theme }) => theme.spacing(30)};
   margin: ${({ theme }) => theme.spacing(30)} 0;
 
   section {

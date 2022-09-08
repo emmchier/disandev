@@ -1,4 +1,5 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
+
 import useScroll from '../../../../hooks/useScroll';
 import BurguerIcon from '../../atoms/burguer-icon';
 import Button from '../../atoms/button';

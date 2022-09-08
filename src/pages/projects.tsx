@@ -25,11 +25,11 @@ const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
       <Section>
         <PageHeaderContainer>
           <PageHeader>
+            What we have been
             <span>
-              Look at what <div>projects</div>
+              <div>working on</div>
+              <b>.</b>
             </span>
-            we were working
-            <b>.</b>
           </PageHeader>
           <Icon icon="teamShape" ariaLabel="geometric shape" />
         </PageHeaderContainer>
@@ -42,12 +42,7 @@ const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
       </ProjectsContent>
 
       <Section>
-        <CallToAction
-          to="/lets-talk"
-          title="¿Have an idea?"
-          buttonTitle="Lets talk"
-          isLink={false}
-        />
+        <CallToAction title="Have an idea?" buttonTitle="Let´s chat" isLink={false} />
       </Section>
     </Page>
   );

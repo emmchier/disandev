@@ -28,7 +28,7 @@ interface Props {
 }
 
 const TeamPage: NextPage<Props> = ({ pages, members }) => {
-  const { title, description, keywords, tag } = usePageMetadata(pages, 'the-team');
+  const { title, description, keywords, tag } = usePageMetadata(pages, 'team');
 
   return (
     <Page title={title} description={description} keywords={keywords} tag={tag}>
@@ -73,15 +73,15 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
             </Col>
             <Col xs={12} sm={7} md={7} lg={7} xlg={7}>
               <Text>
-                We know that each client has specific needs. That's why we are flexible and we
+                We know that each client has specific needs. For this reason, we are flexible and
                 create solutions based on a personalized design adapted to the circumstances of each
                 project.
               </Text>
               <Text>
-                We firmly believe that there is no problem without a solution. where some people see
-                barriers, those of us who work at Disandev see possibilities. We explore the
-                different alternatives that allow us to discover multiple solutions and select the
-                most optimal of them.
+                We firmly believe that there is no problem that does not have a solution. Where some
+                people see barriers, those of us who work at Disandev see possibilities. We explore
+                the different alternatives that allow us to discover multiple solutions and select
+                the most optimal.
               </Text>
             </Col>
           </Row>
@@ -93,7 +93,7 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
           <CallToAction
             to="/projects"
             title="Do you want to know what we do?"
-            buttonTitle="Look all projects"
+            buttonTitle="Take a look at the projects"
           />
         </Section>
       </TeamCallToAction>

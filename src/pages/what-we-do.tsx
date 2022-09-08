@@ -31,13 +31,15 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
   const { title, description, keywords, tag } = usePageMetadata(pages, 'what-we-do');
 
   const filterTechs = techs?.filter((tech) => tech?.fields?.showLogo === true);
+  const orderedTechList = filterTechs.sort((a, b) => a.fields.order - b.fields.order);
+  const orderedStepList = steps.sort((a, b) => a.fields.order - b.fields.order);
 
   return (
     <Page title={title} description={description} keywords={keywords} tag={tag}>
       <Section>
         <PageHeaderContainer>
           <PageHeader>
-            Do you want to provide a good
+            Do you want to provide a great
             <span>
               <div>experience</div> to your users?
             </span>
@@ -57,28 +59,23 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
       <WhatWeDoContent>
         <Section>
           <SectionHeader>
-            How we work<b>.</b>
+            How do we work<b>.</b>
           </SectionHeader>
-          <StepsList list={steps} />
+          <StepsList list={orderedStepList} />
         </Section>
       </WhatWeDoContent>
 
       <TechsContent>
         <Section>
           <SectionHeader>
-            Our main technologies<b>.</b>
+            Technologies we work with<b>.</b>
           </SectionHeader>
-          <TechList list={filterTechs} />
+          <TechList list={orderedTechList} />
         </Section>
       </TechsContent>
 
       <Section>
-        <CallToAction
-          to="/lets-talk"
-          title="¿Have an idea?"
-          buttonTitle="Lets talk"
-          isLink={false}
-        />
+        <CallToAction title="Something in mind?" buttonTitle="Let´s chat" isLink={false} />
       </Section>
     </Page>
   );

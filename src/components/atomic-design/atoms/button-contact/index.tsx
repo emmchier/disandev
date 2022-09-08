@@ -11,7 +11,7 @@ const ButtonContact: FC<PropTypes> = ({ onClick }) => (
   // <CustomLink to="/lets-talk">
   <a href={`mailto:somos.disandev@gmail.com`}>
     <Button variant="outlined" ariaLabel="link to contact page" iconRight={true} onClick={onClick}>
-      Let's Talk
+      Let´s chat
     </Button>
   </a>
   // </CustomLink>

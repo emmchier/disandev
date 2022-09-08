@@ -38,6 +38,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
   const { title, description, keywords, tag } = usePageMetadata(pages, 'home');
   const filteredProjectList = getItemsByPage(projects, 'home');
   const filteredServicesList = getItemsByPage(services, 'home');
+  const orderServiceList = filteredServicesList.sort((a, b) => a.fields.order - b.fields.order);
 
   const handleAnchor = () => {
     window.scrollTo({ top: 680, behavior: 'smooth' });
@@ -58,7 +59,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
                 </SectionHeader>
                 <Button onClick={handleAnchor} variant="text" ariaLabel="ancla a section 2">
                   <Heading variant="h4" weight="bold">
-                    Meet to us
+                    Know Us
                   </Heading>
                   <Icon ariaLabel="arrow to bottom" icon="arrow" direction="down" />
                 </Button>
@@ -72,7 +73,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
       <Section padding={`-bottom: 60px`}>
         <ProjectSectionContent>
           <SectionHeader>
-            <span>What have we been</span>
+            <span>What we have been</span>
             <p>
               working on
               <b>.</b>
@@ -83,7 +84,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
         <ActionContent>
           <CustomLink to="/projects">
             <Button variant="outlined" ariaLabel="button" iconRight={true}>
-              See all projects
+              See all the projects
             </Button>
           </CustomLink>
         </ActionContent>
@@ -91,11 +92,11 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
 
       <Section>
         <ServiceContainer>
-          <ServiceSection list={filteredServicesList} />
+          <ServiceSection list={orderServiceList} />
           <Box width="100%" display="flex" justifyContent="center">
             <CustomLink to="/what-we-do">
               <Button variant="outlined" ariaLabel="button" iconRight={true}>
-                See all services
+                See more services
               </Button>
             </CustomLink>
           </Box>
@@ -103,12 +104,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
       </Section>
 
       <Section>
-        <CallToAction
-          to="/lets-talk"
-          title="¿Have an idea?"
-          buttonTitle="Lets talk"
-          isLink={false}
-        />
+        <CallToAction title="Have an idea?" buttonTitle="Let´s chat" isLink={false} />
       </Section>
     </Page>
   );

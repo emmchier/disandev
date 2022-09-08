@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
+
 import { ServiceI } from '../../../../interfaces';
-import Heading from '../../atoms/heading';
 
 import SectionHeader from '../../atoms/section-header';
 import ServiceList from '../service-list';
@@ -16,9 +16,6 @@ const ServiceSection: FC<PropTypes> = ({ list, offsetColumn = false }) => (
     <SectionHeader>
       What we do?<b>.</b>
     </SectionHeader>
-    <Heading variant="h4" weight="regular">
-      We...
-    </Heading>
     <ServiceList list={list} offsetColumn={offsetColumn} />
   </Content>
 );
