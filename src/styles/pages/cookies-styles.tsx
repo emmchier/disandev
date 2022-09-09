@@ -25,11 +25,20 @@ export const PageHeaderContainer = styled.div`
 
   svg {
     position: absolute !important;
+    width: ${({ theme }) => theme.spacing(300)};
+    transform: rotate(180deg);
     height: auto;
     z-index: 0;
-    right: 0;
-    top: 5vh;
+    right: -15vh;
+    top: -60vh;
     opacity: 0.8;
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      width: ${({ theme }) => theme.spacing(200)};
+      left: -80vh;
+      top: -23vh;
+      opacity: 0.4;
+    }
   }
 `;
 

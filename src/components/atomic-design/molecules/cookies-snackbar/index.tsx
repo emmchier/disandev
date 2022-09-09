@@ -41,10 +41,7 @@ const CookiesSnackbar: FC<PropTypes> = ({ show, setShow }) => {
           <Text>
             We use Google Analytics cookies to check visits and provide best user experience. Are
             you agree?{' '}
-            <a
-              href="https://www.modelosycontratos.com/modelo-aviso-cookies-pagina-web/"
-              target="_blank"
-            >
+            <a href="https://policies.google.com/technologies/cookies?hl=es" target="_blank">
               Know more
             </a>
           </Text>

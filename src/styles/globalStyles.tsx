@@ -42,6 +42,16 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.color.black};
   }
 
+  ::-moz-selection {
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.primary.light};
+  }
+
+  ::selection {
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.primary.light};
+  }
+
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     ::-webkit-scrollbar {
       display: none;

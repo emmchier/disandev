@@ -74,7 +74,7 @@ const Footer: FC<Props> = ({ path }) => (
                   We are in
                 </Heading>
                 <Text>Buenos Aires. Argentina</Text>
-                <Text>Barcelona. España</Text>
+                <Text>Barcelona. Spain</Text>
               </InfoContent>
             </DinamicContent>
           </Col>

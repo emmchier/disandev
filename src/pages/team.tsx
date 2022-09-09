@@ -93,7 +93,7 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
           <CallToAction
             to="/projects"
             title="Do you want to know what we do?"
-            buttonTitle="Take a look at the projects"
+            buttonTitle="Take a look"
           />
         </Section>
       </TeamCallToAction>

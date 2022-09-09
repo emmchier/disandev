@@ -18,7 +18,6 @@ const styledSizes = (size: string) =>
       }
 
       @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-        padding: 0 ${({ theme }) => theme.spacing(5)};
         max-width: 100%;
       }
     `,

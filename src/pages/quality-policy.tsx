@@ -95,12 +95,7 @@ const QualityPolicyPage: NextPage<Props> = ({ pages }) => {
               third-party cookies that help us keep track of the traffic of visits to our website
               through Google Analytics. We are interested in you, browsing safely and respecting the
               laws on the use of cookies. To learn more about this, we invite you to read our
-              <Link href="/cookies">
-                <Button variant="text" ariaLabel="link to Cookies page">
-                  Cookies Policy
-                </Button>
-              </Link>
-              .
+              <Link href="/cookies">Cookies Policy</Link>.
             </Text>
           </Container>
         </QualityContent>
