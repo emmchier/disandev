@@ -52,7 +52,6 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
               <TextContent>
                 <SectionHeader variant="h1">
                   <span>We create digital solutions</span>
-                  <span>for your products</span>
                   to make an impression
                   <b>.</b>
                 </SectionHeader>

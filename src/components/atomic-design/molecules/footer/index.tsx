@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import Box from '../../atoms/box';
 
 import Container from '../../atoms/container';
 import DinamicContent from '../../atoms/dinamic-content';
@@ -72,8 +71,8 @@ const Footer: FC<Props> = ({ path }) => (
                 <Heading variant="h6" weight="medium" cap="upper">
                   We are in
                 </Heading>
-                <Text>Buenos Aires. Argentina</Text>
-                <Text>Barcelona. Spain</Text>
+                <Text>Buenos Aires, Argentina</Text>
+                <Text>Barcelona, Spain</Text>
               </InfoContent>
             </DinamicContent>
           </Col>

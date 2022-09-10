@@ -45,14 +45,14 @@ const QualityPolicyPage: NextPage<Props> = ({ pages }) => {
         </Container>
         <QualityContent>
           <Container size="sm">
-            <Heading variant="h5">Who are we?</Heading>
+            <Heading variant="h4">Who are we?</Heading>
             <Text>
               We are Disandev, a Start up with offices in Spain and Argentina, dedicated to digital
               products, tool development and software products. The objective of this platform will
               be to let you know our services, tell you about our philosophy as a company and our
               way of working to offer you the best experience.
             </Text>
-            <Heading variant="h5">Quality in what we do</Heading>
+            <Heading variant="h4">Quality in what we do</Heading>
             <Text>
               We believe in quality over quantity and we try to work side by side with each client.
               By contracting our services we will be a single team that transcends the barrier
@@ -67,7 +67,7 @@ const QualityPolicyPage: NextPage<Props> = ({ pages }) => {
         </QualityContent>
         <ValuesContent>
           <Container size="sm">
-            <Heading variant="h5">How we work?</Heading>
+            <Heading variant="h4">How we work?</Heading>
             <Text>
               We know that each client has specific needs. For this reason, we are flexible and
               create solutions based on a personalized design adapted to the circumstances of each
@@ -88,7 +88,7 @@ const QualityPolicyPage: NextPage<Props> = ({ pages }) => {
         </ValuesContent>
         <QualityContent>
           <Container size="sm">
-            <Heading variant="h5">Cookies</Heading>
+            <Heading variant="h4">Cookies</Heading>
             <Text>
               By entering our platform we will not be saving information or sensitive data of any
               kind that infringe your privacy. We will only ask for your permission to use

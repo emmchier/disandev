@@ -38,7 +38,7 @@ const CookiesPage: NextPage<Props> = ({ pages }) => {
       <MainContent>
         <ValuesContent>
           <Container size="sm">
-            <Heading variant="h5">What are "cookies"?</Heading>
+            <Heading variant="h4">What are "cookies"?</Heading>
             <Text>
               First of all, they are "good" files, small and simple, that are installed in your
               browser device once you have given us permission to do so. They are not files that
@@ -52,7 +52,7 @@ const CookiesPage: NextPage<Props> = ({ pages }) => {
         </ValuesContent>
         <QualityContent>
           <Container size="sm">
-            <Heading variant="h5">Ok, but... why do we use cookies?</Heading>
+            <Heading variant="h4">Ok, but... why do we use cookies?</Heading>
             <Text>
               Because we are interested in you having the best user experience browsing our site.
               These light files that cookies give us are used by your browser to give us
@@ -67,7 +67,7 @@ const CookiesPage: NextPage<Props> = ({ pages }) => {
         </QualityContent>
         <ValuesContent>
           <Container size="sm">
-            <Heading variant="h5">How do I disable or enable these cookies?</Heading>
+            <Heading variant="h4">How do I disable or enable these cookies?</Heading>
             <Text>
               You can do it in 5 simple steps and as always our friend Google can explain it to you
               super clearly and in detail, better than us. We leave you this{' '}

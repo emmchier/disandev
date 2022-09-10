@@ -54,19 +54,14 @@ export const TextContent = styled.div`
       color: ${({ theme }) => theme.color.black} !important;
     }
 
-    span:nth-child(2) {
-      justify-content: flex-start;
-      margin: 0 !important;
-
-      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-        margin: 0 ${({ theme }) => theme.spacing(2)} !important;
-      }
-    }
-
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       margin-right: ${({ theme }) => theme.spacing(5)} !important;
       font-size: ${({ theme }) => theme.font.size.large};
       line-height: ${({ theme }) => theme.font.lineHeight.medium};
+
+      span {
+        margin-right: ${({ theme }) => theme.spacing(2)} !important;
+      }
     }
   }
 
@@ -105,7 +100,6 @@ export const ProjectSectionContent = styled.div`
 
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       margin-bottom: ${({ theme }) => theme.spacing(10)} !important;
-      font-size: ${({ theme }) => theme.font.size.large};
       line-height: ${({ theme }) => theme.font.lineHeight.large};
     }
   }

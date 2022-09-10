@@ -5,5 +5,13 @@ export const Content = styled.div`
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     margin: ${({ theme }) => theme.spacing(10)} ${({ theme }) => theme.spacing(3)} 0;
+
+    h4 {
+      line-height: ${({ theme }) => theme.font.lineHeight.medium};
+    }
+
+    p {
+      margin-top: ${({ theme }) => theme.spacing(3)};
+    }
   }
 `;

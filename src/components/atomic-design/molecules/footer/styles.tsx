@@ -195,17 +195,12 @@ export const CopyrightContainer = styled.div`
     }
   }
 
-  @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {
-    ul {
-      transform: translateX(-30px);
-    }
-  }
-
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     flex-direction: column;
 
     ul {
       transform: translateX(0);
+      justify-content: space-around !important;
     }
 
     li {

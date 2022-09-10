@@ -5,14 +5,14 @@ interface ScrollButtonPropTypes {
 }
 
 export const ScrollButton = styled.button<ScrollButtonPropTypes>`
-  width: ${({ theme }) => theme.spacing(10)};
-  height: ${({ theme }) => theme.spacing(10)};
+  width: ${({ theme }) => theme.spacing(8)};
+  height: ${({ theme }) => theme.spacing(8)};
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: ${({ theme }) => theme.spacing(2)};
-  background-color: transparent;
+  background-color: rgba(234, 234, 234, 0.5);
   position: fixed;
   z-index: 99;
   bottom: 0;
@@ -22,7 +22,7 @@ export const ScrollButton = styled.button<ScrollButtonPropTypes>`
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   right: 0;
-  margin: ${({ theme }) => theme.spacing(2)};
+  margin: ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(3)};
   border-radius: ${({ theme }) => theme.border.radius.full};
   animation: ${({ isShowing }) =>
     isShowing
@@ -37,6 +37,11 @@ export const ScrollButton = styled.button<ScrollButtonPropTypes>`
     -moz-transition: all 0.5s ease 0s;
     -webkit-transition: all 0.5s ease 0s;
     -o-transition: all 0.5s ease 0s;
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      opacity: 1;
+      background-color: rgba(179, 179, 179, 0.5);
+    }
   }
 
   @keyframes fadeIn {
@@ -58,6 +63,7 @@ export const ScrollButton = styled.button<ScrollButtonPropTypes>`
   }
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    margin: ${({ theme }) => theme.spacing(3)};
+    margin: ${({ theme }) => theme.spacing(2.5)};
+    top: ${({ theme }) => theme.spacing(11)};
   }
 `;

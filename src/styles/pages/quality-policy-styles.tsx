@@ -51,7 +51,7 @@ export const QualityContent = styled.section`
   background-color: ${({ theme }) => theme.color.background.copy};
   padding: ${({ theme }) => theme.spacing(20)} ${({ theme }) => theme.spacing(80)} !important;
 
-  h5,
+  h4,
   p {
     margin-top: ${({ theme }) => theme.spacing(8)} !important;
   }
@@ -69,7 +69,7 @@ export const QualityContent = styled.section`
 export const ValuesContent = styled.section`
   padding: ${({ theme }) => theme.spacing(20)} ${({ theme }) => theme.spacing(80)} !important;
 
-  h5,
+  h4,
   p {
     margin-top: ${({ theme }) => theme.spacing(8)} !important;
   }

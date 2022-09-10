@@ -31,6 +31,7 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
   const { title, description, keywords, tag } = usePageMetadata(pages, 'what-we-do');
 
   const filterTechs = techs?.filter((tech) => tech?.fields?.showLogo === true);
+  const orderServiceList = services.sort((a, b) => a.fields.order - b.fields.order);
   const orderedTechList = filterTechs.sort((a, b) => a.fields.order - b.fields.order);
   const orderedStepList = steps.sort((a, b) => a.fields.order - b.fields.order);
 
@@ -53,7 +54,7 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
 
       <ServicesContent>
         <Section>
-          <ServiceSection list={services} offsetColumn={true} />
+          <ServiceSection list={orderServiceList} offsetColumn={true} />
         </Section>
       </ServicesContent>
 
