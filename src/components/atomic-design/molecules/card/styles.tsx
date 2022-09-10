@@ -36,6 +36,7 @@ export const TitleContent = styled.div<CardProps>`
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       margin-top: ${({ theme }) => theme.spacing(4)} !important;
       margin-bottom: 0 !important;
+      line-height: ${({ theme }) => theme.font.lineHeight.small};
     }
   }
 

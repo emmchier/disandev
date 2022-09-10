@@ -25,7 +25,7 @@ const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
       <Section>
         <PageHeaderContainer>
           <PageHeader>
-            What we have been
+            <span>What we have been</span>
             <span>
               <div>working on</div>
               <b>.</b>
@@ -42,7 +42,7 @@ const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
       </ProjectsContent>
 
       <Section>
-        <CallToAction title="Have an idea?" buttonTitle="Let´s chat" isLink={false} />
+        <CallToAction title="Something in mind?" buttonTitle="Let´s chat" isLink={false} />
       </Section>
     </Page>
   );

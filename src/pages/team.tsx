@@ -35,7 +35,7 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
       <Section>
         <PageHeaderContainer>
           <PageHeader>
-            Behind every digital product
+            <span>Behind every digital product</span>
             <span>
               there is a
               <div>

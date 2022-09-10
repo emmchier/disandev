@@ -16,7 +16,12 @@ export const PageHeaderContainer = styled.div`
           display: inline-flex !important;
           margin: 0;
           text-align: start;
+          margin-left: 0 !important;
         }
+      }
+
+      span:nth-child(3) {
+        margin-left: ${({ theme }) => theme.spacing(1)} !important;
       }
     }
   }

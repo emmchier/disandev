@@ -7,55 +7,50 @@ export interface ContainerProps {
 const styledSizes = (size: string) =>
   ({
     sm: css`
-      max-width: 767px;
+      margin: 0 ${({ theme }) => theme.spacing(20)};
+      padding: 0 !important;
 
       @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {
-        max-width: 600px;
+        margin: 0 ${({ theme }) => theme.spacing(20)} !important;
+        padding: 0 !important;
       }
 
       @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
-        max-width: 550px;
+        margin: 0 ${({ theme }) => theme.spacing(60)} !important;
       }
 
       @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-        max-width: 100%;
+        margin: 0 auto !important;
+        padding: 0 !important;
       }
     `,
     md: css`
-      max-width: 1500px;
+      margin: 0 ${({ theme }) => theme.spacing(20)};
 
       @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {
-        padding: 0 ${({ theme }) => theme.spacing(15)};
-      }
-
-      @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
-        padding: 0 ${({ theme }) => theme.spacing(8)};
+        margin: 0 ${({ theme }) => theme.spacing(15)};
       }
 
       @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-        padding: 0 ${({ theme }) => theme.spacing(5)};
+        margin: 0 auto !important;
+        padding: 0 ${({ theme }) => theme.spacing(5)} !important;
       }
     `,
     lg: css`
       // same as full
-      max-width: 100%;
-      padding: 0 ${({ theme }) => theme.spacing(8)} !important;
-
-      @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {
-        max-width: 1700px;
-      }
+      margin: 0 ${({ theme }) => theme.spacing(8)} !important;
 
       @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        margin: 0 auto !important;
         padding: 0 ${({ theme }) => theme.spacing(5)} !important;
       }
     `,
     none: css`
-      width: 100% !important;
+      margin: 0 !important;
     `,
   }[size]);
 
 export const Content = styled.div<ContainerProps>`
+  width: auto;
   ${({ size }) => styledSizes(size)};
-  margin: 0 auto;
-  padding: 0;
 `;

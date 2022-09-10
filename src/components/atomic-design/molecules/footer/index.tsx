@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Box from '../../atoms/box';
 
 import Container from '../../atoms/container';
 import DinamicContent from '../../atoms/dinamic-content';
@@ -33,14 +34,12 @@ const Footer: FC<Props> = ({ path }) => (
       <FooterMainContent>
         <Row>
           <Col xs={12} sm={12} md={3} lg={3} xlg={3}>
-            <DinamicContent>
-              <BrandContent>
-                <IsoContent>
-                  <Icon ariaLabel="Disandev isotype" icon="iso" />
-                </IsoContent>
-                <Icon ariaLabel="Disandev branding" icon="brand" />
-              </BrandContent>
-            </DinamicContent>
+            <BrandContent>
+              <IsoContent>
+                <Icon ariaLabel="Disandev isotype" icon="iso" />
+              </IsoContent>
+              <Icon ariaLabel="Disandev branding" icon="brand" />
+            </BrandContent>
           </Col>
           <Col xs={12} sm={12} md={6} lg={6} xlg={6}>
             <Row>
@@ -85,7 +84,9 @@ const Footer: FC<Props> = ({ path }) => (
     <Copyright>
       <Container>
         <CopyrightContainer>
-          <Text>{new Date().getFullYear()} © Disandev</Text>
+          <Text>
+            {new Date().getFullYear()} © Disandev <div>|</div> <span>somos.disandev@gmail.com</span>
+          </Text>
           <SocialMediaList />
         </CopyrightContainer>
       </Container>

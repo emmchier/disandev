@@ -26,7 +26,6 @@ import {
   TextContent,
   ServiceContainer,
 } from '../styles/pages/home-styles';
-import { useEffect } from 'react';
 
 interface Props {
   pages: PageInterface[];
@@ -52,7 +51,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
             <HomeContent>
               <TextContent>
                 <SectionHeader variant="h1">
-                  We create digital solutions
+                  <span>We create digital solutions</span>
                   <span>for your products</span>
                   to make an impression
                   <b>.</b>
@@ -104,7 +103,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
       </Section>
 
       <Section>
-        <CallToAction title="Have an idea?" buttonTitle="Let´s chat" isLink={false} />
+        <CallToAction title="Something in mind?" buttonTitle="Let´s chat" isLink={false} />
       </Section>
     </Page>
   );

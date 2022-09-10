@@ -7,8 +7,17 @@ export const PageHeaderContainer = styled.div`
     position: relative;
     z-index: 1;
 
+    span {
+      justify-content: flex-start !important;
+    }
+
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       text-align: start;
+
+      span:nth-child(1) {
+        margin-right: ${({ theme }) => theme.spacing(2)} !important;
+      }
+
       span {
         display: block;
         div {

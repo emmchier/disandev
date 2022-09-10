@@ -16,6 +16,7 @@ export const Content = styled.div`
   p {
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
       font-size: ${({ theme }) => theme.font.size.medium};
+      margin-top: ${({ theme }) => theme.spacing(5)} !important;
     }
   }
 `;

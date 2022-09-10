@@ -42,6 +42,11 @@ export const BrandContent = styled.div`
   align-items: flex-start;
   flex-direction: column;
 
+  svg {
+    height: ${({ theme }) => theme.spacing(6.5)};
+    width: auto;
+  }
+
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     padding-top: ${({ theme }) => theme.spacing(5)};
     padding-bottom: ${({ theme }) => theme.spacing(10)};
@@ -73,7 +78,12 @@ export const InfoContent = styled.div`
 `;
 
 export const IsoContent = styled.div`
-  margin-bottom: ${({ theme }) => theme.spacing(4)};
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
+
+  svg {
+    height: ${({ theme }) => theme.spacing(9)};
+    width: auto;
+  }
 `;
 
 export const CopyContent = styled.div`
@@ -145,7 +155,7 @@ export const ContactLink = styled.div`
 
 export const Copyright = styled.div`
   background-color: ${({ theme }) => theme.color.background.copy};
-  padding: ${({ theme }) => theme.spacing(5)} 0 ${({ theme }) => theme.spacing(2)};
+  padding: ${({ theme }) => theme.spacing(5)} 0;
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     padding: ${({ theme }) => theme.spacing(6)} 0;
@@ -169,6 +179,20 @@ export const CopyrightContainer = styled.div`
 
   p {
     font-size: ${({ theme }) => theme.font.size.small};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+      margin: 0 ${({ theme }) => theme.spacing(3)};
+    }
+
+    @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+      div,
+      span {
+        display: none;
+      }
+    }
   }
 
   @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {

@@ -22,6 +22,10 @@ export const HomeContent = styled.div`
     display: flex;
     justify-content: center;
     margin: 0;
+
+    span:nth-child(2) {
+      margin: 0 ${({ theme }) => theme.spacing(2)} !important;
+    }
   }
 
   button {
@@ -43,11 +47,20 @@ export const TextContent = styled.div`
   flex-direction: column;
 
   h1 {
-    font-weight: ${({ theme }) => theme.font.weight.regular};
+    font-weight: ${({ theme }) => theme.font.weight.light};
     margin-right: ${({ theme }) => theme.spacing(25)};
 
     span {
       color: ${({ theme }) => theme.color.black} !important;
+    }
+
+    span:nth-child(2) {
+      justify-content: flex-start;
+      margin: 0 !important;
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        margin: 0 ${({ theme }) => theme.spacing(2)} !important;
+      }
     }
 
     @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
