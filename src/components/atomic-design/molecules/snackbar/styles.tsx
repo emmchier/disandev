@@ -117,6 +117,13 @@ export const Content = styled.div<SnackbarProps>`
     margin-left: ${({ theme }) => theme.spacing(3)};
   }
 
+  @media only screen and (${({ theme }) => theme.breakpoints.tablet}) {
+    p {
+      max-width: 50%;
+      line-height: ${({ theme }) => theme.font.lineHeight.smallX};
+    }
+  }
+
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     display: flex;
     align-items: center;
@@ -131,25 +138,11 @@ export const Content = styled.div<SnackbarProps>`
 
     p {
       margin-top: ${({ theme }) => theme.spacing(5)};
+      max-width: 100%;
     }
 
     button {
-      margin-bottom: ${({ theme }) => theme.spacing(8)} !important;
+      margin: ${({ theme }) => theme.spacing(5)} !important;
     }
   }
-
-  /* button {
-    svg {
-      height: 14px;
-      width: 18px;
-    }
-    &:hover {
-      background-color: ${({ theme }) => theme.color.background.tag};
-
-      svg {
-        filter: brightness(0) saturate(100%) invert(40%) sepia(0%) saturate(1%) hue-rotate(36deg)
-          brightness(93%) contrast(95%);
-      }
-    }
-  } */
 `;

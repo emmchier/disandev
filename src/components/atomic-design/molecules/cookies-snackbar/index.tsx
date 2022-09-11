@@ -1,5 +1,5 @@
-import React, { FC, useContext, useEffect } from 'react';
-import { MainContext } from '../../../../context';
+import React, { FC, useEffect } from 'react';
+
 import { gtmVirtualPageView } from '../../../../utils';
 import Button from '../../atoms/button';
 
@@ -7,7 +7,7 @@ import Overlay from '../../atoms/overlay';
 import Text from '../../atoms/text';
 import Snackbar from '../snackbar';
 
-import { Content } from './styles';
+import { Content, CookiesActions } from './styles';
 
 interface PropTypes {
   show?: boolean;
@@ -15,8 +15,6 @@ interface PropTypes {
 }
 
 const CookiesSnackbar: FC<PropTypes> = ({ show, setShow }) => {
-  const { setAllowCookies } = useContext(MainContext);
-
   useEffect(() => {
     if (!localStorage.getItem('accepted-cookies')) {
       setShow(true);
@@ -39,18 +37,24 @@ const CookiesSnackbar: FC<PropTypes> = ({ show, setShow }) => {
         setShow={setShow}
         message={
           <Text>
-            We use Google Analytics cookies to check visits and provide best user experience. Are
-            you agree?{' '}
-            <a href="https://policies.google.com/technologies/cookies?hl=es" target="_blank">
-              Know more
-            </a>
+            We use Google Analytics cookies to check visits and provide best user experience. Do you
+            agree?
           </Text>
         }
         background="light"
         action={
-          <Button onClick={handleAccept} variant="outlined" ariaLabel="accept cookies">
-            I Agree
-          </Button>
+          <CookiesActions>
+            <a
+              href="https://policies.google.com/technologies/cookies?hl=es"
+              target="_blank"
+              style={{ marginRight: '15px' }}
+            >
+              Know more
+            </a>
+            <Button onClick={handleAccept} variant="outlined" ariaLabel="accept cookies">
+              I Agree
+            </Button>
+          </CookiesActions>
         }
       />
       <Overlay opacity={0.8} isShowing={show} />

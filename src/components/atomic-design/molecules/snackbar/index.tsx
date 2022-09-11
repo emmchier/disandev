@@ -2,8 +2,7 @@ import React, { FC } from 'react';
 
 import { CloseIcon } from '../../../ui/svg';
 import Button from '../../atoms/button';
-import Container from '../../atoms/container';
-import Text from '../../atoms/text';
+
 import { Content } from './styles';
 
 interface PropTypes {
