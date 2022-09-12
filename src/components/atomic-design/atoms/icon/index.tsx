@@ -14,6 +14,7 @@ import {
   LinkedIn,
   TeamShape,
   Texture,
+  Twitter,
 } from '../../../ui/svg';
 
 import { Content } from './styles';
@@ -62,6 +63,10 @@ const Icon: FC<IconI> = ({
             hover={hover}
             hoverColor={hoverColor}
           />
+        );
+      case 'twitter':
+        return (
+          <Twitter ariaLabel={ariaLabel} variant={variant} hover={hover} hoverColor={hoverColor} />
         );
       case 'github':
         return (

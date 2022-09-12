@@ -48,9 +48,6 @@ export const GridCol = styled.li<GridItemProps>`
   flex-grow: 0;
   flex-basis: ${({ xlg }) => getBreackpoint(xlg)};
 
-  /* @media only screen and (${({ theme }) => theme.breakpoints.desktop}) {
-    flex-basis: ${({ xlg }) => getBreackpoint(xlg)};
-  } */
   @media only screen and (${({ theme }) => theme.breakpoints.tabletLandscape}) {
     flex-basis: ${({ lg }) => getBreackpoint(lg)};
   }
