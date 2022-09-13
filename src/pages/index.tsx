@@ -37,7 +37,8 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
   const { title, description, keywords, tag } = usePageMetadata(pages, 'home');
   const filteredProjectList = getItemsByPage(projects, 'home');
   const filteredServicesList = getItemsByPage(services, 'home');
-  const orderServiceList = filteredServicesList.sort((a, b) => a.fields.order - b.fields.order);
+  const orderedProjectList = filteredProjectList.sort((a, b) => a.fields.order - b.fields.order);
+  const orderedServiceList = filteredServicesList.sort((a, b) => a.fields.order - b.fields.order);
 
   const handleAnchor = () => {
     window.scrollTo({ top: 680, behavior: 'smooth' });
@@ -77,7 +78,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
               <b>.</b>
             </p>
           </SectionHeader>
-          <ProjectList list={filteredProjectList} />
+          <ProjectList list={orderedProjectList} />
         </ProjectSectionContent>
         <ActionContent>
           <CustomLink to="/projects">
@@ -90,7 +91,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
 
       <Section>
         <ServiceContainer>
-          <ServiceSection list={orderServiceList} />
+          <ServiceSection list={orderedServiceList} />
           <Box width="100%" display="flex" justifyContent="center">
             <CustomLink to="/what-we-do">
               <Button variant="outlined" ariaLabel="button" iconRight={true}>
