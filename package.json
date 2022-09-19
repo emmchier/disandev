@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next dev",
+    "start": "next start",
+    "export": "npm run build && next export -o _static",
     "lint": "next lint",
     "postbuild": "next-sitemap"
   },
