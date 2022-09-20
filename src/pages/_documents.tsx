@@ -39,7 +39,7 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="en">
+      <Html lang="en-EN">
         <Head>
           <Script
             strategy="afterInteractive"
