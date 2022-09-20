@@ -9,6 +9,9 @@ import Sidenav from '../atomic-design/molecules/sidenav';
 
 import { Main } from './styles';
 import CookiesSnackbar from '../atomic-design/molecules/cookies-snackbar';
+import Snackbar from '../atomic-design/molecules/snackbar';
+import Button from '../atomic-design/atoms/button';
+import { CloseIcon } from '../ui/svg';
 
 interface Proptypes {
   children: React.ReactNode;
@@ -29,6 +32,22 @@ const Layout: FC<Proptypes> = ({ children }) => {
       {children}
       <Footer path={pathname} />
       <ScrollToTop />
+      <Snackbar
+        show={show}
+        setShow={setShow}
+        message={
+          <>
+            <span>There's an error sending your message. Please write us to </span>
+            <a href={`mailto:somos.disandev@gmail.com`}>somos.disandev@gmail.com</a>
+          </>
+        }
+        background="light"
+        action={
+          <Button onClick={() => setShow(false)} variant="icon" ariaLabel="close snackbar">
+            <CloseIcon ariaLabel="close icon" />
+          </Button>
+        }
+      />
     </Main>
   );
 };

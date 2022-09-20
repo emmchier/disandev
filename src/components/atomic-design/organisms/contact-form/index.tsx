@@ -5,8 +5,8 @@ import * as Yup from 'yup';
 import Button from '../../atoms/button';
 
 import FormikField from './FormikField';
-import emailjs from '@emailjs/browser';
 import { ButtonContainer, Content } from './styles';
+import emailjs from '@emailjs/browser';
 
 interface ContactFormPropTypes {
   loading?: boolean;
@@ -44,6 +44,7 @@ const ContactForm: FC<ContactFormPropTypes> = ({
               process.env.EMAILJS_PUBLIC_KEY as string
             )
             .then((res) => {
+              console.log(res);
               if (res.status === 200) {
                 setResponse(res.status);
                 resetForm();

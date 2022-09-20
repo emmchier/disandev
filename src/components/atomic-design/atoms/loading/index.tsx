@@ -1,10 +1,10 @@
 import React, { FC, useEffect, useState } from 'react';
-import Link from 'next/link';
 
 import Button from '../button';
 
 import { Content } from './styles';
 import SendedMessage from '../sended-message';
+import CustomLink from '../custom-link';
 
 interface PropTypes {
   onShowing?: boolean;
@@ -24,7 +24,7 @@ const Loading: FC<PropTypes> = ({ onShowing, onFinish }) => {
       {onFinish === 200 ? (
         <>
           <SendedMessage message="Tu mensaje fue enviado. En breve nos comunicamos con vos." />
-          <Link href="/lets-talk">
+          <CustomLink to="/contact">
             <Button
               onClick={() => setShow(false)}
               ariaLabel="back to form"
@@ -33,7 +33,7 @@ const Loading: FC<PropTypes> = ({ onShowing, onFinish }) => {
             >
               Send another email
             </Button>
-          </Link>
+          </CustomLink>
         </>
       ) : (
         <span>Sending...</span>
