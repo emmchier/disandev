@@ -53,12 +53,12 @@ const Footer: FC<Props> = ({ path }) => (
                 <DinamicContent>
                   <NavRight>
                     <NavList path={path} noSelected={true} showPolicty={true} />
-                    <ContactLink>
+                    {/* <ContactLink>
                       <a style={{ marginTop: '90px' }} href={`mailto:somos.disandev@gmail.com`}>
                         Contact
                       </a>
                       <b>.</b>
-                    </ContactLink>
+                    </ContactLink> */}
                   </NavRight>
                 </DinamicContent>
               </Col>

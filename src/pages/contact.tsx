@@ -12,9 +12,10 @@ import { ContactCol } from '../styles/pages/error-styles';
 import { SendContent } from '../styles/pages/contact-styles';
 import Image from 'next/image';
 import ContactForm from '../components/atomic-design/organisms/contact-form';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { MainContext } from '../context';
 import Loading from '../components/atomic-design/atoms/loading';
+import Container from '../components/atomic-design/atoms/container';
 
 interface Props {
   pages: PageInterface[];
@@ -27,43 +28,50 @@ const ContactPage: NextPage<Props> = ({ pages }) => {
 
   const { setShowSnackbar, loading, setLoading, response, setResponse } = useContext(MainContext);
 
+  useEffect(() => {
+    setResponse(0);
+    setLoading(false);
+  }, []);
+
   return (
     <Page title={title} description={description} keywords={keywords} tag={tag}>
       {loading === true && <Loading onShowing={loading} onFinish={response} />}
-      <BackButton navigate={() => navigate.back()} />
-      <Row>
-        <Col xs={12} sm={4} md={6} lg={6} xlg={6}>
-          <ContactCol>
-            <Heading variant="h2" weight="regular">
-              Contanos qué
-              <span> tenes en mente</span>
-            </Heading>
-            <Heading variant="h4" weight="bold">
-              y comencemos a hacer
-              <span> realidad tu idea.</span>
-            </Heading>
-            <SendContent>
-              <Image
-                src={'/images/icons/contact-send.png' || '/images/default-bg.svg'}
-                alt="Our values image reference"
-                height="200%"
-                width="250%"
-                objectFit="contain"
-                priority
+      <Container>
+        <BackButton navigate={() => navigate.back()} />
+        <Row>
+          <Col xs={12} sm={4} md={6} lg={6} xlg={6}>
+            <ContactCol>
+              <Heading variant="h2" weight="regular">
+                Contanos qué
+                <span> tenes en mente</span>
+              </Heading>
+              <Heading variant="h4" weight="bold">
+                y comencemos a hacer
+                <span> realidad tu idea.</span>
+              </Heading>
+              <SendContent>
+                <Image
+                  src={'/images/icons/contact-send.png' || '/images/default-bg.svg'}
+                  alt="Our values image reference"
+                  height="200%"
+                  width="250%"
+                  objectFit="contain"
+                  priority
+                />
+              </SendContent>
+            </ContactCol>
+          </Col>
+          <Col xs={12} sm={4} md={6} lg={6} xlg={6}>
+            <ContactCol>
+              <ContactForm
+                setShowLoading={setLoading}
+                setResponse={setResponse}
+                setShowSnackbar={setShowSnackbar}
               />
-            </SendContent>
-          </ContactCol>
-        </Col>
-        <Col xs={12} sm={4} md={6} lg={6} xlg={6}>
-          <ContactCol>
-            <ContactForm
-              setShowLoading={setLoading}
-              setResponse={setResponse}
-              setShowSnackbar={setShowSnackbar}
-            />
-          </ContactCol>
-        </Col>
-      </Row>
+            </ContactCol>
+          </Col>
+        </Row>
+      </Container>
     </Page>
   );
 };

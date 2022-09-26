@@ -441,6 +441,16 @@ export const BgHero: FC<IconI> = () => (
   </svg>
 );
 
+export const ContactGlove = () => (
+  <svg width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M87.9681 92.3518H46.9259C21.8378 92.3518 1.5 72.014 1.5 46.9259C1.5 21.8378 21.8378 1.5 46.9259 1.5C72.014 1.5 92.3518 21.8378 92.3518 46.9259V87.9678C92.3518 87.9679 92.3518 87.968 92.3518 87.9681C92.3511 90.3899 90.388 92.3518 87.9681 92.3518Z"
+      stroke="#2E2E2E"
+      stroke-width="3"
+    />
+  </svg>
+);
+
 export const Cookie: FC<IconI> = () => (
   <svg
     width="702"

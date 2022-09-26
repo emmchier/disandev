@@ -32,7 +32,7 @@ const Layout: FC<Proptypes> = ({ children }) => {
       {children}
       <Footer path={pathname} />
       <ScrollToTop />
-      <Snackbar
+      {/* <Snackbar
         show={show}
         setShow={setShow}
         message={
@@ -47,7 +47,7 @@ const Layout: FC<Proptypes> = ({ children }) => {
             <CloseIcon ariaLabel="close icon" />
           </Button>
         }
-      />
+      /> */}
     </Main>
   );
 };

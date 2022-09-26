@@ -5,6 +5,7 @@ export const Screen = styled.div`
   align-items: center;
   justify-content: center;
   position: fixed;
+  z-index: 999999;
   height: 100vh;
   width: 100%;
   opacity: 0;

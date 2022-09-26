@@ -6,16 +6,22 @@ export const socialMediaList = [
     icon: 'linkedin',
   },
   {
+    id: 'instagram',
+    socialName: 'Instagram',
+    to: 'https://www.instagram.com/dis.an.dev/',
+    icon: 'instagram',
+  },
+  {
     id: 'facebook',
     socialName: 'Facebook',
     to: 'https://www.facebook.com/somos.disandev',
     icon: 'facebook',
   },
   {
-    id: 'instagram',
-    socialName: 'Instagram',
-    to: 'https://www.instagram.com/dis.an.dev/',
-    icon: 'instagram',
+    id: 'behance',
+    socialName: 'Behance',
+    to: 'https://www.behance.net/disandev/',
+    icon: 'behance',
   },
   {
     id: 'twitter',
