@@ -20,7 +20,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2000);
+    setTimeout(() => setLoading(false), 1000);
   }, []);
 
   return (
