@@ -72,10 +72,17 @@ export const ContactCol = styled.div`
   height: 100vh;
   position: relative;
 
-  h2,
-  h4 {
+  h3,
+  h5 {
+    color: ${({ theme }) => theme.color.text.primary};
     span {
+      color: ${({ theme }) => theme.color.text.primary};
       display: block;
     }
+  }
+
+  h5 {
+    line-height: ${({ theme }) => theme.font.lineHeight.medium};
+    padding-top: ${({ theme }) => theme.spacing(5)};
   }
 `;

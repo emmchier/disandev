@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 
 import ButtonContact from '../../atoms/button-contact';
@@ -11,10 +12,17 @@ import { MenuContent, Content, CloseBtn, SocialMediaContent } from './styles';
 interface PropTypes {
   path?: string;
   show?: boolean;
-  showSidebar?: () => void;
+  showSidebar: () => void;
 }
 
 const Sidenav: FC<PropTypes> = ({ path, show, showSidebar }) => {
+  const router = useRouter();
+
+  const handleContact = () => {
+    showSidebar();
+    router.push('/contact');
+  };
+
   return (
     <>
       <MenuContent isShowing={show}>
@@ -24,7 +32,7 @@ const Sidenav: FC<PropTypes> = ({ path, show, showSidebar }) => {
         <Content>
           <div>
             <NavList path={path} showSidebar={showSidebar} />
-            <ButtonContact onClick={showSidebar} />
+            <ButtonContact onClick={handleContact} />
             <SocialMediaContent>
               <SocialMediaList />
             </SocialMediaContent>

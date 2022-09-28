@@ -30,26 +30,34 @@ const ContactForm: FC<ContactFormPropTypes> = ({
   const validateFillInputs = (name: string, email: string, message: string) =>
     loading !== true ? (name !== '' && email !== '' && message !== '' ? false : true) : true;
 
+  const validateSomeFillInputs = (name: string, email: string, message: string) =>
+    loading !== true ? (name !== '' || email !== '' || message !== '' ? false : true) : true;
+
   return (
     <Formik
       initialValues={initialState}
       onSubmit={(values, { resetForm }) => {
         try {
           setShowLoading(true);
-          emailjs
-            .send(
-              process.env.EMAILJS_SERVICE_ID as string,
-              process.env.EMAILJS_TEMPLATE_ID as string,
-              values,
-              process.env.EMAILJS_PUBLIC_KEY as string
-            )
-            .then((res) => {
-              console.log(res);
-              if (res.status === 200) {
-                setResponse(res.status);
-                resetForm();
-              }
-            });
+          setTimeout(() => {
+            setResponse(200);
+            resetForm();
+          }, 3000);
+
+          // emailjs
+          //   .send(
+          //     process.env.EMAILJS_SERVICE_ID as string,
+          //     process.env.EMAILJS_TEMPLATE_ID as string,
+          //     values,
+          //     process.env.EMAILJS_PUBLIC_KEY as string
+          //   )
+          //   .then((res) => {
+          //     console.log(res);
+          //     if (res.status === 200) {
+          //       setResponse(res.status);
+          //       resetForm();
+          //     }
+          //   });
         } catch {
           setShowLoading(false);
           setShowSnackbar(true);
@@ -66,7 +74,7 @@ const ContactForm: FC<ContactFormPropTypes> = ({
           <Form>
             <FormikField label="Your name / company name" name="name" />
             <FormikField label="Your E-mail" name="email" />
-            <FormikField textarea label="Tell us about your project idea" name="message" />
+            <FormikField textarea label="Tell us about your Idea or Project" name="message" />
             <ButtonContainer>
               <Button
                 type="submit"
@@ -81,7 +89,15 @@ const ContactForm: FC<ContactFormPropTypes> = ({
               >
                 Send
               </Button>
-              <Button onClick={formik.resetForm} variant="text" ariaLabel="reset form">
+              <Button
+                onClick={formik.resetForm}
+                ariaLabel="reset form"
+                disabled={validateSomeFillInputs(
+                  formik.values.name,
+                  formik.values.email,
+                  formik.values.message
+                )}
+              >
                 Clear
               </Button>
             </ButtonContainer>

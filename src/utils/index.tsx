@@ -4,5 +4,4 @@ export const gtmVirtualPageView = () => {
     window.dataLayer.push({
       event: 'cookies-aceptadas',
     });
-  console.log('aceptadas');
 };

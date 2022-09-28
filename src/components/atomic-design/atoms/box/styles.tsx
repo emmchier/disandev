@@ -7,8 +7,8 @@ interface BoxI {
   flexDirection: string;
   width: string;
   height: string;
-  margin: number[];
-  padding: number[];
+  margin: string;
+  padding: string;
 }
 
 const displayStyles = (display: string) =>
@@ -88,6 +88,6 @@ export const Content = styled.div<BoxI>`
   ${({ flexDirection }) => directionStyles(flexDirection)};
   width: ${({ width }): string => width || 'auto'};
   height: ${({ height }): string => height || 'auto'};
-  padding: ${({ padding }): number[] => padding};
-  margin: ${({ margin }): number[] => margin};
+  ${({ padding }): string => `padding${padding}`};
+  ${({ margin }): string => `margin${margin}`};
 `;

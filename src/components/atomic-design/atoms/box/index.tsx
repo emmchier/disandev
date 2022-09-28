@@ -10,8 +10,8 @@ interface PropTypes {
   flexDirection?: string;
   width?: string;
   height?: string;
-  margin?: number[];
-  padding?: number[];
+  margin?: string;
+  padding?: string;
 }
 
 const Box: FC<PropTypes> = ({
@@ -22,8 +22,8 @@ const Box: FC<PropTypes> = ({
   flexDirection = 'row',
   width = 'auto',
   height = 'auto',
-  margin = [],
-  padding = [],
+  margin = '',
+  padding = '',
 }) => (
   <Content
     display={display}

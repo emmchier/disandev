@@ -103,7 +103,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
       </Section>
 
       <Section>
-        <CallToAction title="Something in mind?" buttonTitle="Let´s chat" isLink={false} />
+        <CallToAction title="Something in mind?" buttonTitle="Let´s chat" to="/contact" />
       </Section>
     </Page>
   );

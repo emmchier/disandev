@@ -12,7 +12,8 @@ type Props = {
   path?: string;
   orientation?: string;
   noSelected?: boolean;
-  showPolicty?: boolean;
+  showPolicy?: boolean;
+  showContact?: boolean;
   showSidebar?: () => any;
 };
 
@@ -26,7 +27,8 @@ const NavList: FC<Props> = ({
   path = '',
   orientation = 'vertical',
   noSelected = false,
-  showPolicty = false,
+  showPolicy = false,
+  showContact = false,
   showSidebar,
 }) => {
   const [mounted, setMounted] = useState(false);
@@ -35,7 +37,9 @@ const NavList: FC<Props> = ({
   if (!mounted) return null;
 
   const getFilteredList = () =>
-    showPolicty === false ? navList?.filter((item) => item.to !== '/quality-policy') : navList;
+    showPolicy === false && showContact === false
+      ? navList?.filter((item) => item.to !== '/quality-policy' && item.to !== '/contact')
+      : navList;
 
   return (
     <List alignItems="start" orientation={orientation}>

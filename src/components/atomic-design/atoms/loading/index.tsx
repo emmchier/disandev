@@ -2,10 +2,11 @@ import React, { FC, useEffect, useState } from 'react';
 
 import Button from '../button';
 
-import { Content, AnimationContainer } from './styles';
-import SendedMessage from '../sended-message';
+import { Content, AnimationContainer, SendedMessage } from './styles';
 import { useRouter } from 'next/router';
 import { ContactGlove } from '../../../ui/svg';
+import Heading from '../heading';
+import Text from '../text';
 
 interface PropTypes {
   onShowing?: boolean;
@@ -29,23 +30,8 @@ const Loading: FC<PropTypes> = ({ onShowing, onFinish }) => {
 
   return (
     <Content onShowing={show}>
-      {onFinish === 200 ? (
-        <>
-          <AnimationContainer isLoading={false}>
-            <ContactGlove />
-            <span>
-              <div></div>
-              <div></div>
-              <div></div>
-            </span>
-          </AnimationContainer>
-          <SendedMessage message="Tu mensaje fue enviado. En breve nos comunicamos con vos." />
-          <Button onClick={handleBack} ariaLabel="back to home" variant="outlined" iconLeft={true}>
-            Back to home
-          </Button>
-        </>
-      ) : (
-        <AnimationContainer isLoading={onShowing}>
+      <>
+        <AnimationContainer isLoading={onFinish === 200 ? false : true}>
           <ContactGlove />
           <span>
             <div></div>
@@ -53,7 +39,16 @@ const Loading: FC<PropTypes> = ({ onShowing, onFinish }) => {
             <div></div>
           </span>
         </AnimationContainer>
-      )}
+        <Heading variant="h5" weight="light">
+          {onFinish === 200 ? 'Message Sent' : 'Sending...'}
+        </Heading>
+        <SendedMessage isSended={onFinish === 200 ? true : false}>
+          <Text weight="bold">We will contact soon.</Text>
+          <Button onClick={handleBack} ariaLabel="back to home" variant="outlined" iconLeft={true}>
+            Back to home
+          </Button>
+        </SendedMessage>
+      </>
     </Content>
   );
 };

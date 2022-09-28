@@ -77,7 +77,7 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
       </TechsContent>
 
       <Section>
-        <CallToAction title="Something in mind?" buttonTitle="Let´s chat" isLink={false} />
+        <CallToAction title="Something in mind?" buttonTitle="Let´s chat" to="/contact" />
       </Section>
     </Page>
   );

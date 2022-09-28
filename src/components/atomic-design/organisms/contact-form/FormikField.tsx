@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { useField } from 'formik';
 import Input from '../../molecules/input';
 import Textarea from '../../atoms/textarea';
-import { Error } from './styles';
+import { Error, ContentField, TextareaContainer } from './styles';
 
 interface PropTypes {
   label: string;
@@ -17,14 +17,19 @@ const FormikField: FC<PropTypes> = ({ label = '', textarea = false, ...props }) 
   const [field, meta] = useField(props);
 
   return (
-    <>
-      {meta.touched && meta.error && <Error>{meta.error}</Error>}
+    <ContentField>
       {!textarea ? (
-        <Input {...field} {...props} label={label} />
+        <>
+          <Input {...field} {...props} label={label} />
+          {meta.touched && meta.error && <Error>{meta.error}</Error>}
+        </>
       ) : (
-        <Textarea {...field} {...props} label={label} />
+        <TextareaContainer>
+          <Textarea {...field} {...props} label={label} />
+          {meta.touched && meta.error && <Error>{meta.error}</Error>}
+        </TextareaContainer>
       )}
-    </>
+    </ContentField>
   );
 };
 

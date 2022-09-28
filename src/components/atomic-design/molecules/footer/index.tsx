@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { FC } from 'react';
 
 import Container from '../../atoms/container';
@@ -52,11 +53,11 @@ const Footer: FC<Props> = ({ path }) => (
               <Col xs={12} sm={12} md={6} lg={6} xlg={6}>
                 <DinamicContent>
                   <NavRight>
-                    <NavList path={path} noSelected={true} showPolicty={true} />
+                    <NavList path={path} noSelected={true} showPolicy={true} showContact={true} />
                     {/* <ContactLink>
-                      <a style={{ marginTop: '90px' }} href={`mailto:somos.disandev@gmail.com`}>
-                        Contact
-                      </a>
+                      <Link href="/contact">
+                        <a>Contact</a>
+                      </Link>
                       <b>.</b>
                     </ContactLink> */}
                   </NavRight>

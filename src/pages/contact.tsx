@@ -9,13 +9,14 @@ import { useRouter } from 'next/router';
 import Row from '../components/atomic-design/molecules/grid/row';
 import Col from '../components/atomic-design/molecules/grid/col';
 import { ContactCol } from '../styles/pages/error-styles';
-import { SendContent } from '../styles/pages/contact-styles';
+import { SendContent, TextContent } from '../styles/pages/contact-styles';
 import Image from 'next/image';
 import ContactForm from '../components/atomic-design/organisms/contact-form';
 import { useContext, useEffect } from 'react';
 import { MainContext } from '../context';
 import Loading from '../components/atomic-design/atoms/loading';
 import Container from '../components/atomic-design/atoms/container';
+import Box from '../components/atomic-design/atoms/box';
 
 interface Props {
   pages: PageInterface[];
@@ -36,26 +37,30 @@ const ContactPage: NextPage<Props> = ({ pages }) => {
   return (
     <Page title={title} description={description} keywords={keywords} tag={tag}>
       {loading === true && <Loading onShowing={loading} onFinish={response} />}
+      {/* <Loading onShowing={true} onFinish={200} /> */}
       <Container>
-        <BackButton navigate={() => navigate.back()} />
         <Row>
           <Col xs={12} sm={4} md={6} lg={6} xlg={6}>
             <ContactCol>
-              <Heading variant="h2" weight="regular">
-                Contanos qué
-                <span> tenes en mente</span>
-              </Heading>
-              <Heading variant="h4" weight="bold">
-                y comencemos a hacer
-                <span> realidad tu idea.</span>
-              </Heading>
+              <Box margin="-bottom: 50px">
+                <BackButton navigate={() => navigate.back()} />
+              </Box>
+              <TextContent>
+                <Heading variant="h3" weight="regular">
+                  Let us know what
+                  <span> you have in mind</span>
+                </Heading>
+                <Heading variant="h5" weight="bold">
+                  and let´s start making
+                  <span> your idea come true.</span>
+                </Heading>
+              </TextContent>
               <SendContent>
                 <Image
                   src={'/images/icons/contact-send.png' || '/images/default-bg.svg'}
                   alt="Our values image reference"
-                  height="200%"
-                  width="250%"
-                  objectFit="contain"
+                  width={150}
+                  height={150}
                   priority
                 />
               </SendContent>

@@ -8,6 +8,10 @@ interface AnimationContainerI {
   isLoading?: boolean;
 }
 
+interface SendedI {
+  isSended: boolean;
+}
+
 export const Content = styled.div<ContentPropTypes>`
   background-color: ${({ theme }) => theme.color.white};
   width: 100%;
@@ -29,6 +33,39 @@ export const Content = styled.div<ContentPropTypes>`
       : css`
           opacity: 0;
           display: none;
+        `}
+
+  h5 {
+    font-size: ${({ theme }) => theme.font.size.largeX};
+    margin-top: ${({ theme }) => theme.spacing(8)} !important;
+  }
+`;
+
+export const SendedMessage = styled.div<SendedI>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: ${({ theme }) => theme.color.text.primary};
+  transition: ${({ theme }) => theme.transition.main};
+
+  p {
+    font-size: ${({ theme }) => theme.font.size.medium};
+    margin-top: ${({ theme }) => theme.spacing(1)};
+    color: ${({ theme }) => theme.color.text.primary};
+  }
+
+  button {
+    margin-top: ${({ theme }) => theme.spacing(8)};
+  }
+  ${({ isSended }) =>
+    isSended === true
+      ? css`
+          opacity: 1;
+          transition: ${({ theme }) => theme.transition.main};
+        `
+      : css`
+          opacity: 0;
+          transition: ${({ theme }) => theme.transition.main};
         `}
 `;
 

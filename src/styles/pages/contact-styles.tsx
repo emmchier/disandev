@@ -8,8 +8,8 @@ export const ContactCol = styled.div`
   height: 100vh;
   position: relative;
 
-  h2,
-  h4 {
+  h3,
+  h5 {
     span {
       display: block;
     }
@@ -22,10 +22,14 @@ export const BackButtonContainer = styled.div`
   z-index: 99;
 `;
 
+export const TextContent = styled.div`
+  margin-left: ${({ theme }) => theme.spacing(10)};
+`;
+
 export const SendContent = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-left: ${({ theme }) => theme.spacing(20)};
+  justify-content: flex-end;
+  transform: translateX(-150px);
 `;
