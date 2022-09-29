@@ -26,6 +26,7 @@ import {
   TextContent,
   ServiceContainer,
 } from '../styles/pages/home-styles';
+import Head from 'next/head';
 
 interface Props {
   pages: PageInterface[];
@@ -44,8 +45,19 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
     window.scrollTo({ top: 680, behavior: 'smooth' });
   };
 
+  const origin = typeof window === 'undefined' ? '' : window.location.origin;
+
   return (
-    <Page title={title} description={description} keywords={keywords}>
+    <>
+      <Head>
+        <title>{title || 'Pokemon App'}</title>
+        <meta name="author" content="Emmanuel Chierchie" />
+        <meta name="description" content={`Información del pokemon ${title}`} />
+        <meta name="keywords" content={`${title}, pokemon, pokedex`} />
+        <meta property="og:title" content={`Información sobre ${title}`} />
+        <meta property="og:description" content={`Esta es la página sobre ${title}`} />
+        <meta property="og:image" content={`${origin}/images/home-tag.png`} />
+      </Head>
       <Section auto={false} container="none">
         <Container>
           <Content>
@@ -105,7 +117,7 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
       <Section>
         <CallToAction title="Something in mind?" buttonTitle="Let´s chat" to="/contact" />
       </Section>
-    </Page>
+    </>
   );
 };
 

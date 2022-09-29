@@ -35,7 +35,7 @@ const Page: FC<PageTypes> = ({ children, title, description, keywords }) => {
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
-          content={`${origin}/images${asPath === '/' ? '/home' : asPath}-tag.png` || ''}
+          content={`${origin}/images${asPath === '/' ? '/home' : asPath}-tag.png`}
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
