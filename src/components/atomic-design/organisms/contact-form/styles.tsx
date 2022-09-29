@@ -4,7 +4,7 @@ export const Content = styled.div`
   width: 70%;
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    width: 70%;
+    width: 100%;
   }
 `;
 
@@ -27,10 +27,7 @@ export const ButtonContainer = styled.div`
   }
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    button {
-      display: block;
-      width: 100%;
-    }
+    margin-bottom: ${({ theme }) => theme.spacing(15)};
   }
 `;
 
@@ -40,6 +37,17 @@ export const ContentField = styled.div`
   input,
   textarea {
     margin-bottom: ${({ theme }) => theme.spacing(10)};
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    label {
+      font-size: ${({ theme }) => theme.font.size.smallX};
+    }
+
+    input,
+    textarea {
+      margin-bottom: ${({ theme }) => theme.spacing(5)};
+    }
   }
 `;
 

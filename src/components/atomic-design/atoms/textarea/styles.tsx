@@ -52,6 +52,7 @@ export const TextareaField = styled.textarea`
   }
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    max-height: ${({ theme }) => theme.spacing(70)};
     ::-webkit-scrollbar {
       display: none;
     }

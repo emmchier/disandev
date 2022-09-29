@@ -76,6 +76,10 @@ export const Shapes = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 export const ShapesContent = styled.div`

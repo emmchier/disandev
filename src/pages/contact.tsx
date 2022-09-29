@@ -8,15 +8,13 @@ import BackButton from '../components/atomic-design/atoms/back-button';
 import { useRouter } from 'next/router';
 import Row from '../components/atomic-design/molecules/grid/row';
 import Col from '../components/atomic-design/molecules/grid/col';
-import { ContactCol } from '../styles/pages/error-styles';
-import { SendContent, TextContent } from '../styles/pages/contact-styles';
+import { SendContent, TextContent, ActionBack, ContactCol } from '../styles/pages/contact-styles';
 import Image from 'next/image';
 import ContactForm from '../components/atomic-design/organisms/contact-form';
 import { useContext, useEffect } from 'react';
 import { MainContext } from '../context';
 import Loading from '../components/atomic-design/atoms/loading';
 import Container from '../components/atomic-design/atoms/container';
-import Box from '../components/atomic-design/atoms/box';
 
 interface Props {
   pages: PageInterface[];
@@ -42,9 +40,9 @@ const ContactPage: NextPage<Props> = ({ pages }) => {
         <Row>
           <Col xs={12} sm={4} md={6} lg={6} xlg={6}>
             <ContactCol>
-              <Box margin="-bottom: 50px">
+              <ActionBack>
                 <BackButton navigate={() => navigate.back()} />
-              </Box>
+              </ActionBack>
               <TextContent>
                 <Heading variant="h3" weight="regular">
                   Let us know what

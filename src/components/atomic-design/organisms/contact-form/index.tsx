@@ -44,20 +44,20 @@ const ContactForm: FC<ContactFormPropTypes> = ({
             resetForm();
           }, 3000);
 
-          // emailjs
-          //   .send(
-          //     process.env.EMAILJS_SERVICE_ID as string,
-          //     process.env.EMAILJS_TEMPLATE_ID as string,
-          //     values,
-          //     process.env.EMAILJS_PUBLIC_KEY as string
-          //   )
-          //   .then((res) => {
-          //     console.log(res);
-          //     if (res.status === 200) {
-          //       setResponse(res.status);
-          //       resetForm();
-          //     }
-          //   });
+          emailjs
+            .send(
+              process.env.EMAILJS_SERVICE_ID as string,
+              process.env.EMAILJS_TEMPLATE_ID as string,
+              values,
+              process.env.EMAILJS_PUBLIC_KEY as string
+            )
+            .then((res) => {
+              console.log(res);
+              if (res.status === 200) {
+                setResponse(res.status);
+                resetForm();
+              }
+            });
         } catch {
           setShowLoading(false);
           setShowSnackbar(true);
