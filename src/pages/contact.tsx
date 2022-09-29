@@ -37,7 +37,7 @@ const ContactPage: NextPage<Props> = ({ pages }) => {
   return (
     <Page title={title} description={description} keywords={keywords} tag={tag}>
       {loading === true && <Loading onShowing={loading} onFinish={response} />}
-      {/* <Loading onShowing={true} onFinish={200} /> */}
+
       <Container>
         <Row>
           <Col xs={12} sm={4} md={6} lg={6} xlg={6}>
