@@ -1,5 +1,5 @@
-import type { NextPage, GetStaticProps } from 'next';
 import { usePageMetadata } from '../hooks/usePageMetadata';
+import type { NextPage, GetStaticProps } from 'next';
 import { PageInterface, ServiceI, StepI, TechI } from '../interfaces';
 import { client } from '../common/contentfulClientProvider';
 
