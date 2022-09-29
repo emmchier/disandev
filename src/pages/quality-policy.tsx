@@ -27,10 +27,10 @@ interface Props {
 }
 
 const QualityPolicyPage: NextPage<Props> = ({ pages }) => {
-  const { title, description, keywords, tag } = usePageMetadata(pages, 'quality-policy');
+  const { title, description, keywords } = usePageMetadata(pages, 'quality-policy');
 
   return (
-    <Page title={title} description={description} keywords={keywords} tag={tag}>
+    <Page title={title} description={description} keywords={keywords}>
       <MainContent>
         <Container>
           <PageHeaderContainer>

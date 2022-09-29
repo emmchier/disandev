@@ -21,10 +21,10 @@ interface Props {
 }
 
 const CookiesPage: NextPage<Props> = ({ pages }) => {
-  const { title, description, keywords, tag } = usePageMetadata(pages, 'cookies');
+  const { title, description, keywords } = usePageMetadata(pages, 'cookies');
 
   return (
-    <Page title={title} description={description} keywords={keywords} tag={tag}>
+    <Page title={title} description={description} keywords={keywords}>
       <Container>
         <PageHeaderContainer>
           <PageHeader>

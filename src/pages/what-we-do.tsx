@@ -28,7 +28,7 @@ interface Props {
 }
 
 const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
-  const { title, description, keywords, tag } = usePageMetadata(pages, 'what-we-do');
+  const { title, description, keywords } = usePageMetadata(pages, 'what-we-do');
 
   const filterTechs = techs?.filter((tech) => tech?.fields?.showLogo === true);
   const orderServiceList = services.sort((a, b) => a.fields.order - b.fields.order);
@@ -36,7 +36,7 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
   const orderedStepList = steps.sort((a, b) => a.fields.order - b.fields.order);
 
   return (
-    <Page title={title} description={description} keywords={keywords} tag={tag}>
+    <Page title={title} description={description} keywords={keywords}>
       <Section>
         <PageHeaderContainer>
           <PageHeader>

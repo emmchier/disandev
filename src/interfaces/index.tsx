@@ -56,7 +56,6 @@ export interface MetaDataInterface {
   title: string;
   description: string;
   keywords: KeywordInterface[];
-  tag: { fields: { file: { url?: string } } };
 }
 
 export interface KeywordInterface {
@@ -104,7 +103,6 @@ export interface MetaTagI {
   title?: string;
   description?: string;
   keywords?: string;
-  image?: string;
 }
 
 export interface MemberI {

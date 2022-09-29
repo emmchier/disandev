@@ -22,7 +22,6 @@ const NotFound: NextPage<Props> = () => {
       title="Upsss..."
       description="An error has occurred. Please back to home."
       keywords="Error 404"
-      tag=""
     >
       <Section>
         <Container>

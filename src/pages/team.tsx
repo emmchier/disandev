@@ -28,10 +28,10 @@ interface Props {
 }
 
 const TeamPage: NextPage<Props> = ({ pages, members }) => {
-  const { title, description, keywords, tag } = usePageMetadata(pages, 'team');
+  const { title, description, keywords } = usePageMetadata(pages, 'team');
 
   return (
-    <Page title={title} description={description} keywords={keywords} tag={tag}>
+    <Page title={title} description={description} keywords={keywords}>
       <Section>
         <PageHeaderContainer>
           <PageHeader>

@@ -6,8 +6,7 @@ export const usePageMetadata = (pages: PageInterface[], slug: string) => {
   const page = getPage(formatedList, slug);
   const title = page[0]?.title;
   const description = page[0]?.description;
-  const tag = page[0]?.tag?.fields?.file?.url;
   const keywords = getKeywords(page[0]?.keywords);
 
-  return { page, title, description, keywords, tag };
+  return { page, title, description, keywords };
 };

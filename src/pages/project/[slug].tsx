@@ -40,12 +40,12 @@ interface Props {
 }
 
 const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
-  const { title, description, keywords, tag } = usePageMetadata(pages, project?.fields?.slug);
+  const { title, description, keywords } = usePageMetadata(pages, project?.fields?.slug);
   const router = useRouter();
   const isMobile = useIsMobile();
 
   return (
-    <Page title={`Projects | ${title}`} description={description} keywords={keywords} tag={tag}>
+    <Page title={`Projects | ${title}`} description={description} keywords={keywords}>
       <BannerContainer>
         {isMobile ? (
           <Image
@@ -87,9 +87,9 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
               <Technologies>
                 <List orientation="horizontal">
                   {project?.fields?.techList
-                    ? project?.fields?.techList.map((tag: TechI, index: number) => (
+                    ? project?.fields?.techList.map((tech: TechI, index: number) => (
                         <li key={index}>
-                          <Chip>{tag?.fields?.technologyName}</Chip>
+                          <Chip>{tech?.fields?.technologyName}</Chip>
                         </li>
                       ))
                     : []}

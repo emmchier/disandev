@@ -22,7 +22,7 @@ interface Props {
 }
 
 const ContactPage: NextPage<Props> = ({ pages }) => {
-  const { title, description, keywords, tag } = usePageMetadata(pages, 'contact');
+  const { title, description, keywords } = usePageMetadata(pages, 'contact');
   const navigate = useRouter();
 
   const { setShowSnackbar, loading, setLoading, response, setResponse } = useContext(MainContext);
@@ -33,7 +33,7 @@ const ContactPage: NextPage<Props> = ({ pages }) => {
   }, []);
 
   return (
-    <Page title={title} description={description} keywords={keywords} tag={tag}>
+    <Page title={title} description={description} keywords={keywords}>
       {loading === true && <Loading onShowing={loading} onFinish={response} />}
 
       <Container>

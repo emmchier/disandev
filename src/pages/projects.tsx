@@ -18,11 +18,11 @@ interface Props {
 }
 
 const ProjectsPage: NextPage<Props> = ({ pages, projects }) => {
-  const { title, description, keywords, tag } = usePageMetadata(pages, 'projects');
+  const { title, description, keywords } = usePageMetadata(pages, 'projects');
   const orderedProjectList = projects.sort((a, b) => a.fields.order - b.fields.order);
 
   return (
-    <Page title={title} description={description} keywords={keywords} tag={tag}>
+    <Page title={title} description={description} keywords={keywords}>
       <Section>
         <PageHeaderContainer>
           <PageHeader>
