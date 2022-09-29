@@ -2,16 +2,21 @@ import React, { FC } from 'react';
 
 import Head from 'next/head';
 import { Content } from './styles';
+import { useRouter } from 'next/router';
 
 type PageTypes = {
   children: React.ReactNode;
   title: string;
   description: string;
-  tag: string;
   keywords: string;
 };
 
-const Page: FC<PageTypes> = ({ children, title, description, tag, keywords }) => {
+const origin = typeof window === 'undefined' ? '' : window.location.origin;
+
+const Page: FC<PageTypes> = ({ children, title, description, keywords }) => {
+  const { asPath } = useRouter();
+  console.log(asPath);
+
   return (
     <Content>
       <Head>
@@ -20,7 +25,6 @@ const Page: FC<PageTypes> = ({ children, title, description, tag, keywords }) =>
         <title>{title && title}</title>
         {description && <meta name="description" content={description} />}
         {keywords && <meta name="keywords" content={keywords} />}
-        {tag && <meta itemProp="image" content={`https:${tag}`} />}
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://disandev.com/" />
         <meta name="author" content="https://disandev.com/" />
@@ -30,10 +34,13 @@ const Page: FC<PageTypes> = ({ children, title, description, tag, keywords }) =>
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={`https:${tag}`} />
+        <meta
+          property="og:image"
+          content={`${origin}/images${asPath === '/' ? '/home' : asPath}-tag.png` || ''}
+        />
         <meta property="og:image:type" content="image/png" />
-        {tag && <meta property="og:image:width" content="1200" />}
-        {tag && <meta property="og:image:height" content="630" />}
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <link
           rel="preload"
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
