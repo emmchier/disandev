@@ -15,7 +15,6 @@ const origin = typeof window === 'undefined' ? '' : window.location.origin;
 
 const Page: FC<PageTypes> = ({ children, title, description, keywords }) => {
   const { asPath } = useRouter();
-  console.log(asPath);
 
   return (
     <Content>
