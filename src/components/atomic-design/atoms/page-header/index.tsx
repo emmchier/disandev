@@ -1,14 +1,14 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { FCC } from '../../../../types';
 
 import SectionHeader from '../section-header';
 import { Content } from './styles';
 
-type Props = {
-  children: React.ReactNode;
+interface PageHeaderTypes {
   variant?: string;
-};
+}
 
-const PageHeader: FC<Props> = ({ children, variant = 'h2' }) => (
+const PageHeader: FCC<PageHeaderTypes> = ({ children, variant = 'h2' }) => (
   <Content>
     <SectionHeader variant={variant}>{children}</SectionHeader>
   </Content>

@@ -1,10 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { FCC } from '../../../../types';
+
 import Icon from '../icon';
 
 import { Content, IconLeft, IconRight } from './styles';
 
-interface PropTypes {
-  children: React.ReactNode;
+interface ButtonTypes {
   type?: 'submit' | 'reset' | 'button';
   color?: 'primary' | 'secondary';
   variant?: 'contained' | 'outlined' | 'text' | 'icon';
@@ -16,7 +17,7 @@ interface PropTypes {
   onClick?: (e: any) => any;
 }
 
-const Button: FC<PropTypes> = ({
+const Button: FCC<ButtonTypes> = ({
   children,
   type = 'button',
   color = 'primary',

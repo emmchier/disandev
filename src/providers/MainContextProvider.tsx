@@ -1,11 +1,9 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
+import { FCC } from '../types';
+
 import { MainContext } from '../context';
 
-interface Proptypes {
-  children: React.ReactNode;
-}
-
-const MainProvider: FC<Proptypes> = ({ children }) => {
+const MainProvider: FCC = ({ children }) => {
   const [allowCookies, setAllowCookies] = useState(false);
   const [showSnackbar, setShowSnackbar] = useState(false);
   const [loading, setLoading] = useState(false);

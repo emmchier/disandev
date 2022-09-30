@@ -1,13 +1,14 @@
-import React, { FC } from 'react';
+import React from 'react';
+
+import { FCC } from '../../../../types';
 
 import { Content } from './styles';
 
-interface PropTypes {
-  children: React.ReactNode;
+interface ContainerTypes {
   size?: 'sm' | 'md' | 'lg' | 'none';
 }
 
-const Container: FC<PropTypes> = ({ children, size = 'md' }) => (
+const Container: FCC<ContainerTypes> = ({ children, size = 'md' }) => (
   <Content size={size}>{children}</Content>
 );
 

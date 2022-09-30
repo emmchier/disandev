@@ -1,13 +1,14 @@
-import React, { FC } from 'react';
+import React from 'react';
+
+import { FCC } from '../../../../types';
 
 import { Container, Content } from './styles';
 
-interface DinamicContentPropTypes {
-  children: React.ReactNode;
+interface DinamicContentTypes {
   alignItems?: string;
 }
 
-const DinamicContent: FC<DinamicContentPropTypes> = ({ children, alignItems = 'flex-start' }) => (
+const DinamicContent: FCC<DinamicContentTypes> = ({ children, alignItems = 'flex-start' }) => (
   <Container alignItems={alignItems}>
     <Content>{children}</Content>
   </Container>

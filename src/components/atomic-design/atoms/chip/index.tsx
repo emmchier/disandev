@@ -1,11 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
+
+import { FCC } from '../../../../types';
 
 import { Content } from './styles';
 
-interface ChipTypes {
-  children: React.ReactNode;
-}
-
-const Chip: FC<ChipTypes> = ({ children }) => <Content>#{children}</Content>;
+const Chip: FCC = ({ children }) => <Content>#{children}</Content>;
 
 export default Chip;

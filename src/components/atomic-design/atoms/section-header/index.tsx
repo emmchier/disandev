@@ -1,15 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { FCC } from '../../../../types';
 
 import Heading from '../heading';
 import { Content } from './styles';
 
-type SectionHeaderProps = {
-  children: React.ReactNode;
+interface SectionHeaderTypes {
   variant?: string;
   cap?: string;
-};
+}
 
-const SectionHeader: FC<SectionHeaderProps> = ({ children, variant = 'h3', cap = 'default' }) => (
+const SectionHeader: FCC<SectionHeaderTypes> = ({ children, variant = 'h3', cap = 'default' }) => (
   <Content>
     <Heading variant={variant} cap={cap}>
       {children}

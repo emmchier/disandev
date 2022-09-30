@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { FCC } from '../../../../types';
 
 import { Content } from './styles';
 
-interface PropTypes {
-  children: React.ReactNode;
+interface BoxTypes {
   display?: string;
   alignItems?: string;
   justifyContent?: string;
@@ -14,7 +14,7 @@ interface PropTypes {
   padding?: string;
 }
 
-const Box: FC<PropTypes> = ({
+const Box: FCC<BoxTypes> = ({
   children,
   display = 'block',
   alignItems = 'start',

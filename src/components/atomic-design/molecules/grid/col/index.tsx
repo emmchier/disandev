@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { FCC } from '../../../../../types';
 
-import { ColContent, GridCol, GridItemProps } from './styles';
+import { ColContent, ColTypes, GridCol } from './styles';
 
-const Col: FC<GridItemProps> = ({ children, xs, sm, md, lg, xlg }) => (
+const Col: FCC<ColTypes> = ({ children, xs, sm, md, lg, xlg }) => (
   <GridCol xs={xs} sm={sm} md={md} lg={lg} xlg={xlg}>
     <ColContent>{children}</ColContent>
   </GridCol>

@@ -1,22 +1,23 @@
 import React from 'react';
 
+import { FCC } from '../../../../types';
+
 import { Content, Title1, Title2, Title3, Title4, Title5, Title6 } from './styles';
 
-type HeadingI = {
-  children: React.ReactNode;
+interface HeadingTypes {
   variant?: string;
   weight?: string;
   color?: string;
   cap?: string;
-};
+}
 
-const Heading = ({
+const Heading: FCC<HeadingTypes> = ({
   children,
   variant = 'h3',
   weight = 'bold',
   color = 'default',
   cap = 'default',
-}: HeadingI) => {
+}) => {
   const setHeading = () => {
     switch (variant) {
       case 'h1':

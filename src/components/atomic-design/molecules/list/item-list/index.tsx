@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { FCC } from '../../../../../types';
 
 import { Item } from './styles';
 
-interface PropTypes {
-  children: React.ReactNode;
+interface ListItemTypes {
   onClick?: () => void;
 }
 
-const ListItem: FC<PropTypes> = ({ children, onClick }) => (
+const ListItem: FCC<ListItemTypes> = ({ children, onClick }) => (
   <Item onClick={onClick}>{children}</Item>
 );
 

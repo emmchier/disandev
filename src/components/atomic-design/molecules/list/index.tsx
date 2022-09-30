@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { FCC } from '../../../../types';
 
 import { ContainerList } from './styles';
 
-interface PropTypes {
-  children: React.ReactNode;
+interface ListTypes {
   orientation?: string;
   alignItems?: string;
   justifyContent?: string;
@@ -11,7 +11,7 @@ interface PropTypes {
   spaceY?: string;
 }
 
-const List: FC<PropTypes> = ({
+const List: FCC<ListTypes> = ({
   children,
   orientation = 'vertical',
   alignItems = 'start',

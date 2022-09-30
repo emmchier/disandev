@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 type Column = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-export interface GridItemProps {
-  children: React.ReactNode;
+export interface ColTypes {
   xs: Column;
   sm: Column;
   md: Column;
@@ -42,7 +41,7 @@ const getBreackpoint = (bpt: Column) => {
   }
 };
 
-export const GridCol = styled.li<GridItemProps>`
+export const GridCol = styled.li<ColTypes>`
   display: flex;
   list-style: none;
   flex-grow: 0;

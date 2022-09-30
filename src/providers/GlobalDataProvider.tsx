@@ -1,14 +1,11 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { getGlobalData } from '../api/globalData';
 import { GlobalData } from '../interfaces';
 import { GlobalDataContext } from '../context/index';
+import { FCC } from '../types';
 
-interface Proptypes {
-  children: React.ReactNode;
-}
-
-const GlobalDataProvider: FC<Proptypes> = ({ children }) => {
+const GlobalDataProvider: FCC = ({ children }) => {
   const [allowCookies, setAllowCookies] = useState(false);
 
   const [data, setData] = useState<GlobalData>({

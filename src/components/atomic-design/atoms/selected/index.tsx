@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { FCC } from '../../../../types';
 
 import { Dot, Text, Content, TextNotSelected } from './styles';
 
-type Props = {
-  children: React.ReactNode;
+interface SelectedTypes {
   noSelected?: boolean;
-};
+}
 
-const Selected: FC<Props> = ({ children, noSelected = false }) => (
+const Selected: FCC<SelectedTypes> = ({ children, noSelected = false }) => (
   <Content>
     {!noSelected ? <Text>{children}</Text> : <TextNotSelected>{children}</TextNotSelected>}
     <Dot>.</Dot>

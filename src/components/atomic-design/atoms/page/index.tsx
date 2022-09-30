@@ -1,19 +1,20 @@
-import React, { FC } from 'react';
+import React from 'react';
+
+import { FCC } from '../../../../types';
+import { useRouter } from 'next/router';
 
 import Head from 'next/head';
 import { Content } from './styles';
-import { useRouter } from 'next/router';
 
-type PageTypes = {
-  children: React.ReactNode;
+interface PageTypes {
   title: string;
   description: string;
   keywords: string;
-};
+}
 
 const origin = typeof window === 'undefined' ? '' : window.location.origin;
 
-const Page: FC<PageTypes> = ({ children, title, description, keywords }) => {
+const Page: FCC<PageTypes> = ({ children, title, description, keywords }) => {
   const { asPath } = useRouter();
 
   return (
