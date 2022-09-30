@@ -7,8 +7,6 @@ interface ListItemTypes {
   onClick?: () => void;
 }
 
-const ListItem: FCC<ListItemTypes> = ({ children, onClick }) => (
+export const ListItem: FCC<ListItemTypes> = ({ children, onClick }) => (
   <Item onClick={onClick}>{children}</Item>
 );
-
-export default ListItem;

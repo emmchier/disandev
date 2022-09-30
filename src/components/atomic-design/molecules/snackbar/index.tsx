@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { CloseIcon } from '../../../ui/svg';
-import Button from '../../atoms/button';
+import { Button } from '../../atoms';
 
 import { Content } from './styles';
 
@@ -14,7 +14,7 @@ interface PropTypes {
   background?: string;
 }
 
-const Snackbar: FC<PropTypes> = ({
+export const Snackbar: FC<PropTypes> = ({
   message = '',
   show = false,
   position = 'bottomFull',
@@ -31,5 +31,3 @@ const Snackbar: FC<PropTypes> = ({
     {action}
   </Content>
 );
-
-export default Snackbar;

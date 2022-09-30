@@ -1,10 +1,9 @@
 import React, { FC } from 'react';
+
 import {
   Ball,
-  Circle,
   CircleLeft,
   CircleRight,
-  InnerCircle,
   InnerCircleLeft,
   InnerCircleRight,
   LineLeft,
@@ -13,7 +12,7 @@ import {
   Screen,
 } from './styles';
 
-const LoadingPage: FC = () => (
+export const LoadingPage: FC = () => (
   <Screen>
     <Logo>
       <CircleLeft>
@@ -31,5 +30,3 @@ const LoadingPage: FC = () => (
     </Logo>
   </Screen>
 );
-
-export default LoadingPage;

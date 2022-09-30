@@ -1,20 +1,19 @@
-import type { GetStaticProps, NextPage } from 'next';
-import { usePageMetadata } from '../hooks/usePageMetadata';
-import Heading from '../components/atomic-design/atoms/heading';
-import { PageInterface } from '../interfaces';
-import Page from '../components/atomic-design/atoms/page';
-import { client } from '../common/contentfulClientProvider';
-import BackButton from '../components/atomic-design/atoms/back-button';
-import { useRouter } from 'next/router';
-import Row from '../components/atomic-design/molecules/grid/row';
-import Col from '../components/atomic-design/molecules/grid/col';
-import { SendContent, TextContent, ActionBack, ContactCol } from '../styles/pages/contact-styles';
-import Image from 'next/image';
-import ContactForm from '../components/atomic-design/organisms/contact-form';
 import { useContext, useEffect } from 'react';
+
+import type { GetStaticProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+
 import { MainContext } from '../context';
-import Loading from '../components/atomic-design/atoms/loading';
-import Container from '../components/atomic-design/atoms/container';
+import { usePageMetadata } from '../hooks/usePageMetadata';
+import { PageInterface } from '../interfaces';
+import { client } from '../common/contentfulClientProvider';
+
+import { Heading, Page, BackButton, Loading, Container } from '../components/atomic-design/atoms';
+import { Row, Col } from '../components/atomic-design/molecules';
+import { ContactForm } from '../components/atomic-design/organisms';
+
+import { SendContent, TextContent, ActionBack, ContactCol } from '../styles/pages/contact-styles';
 
 interface Props {
   pages: PageInterface[];

@@ -1,13 +1,12 @@
-import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
-import LoadingPage from '../components/atomic-design/loading-page';
-import Layout from '../components/layout';
-import GlobalDataProvider from '../providers/GlobalDataProvider';
-
-import { StyledThemeProvider } from '../providers/StyledThemeProvider';
-import MainProvider from '../providers/MainContextProvider';
+import type { AppProps } from 'next/app';
 import Script from 'next/script';
 import TagManager, { TagManagerArgs } from 'react-gtm-module';
+
+import { MainProvider, GlobalDataProvider, StyledThemeProvider } from '../providers';
+
+import { LoadingPage } from '../components/atomic-design/molecules';
+import Layout from '../components/layout';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [loading, setLoading] = useState(true);

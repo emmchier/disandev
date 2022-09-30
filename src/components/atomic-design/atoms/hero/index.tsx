@@ -8,7 +8,7 @@ interface Props {
   img?: string;
 }
 
-const Hero: FC<Props> = ({ img = '', alt = '' }) => (
+export const Hero: FC<Props> = ({ img = '', alt = '' }) => (
   <Content>
     <Image
       alt={alt}
@@ -19,5 +19,3 @@ const Hero: FC<Props> = ({ img = '', alt = '' }) => (
     />
   </Content>
 );
-
-export default Hero;

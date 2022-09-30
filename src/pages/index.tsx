@@ -1,22 +1,23 @@
 import type { NextPage, GetStaticProps } from 'next';
 
 import { usePageMetadata } from '../hooks/usePageMetadata';
-import Heading from '../components/atomic-design/atoms/heading';
 import { PageInterface, ProjectI, ServiceI } from '../interfaces';
-import Page from '../components/atomic-design/atoms/page';
-import Section from '../components/atomic-design/atoms/section';
 import { client } from '../common/contentfulClientProvider';
-import Container from '../components/atomic-design/atoms/container';
 import { getItemsByPage } from '../helpers/functions';
-import CustomLink from '../components/atomic-design/atoms/custom-link';
-import SectionHeader from '../components/atomic-design/atoms/section-header';
-import Button from '../components/atomic-design/atoms/button';
-import Icon from '../components/atomic-design/atoms/icon';
-import Core from '../components/atomic-design/molecules/core-component';
-import ProjectList from '../components/atomic-design/organisms/project-list';
-import Box from '../components/atomic-design/atoms/box';
-import ServiceSection from '../components/atomic-design/organisms/service-section';
-import CallToAction from '../components/atomic-design/molecules/call-to-action';
+
+import {
+  Heading,
+  Page,
+  Section,
+  Container,
+  CustomLink,
+  SectionHeader,
+  Button,
+  Icon,
+  Box,
+} from '../components/atomic-design/atoms';
+import { Core, CallToAction } from '../components/atomic-design/molecules';
+import { ProjectList, ServiceSection } from '../components/atomic-design/organisms';
 
 import {
   ActionContent,

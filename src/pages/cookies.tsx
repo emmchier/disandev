@@ -1,19 +1,18 @@
 import type { GetStaticProps, NextPage } from 'next';
+
 import { usePageMetadata } from '../hooks/usePageMetadata';
-import Heading from '../components/atomic-design/atoms/heading';
 import { PageInterface } from '../interfaces';
-import Page from '../components/atomic-design/atoms/page';
-import Container from '../components/atomic-design/atoms/container';
-import PageHeader from '../components/atomic-design/atoms/page-header/index';
+import { client } from '../common/contentfulClientProvider';
+import { Cookie } from '../components/ui/svg';
+
+import { Heading, Page, Container, PageHeader, Text } from '../components/atomic-design/atoms';
+
 import {
   PageHeaderContainer,
   QualityContent,
   ValuesContent,
   MainContent,
 } from '../styles/pages/cookies-styles';
-import Text from '../components/atomic-design/atoms/text';
-import { client } from '../common/contentfulClientProvider';
-import { Cookie } from '../components/ui/svg';
 
 interface Props {
   pages: PageInterface[];

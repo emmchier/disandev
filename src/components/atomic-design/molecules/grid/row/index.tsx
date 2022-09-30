@@ -9,6 +9,6 @@ interface RowTypes {
   gap?: Spacing;
 }
 
-const Row: FCC<RowTypes> = ({ children, gap = 0 }) => <GridList gap={gap}>{children}</GridList>;
-
-export default Row;
+export const Row: FCC<RowTypes> = ({ children, gap = 0 }) => (
+  <GridList gap={gap}>{children}</GridList>
+);

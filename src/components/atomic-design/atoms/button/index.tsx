@@ -1,7 +1,7 @@
 import React from 'react';
 import { FCC } from '../../../../types';
 
-import Icon from '../icon';
+import { Icon } from '../../atoms';
 
 import { Content, IconLeft, IconRight } from './styles';
 
@@ -17,7 +17,7 @@ interface ButtonTypes {
   onClick?: (e: any) => any;
 }
 
-const Button: FCC<ButtonTypes> = ({
+export const Button: FCC<ButtonTypes> = ({
   children,
   type = 'button',
   color = 'primary',
@@ -47,5 +47,3 @@ const Button: FCC<ButtonTypes> = ({
     </IconRight>
   </Content>
 );
-
-export default Button;

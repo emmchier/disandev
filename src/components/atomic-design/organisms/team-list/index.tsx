@@ -1,11 +1,9 @@
 import React, { FC } from 'react';
 
 import { MemberI } from '../../../../interfaces';
-import CustomLink from '../../atoms/custom-link';
-import Icon from '../../atoms/icon';
-import Card from '../../molecules/card';
-import Col from '../../molecules/grid/col';
-import Row from '../../molecules/grid/row';
+
+import { CustomLink, Icon } from '../../atoms';
+import { Card, Row, Col } from '../../molecules';
 
 import { MemberRole, SocialMember } from './styles';
 
@@ -13,7 +11,7 @@ interface Props {
   list: MemberI[];
 }
 
-const TeamList: FC<Props> = ({ list }) => (
+export const TeamList: FC<Props> = ({ list }) => (
   <Row gap={10}>
     {list?.map((item: MemberI, index: number) => (
       <Col key={index} xs={12} sm={4} md={4} lg={4} xlg={4}>
@@ -41,5 +39,3 @@ const TeamList: FC<Props> = ({ list }) => (
     ))}
   </Row>
 );
-
-export default TeamList;

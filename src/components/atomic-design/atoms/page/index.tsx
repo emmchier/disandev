@@ -1,9 +1,9 @@
 import React from 'react';
-
-import { FCC } from '../../../../types';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import Head from 'next/head';
+import { FCC } from '../../../../types';
+
 import { Content } from './styles';
 
 interface PageTypes {
@@ -14,7 +14,7 @@ interface PageTypes {
 
 const origin = typeof window === 'undefined' ? '' : window.location.origin;
 
-const Page: FCC<PageTypes> = ({ children, title, description, keywords }) => {
+export const Page: FCC<PageTypes> = ({ children, title, description, keywords }) => {
   const { asPath } = useRouter();
 
   return (
@@ -56,5 +56,3 @@ const Page: FCC<PageTypes> = ({ children, title, description, keywords }) => {
     </Content>
   );
 };
-
-export default Page;

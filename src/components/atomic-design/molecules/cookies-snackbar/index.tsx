@@ -1,11 +1,9 @@
 import React, { FC, useEffect } from 'react';
 
 import { gtmVirtualPageView } from '../../../../utils';
-import Button from '../../atoms/button';
 
-import Overlay from '../../atoms/overlay';
-import Text from '../../atoms/text';
-import Snackbar from '../snackbar';
+import { Button, Overlay, Text } from '../../atoms';
+import { Snackbar } from '../../molecules';
 
 import { Content, CookiesActions } from './styles';
 
@@ -14,7 +12,7 @@ interface PropTypes {
   setShow: (b: boolean) => void;
 }
 
-const CookiesSnackbar: FC<PropTypes> = ({ show, setShow }) => {
+export const CookiesSnackbar: FC<PropTypes> = ({ show, setShow }) => {
   useEffect(() => {
     if (!localStorage.getItem('accepted-cookies')) {
       setShow(true);
@@ -61,5 +59,3 @@ const CookiesSnackbar: FC<PropTypes> = ({ show, setShow }) => {
     </Content>
   );
 };
-
-export default CookiesSnackbar;

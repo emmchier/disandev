@@ -9,10 +9,8 @@ interface CustomLinkTypes {
   target?: string;
 }
 
-const CustomLink: FCC<CustomLinkTypes> = ({ children, to = '', target = '' }) => (
+export const CustomLink: FCC<CustomLinkTypes> = ({ children, to = '', target = '' }) => (
   <Link href={to} passHref>
     <a target={target}>{children}</a>
   </Link>
 );
-
-export default CustomLink;

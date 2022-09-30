@@ -1,15 +1,8 @@
-import Link from 'next/link';
 import React, { FC } from 'react';
 
-import Container from '../../atoms/container';
-import DinamicContent from '../../atoms/dinamic-content';
-import Heading from '../../atoms/heading';
-import Icon from '../../atoms/icon';
-import Text from '../../atoms/text';
-import NavList from '../../organisms/nav-list';
-import SocialMediaList from '../../organisms/social-media-list';
-import Col from '../grid/col';
-import Row from '../grid/row';
+import { Container, DinamicContent, Heading, Icon, Text } from '../../atoms';
+import { Row, Col } from '../../molecules';
+import { NavList, SocialMediaList } from '../../organisms';
 
 import {
   FooterContent,
@@ -21,14 +14,13 @@ import {
   NavRight,
   CopyrightContainer,
   FooterMainContent,
-  ContactLink,
 } from './styles';
 
 type Props = {
   path?: string;
 };
 
-const Footer: FC<Props> = ({ path }) => (
+export const Footer: FC<Props> = ({ path }) => (
   <FooterContent>
     <Container>
       <FooterMainContent>
@@ -54,12 +46,6 @@ const Footer: FC<Props> = ({ path }) => (
                 <DinamicContent>
                   <NavRight>
                     <NavList path={path} noSelected={true} showPolicy={true} showContact={true} />
-                    {/* <ContactLink>
-                      <Link href="/contact">
-                        <a>Contact</a>
-                      </Link>
-                      <b>.</b>
-                    </ContactLink> */}
                   </NavRight>
                 </DinamicContent>
               </Col>
@@ -93,5 +79,3 @@ const Footer: FC<Props> = ({ path }) => (
     </Copyright>
   </FooterContent>
 );
-
-export default Footer;

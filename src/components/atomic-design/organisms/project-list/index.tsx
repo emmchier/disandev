@@ -1,16 +1,14 @@
 import React, { FC } from 'react';
 
 import { ProjectI } from '../../../../interfaces';
-import CustomLink from '../../atoms/custom-link';
-import Card from '../../molecules/card';
-import Col from '../../molecules/grid/col';
-import Row from '../../molecules/grid/row';
+import { CustomLink } from '../../atoms';
+import { Card, Row, Col } from '../../molecules';
 
 interface Props {
   list: ProjectI[];
 }
 
-const ProjectList: FC<Props> = ({ list }) => {
+export const ProjectList: FC<Props> = ({ list }) => {
   return (
     <Row gap={10}>
       {list?.map((item: ProjectI) => (
@@ -38,5 +36,3 @@ const ProjectList: FC<Props> = ({ list }) => {
     </Row>
   );
 };
-
-export default ProjectList;

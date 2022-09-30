@@ -1,11 +1,8 @@
-import { useRouter } from 'next/router';
 import React, { FC } from 'react';
+import { useRouter } from 'next/router';
 
-import ButtonContact from '../../atoms/button-contact';
-import Icon from '../../atoms/icon';
-import Overlay from '../../atoms/overlay';
-import NavList from '../../organisms/nav-list';
-import SocialMediaList from '../../organisms/social-media-list';
+import { ButtonContact, Icon, Overlay } from '../../atoms';
+import { NavList, SocialMediaList } from '../../organisms';
 
 import { MenuContent, Content, CloseBtn, SocialMediaContent } from './styles';
 
@@ -15,7 +12,7 @@ interface PropTypes {
   showSidebar: () => void;
 }
 
-const Sidenav: FC<PropTypes> = ({ path, show, showSidebar }) => {
+export const Sidenav: FC<PropTypes> = ({ path, show, showSidebar }) => {
   const router = useRouter();
 
   const handleContact = () => {
@@ -43,5 +40,3 @@ const Sidenav: FC<PropTypes> = ({ path, show, showSidebar }) => {
     </>
   );
 };
-
-export default Sidenav;

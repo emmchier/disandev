@@ -7,11 +7,9 @@ interface SelectedTypes {
   noSelected?: boolean;
 }
 
-const Selected: FCC<SelectedTypes> = ({ children, noSelected = false }) => (
+export const Selected: FCC<SelectedTypes> = ({ children, noSelected = false }) => (
   <Content>
     {!noSelected ? <Text>{children}</Text> : <TextNotSelected>{children}</TextNotSelected>}
     <Dot>.</Dot>
   </Content>
 );
-
-export default Selected;

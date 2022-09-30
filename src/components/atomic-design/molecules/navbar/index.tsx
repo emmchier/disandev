@@ -1,11 +1,7 @@
 import React, { FC } from 'react';
 
 import useScroll from '../../../../hooks/useScroll';
-import BurguerIcon from '../../atoms/burguer-icon';
-import Button from '../../atoms/button';
-import Container from '../../atoms/container';
-import CustomLink from '../../atoms/custom-link';
-import Icon from '../../atoms/icon';
+import { BurguerIcon, Button, Container, CustomLink, Icon } from '../../atoms';
 
 import { Header, Content, Background } from './styles';
 
@@ -13,7 +9,7 @@ interface PropTypes {
   showSidebar?: () => void;
 }
 
-const Navbar: FC<PropTypes> = ({ showSidebar }) => {
+export const Navbar: FC<PropTypes> = ({ showSidebar }) => {
   const isFixed = useScroll();
 
   return (
@@ -32,5 +28,3 @@ const Navbar: FC<PropTypes> = ({ showSidebar }) => {
     </Header>
   );
 };
-
-export default Navbar;

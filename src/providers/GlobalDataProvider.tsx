@@ -5,7 +5,7 @@ import { GlobalData } from '../interfaces';
 import { GlobalDataContext } from '../context/index';
 import { FCC } from '../types';
 
-const GlobalDataProvider: FCC = ({ children }) => {
+export const GlobalDataProvider: FCC = ({ children }) => {
   const [allowCookies, setAllowCookies] = useState(false);
 
   const [data, setData] = useState<GlobalData>({
@@ -29,5 +29,3 @@ const GlobalDataProvider: FCC = ({ children }) => {
     </GlobalDataContext.Provider>
   );
 };
-
-export default GlobalDataProvider;

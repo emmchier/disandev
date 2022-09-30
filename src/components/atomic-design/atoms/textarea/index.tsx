@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useRef } from 'react';
 
 import { Content, Label, TextareaField } from './styles';
 import useAutosizeTextArea from '../../../../hooks/useAutosizeTextArea';
@@ -13,7 +13,7 @@ interface TextareaI {
   disabled?: boolean;
 }
 
-const Textarea: FC<TextareaI> = ({ label, name, value, onChange, onBlur, required }) => {
+export const Textarea: FC<TextareaI> = ({ label, name, value, onChange, onBlur, required }) => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   useAutosizeTextArea(textAreaRef.current, value as string);
 
@@ -32,5 +32,3 @@ const Textarea: FC<TextareaI> = ({ label, name, value, onChange, onBlur, require
     </Content>
   );
 };
-
-export default Textarea;

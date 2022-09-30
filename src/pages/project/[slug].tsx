@@ -1,26 +1,27 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { useRouter } from 'next/router';
 import { client } from '../../common/contentfulClientProvider';
 import { usePageMetadata } from '../../hooks/usePageMetadata';
 import { PageInterface, ProjectI, TechI } from '../../interfaces';
-
-import BackButton from '../../components/atomic-design/atoms/back-button';
-import Chip from '../../components/atomic-design/atoms/chip';
-import Heading from '../../components/atomic-design/atoms/heading';
-import Hero from '../../components/atomic-design/atoms/hero';
-import Page from '../../components/atomic-design/atoms/page';
-import Section from '../../components/atomic-design/atoms/section';
-import Col from '../../components/atomic-design/molecules/grid/col';
-import Row from '../../components/atomic-design/molecules/grid/row';
-import LinkToWeb from '../../components/atomic-design/molecules/link-to-web';
-import List from '../../components/atomic-design/molecules/list';
 import useIsMobile from '../../hooks/useIsMobile';
-import SkelletonHeader from '../../components/atomic-design/atoms/skelleton/skelleton-header';
-import SkelletonDevices from '../../components/atomic-design/atoms/skelleton/skelleton-devices';
-import SkelletonHero from '../../components/atomic-design/atoms/skelleton/skelleton-hero';
+
+import {
+  BackButton,
+  Chip,
+  Heading,
+  Hero,
+  Page,
+  Section,
+  SkelletonHeader,
+  SkelletonDevices,
+  SkelletonHero,
+  Text,
+} from '../../components/atomic-design/atoms';
+
+import { Row, Col, LinkToWeb, List } from '../../components/atomic-design/molecules';
 
 import {
   ActionContent,
@@ -32,7 +33,6 @@ import {
   DevicesContainer,
   BannerContainer,
 } from '../../styles/pages/project-detail-styles';
-import Text from '../../components/atomic-design/atoms/text';
 
 interface Props {
   pages: PageInterface[];

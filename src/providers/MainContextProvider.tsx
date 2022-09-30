@@ -3,7 +3,7 @@ import { FCC } from '../types';
 
 import { MainContext } from '../context';
 
-const MainProvider: FCC = ({ children }) => {
+export const MainProvider: FCC = ({ children }) => {
   const [allowCookies, setAllowCookies] = useState(false);
   const [showSnackbar, setShowSnackbar] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -26,5 +26,3 @@ const MainProvider: FCC = ({ children }) => {
     </MainContext.Provider>
   );
 };
-
-export default MainProvider;

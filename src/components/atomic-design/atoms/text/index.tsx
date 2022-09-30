@@ -1,4 +1,3 @@
-import React from 'react';
 import { FCC } from '../../../../types';
 
 import { Paragraph } from './styles';
@@ -9,7 +8,7 @@ interface TextTypes {
   cap?: string;
 }
 
-const Text: FCC<TextTypes> = ({
+export const Text: FCC<TextTypes> = ({
   children,
   weight = 'regular',
   color = 'dark',
@@ -19,5 +18,3 @@ const Text: FCC<TextTypes> = ({
     {children}
   </Paragraph>
 );
-
-export default Text;

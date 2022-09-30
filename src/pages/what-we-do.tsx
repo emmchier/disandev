@@ -1,17 +1,12 @@
-import { usePageMetadata } from '../hooks/usePageMetadata';
 import type { NextPage, GetStaticProps } from 'next';
+
+import { usePageMetadata } from '../hooks/usePageMetadata';
 import { PageInterface, ServiceI, StepI, TechI } from '../interfaces';
 import { client } from '../common/contentfulClientProvider';
 
-import Page from '../components/atomic-design/atoms/page';
-import Section from '../components/atomic-design/atoms/section';
-import PageHeader from '../components/atomic-design/atoms/page-header';
-import Icon from '../components/atomic-design/atoms/icon';
-import ServiceSection from '../components/atomic-design/organisms/service-section';
-import SectionHeader from '../components/atomic-design/atoms/section-header';
-import StepsList from '../components/atomic-design/organisms/steps-list';
-import TechList from '../components/atomic-design/organisms/tech-list';
-import CallToAction from '../components/atomic-design/molecules/call-to-action';
+import { Page, Section, PageHeader, Icon, SectionHeader } from '../components/atomic-design/atoms';
+import { CallToAction } from '../components/atomic-design/molecules';
+import { ServiceSection, StepsList, TechList } from '../components/atomic-design/organisms';
 
 import {
   PageHeaderContainer,

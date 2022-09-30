@@ -11,7 +11,7 @@ interface HeadingTypes {
   cap?: string;
 }
 
-const Heading: FCC<HeadingTypes> = ({
+export const Heading: FCC<HeadingTypes> = ({
   children,
   variant = 'h3',
   weight = 'bold',
@@ -42,5 +42,3 @@ const Heading: FCC<HeadingTypes> = ({
     </Content>
   );
 };
-
-export default Heading;

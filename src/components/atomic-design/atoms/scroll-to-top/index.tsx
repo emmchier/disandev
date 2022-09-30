@@ -1,10 +1,10 @@
 import React, { FC, useEffect, useState } from 'react';
 
-import Icon from '../icon';
+import { Icon } from '../../atoms';
 
 import { ScrollButton } from './styles';
 
-const ScrollToTop: FC = () => {
+export const ScrollToTop: FC = () => {
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
     return () => {
@@ -39,5 +39,3 @@ const ScrollToTop: FC = () => {
     </>
   );
 };
-
-export default ScrollToTop;

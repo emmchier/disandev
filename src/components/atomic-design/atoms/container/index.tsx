@@ -8,8 +8,6 @@ interface ContainerTypes {
   size?: 'sm' | 'md' | 'lg' | 'none';
 }
 
-const Container: FCC<ContainerTypes> = ({ children, size = 'md' }) => (
+export const Container: FCC<ContainerTypes> = ({ children, size = 'md' }) => (
   <Content size={size}>{children}</Content>
 );
-
-export default Container;

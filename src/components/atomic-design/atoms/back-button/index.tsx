@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
-import Button from '../button';
+import { Button } from '../../atoms';
+
 import { Content } from './styles';
 
 interface BackButtonPropTypes {
@@ -9,7 +10,7 @@ interface BackButtonPropTypes {
   showLabel?: boolean;
 }
 
-const BackButton: FC<BackButtonPropTypes> = ({ navigate, showLabel = true }) => (
+export const BackButton: FC<BackButtonPropTypes> = ({ navigate, showLabel = true }) => (
   <Content>
     <Button
       variant="text"
@@ -21,5 +22,3 @@ const BackButton: FC<BackButtonPropTypes> = ({ navigate, showLabel = true }) => 
     </Button>
   </Content>
 );
-
-export default BackButton;

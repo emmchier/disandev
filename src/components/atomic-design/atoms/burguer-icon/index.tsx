@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 
-import SparkList from '../spark/spark-list';
+import { SparkList } from '../../atoms';
 
 import { Content, Span } from './styles';
 
-const BurguerIcon: FC = () => (
+export const BurguerIcon: FC = () => (
   <Content>
     <Span>
       <SparkList num={3} color="primary" />
@@ -17,5 +17,3 @@ const BurguerIcon: FC = () => (
     </Span>
   </Content>
 );
-
-export default BurguerIcon;

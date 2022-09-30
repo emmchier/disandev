@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 
-import Icon from '../../atoms/icon';
-import Text from '../../atoms/text';
+import { Icon, Text } from '../../atoms';
 
 import { Content } from './styles';
 
@@ -10,7 +9,7 @@ interface PropTypes {
   urlName?: string;
 }
 
-const LinkToWeb: FC<PropTypes> = ({ url, urlName }) => (
+export const LinkToWeb: FC<PropTypes> = ({ url, urlName }) => (
   <Content>
     <Text weight="light">Want to chek it out?</Text>
     <a href={url} target="_blank" rel="noopener noreferrer">
@@ -19,5 +18,3 @@ const LinkToWeb: FC<PropTypes> = ({ url, urlName }) => (
     </a>
   </Content>
 );
-
-export default LinkToWeb;

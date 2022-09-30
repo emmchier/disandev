@@ -1,7 +1,7 @@
-import React from 'react';
 import { FCC } from '../../../../types';
 
-import Heading from '../heading';
+import { Heading } from '../../atoms';
+
 import { Content } from './styles';
 
 interface SectionHeaderTypes {
@@ -9,12 +9,14 @@ interface SectionHeaderTypes {
   cap?: string;
 }
 
-const SectionHeader: FCC<SectionHeaderTypes> = ({ children, variant = 'h3', cap = 'default' }) => (
+export const SectionHeader: FCC<SectionHeaderTypes> = ({
+  children,
+  variant = 'h3',
+  cap = 'default',
+}) => (
   <Content>
     <Heading variant={variant} cap={cap}>
       {children}
     </Heading>
   </Content>
 );
-
-export default SectionHeader;

@@ -1,11 +1,9 @@
 import React, { FC } from 'react';
 
 import { StepI } from '../../../../../interfaces';
-import Heading from '../../../atoms/heading';
-import Spark from '../../../atoms/spark';
-import Text from '../../../atoms/text';
-import Col from '../../../molecules/grid/col';
-import Row from '../../../molecules/grid/row';
+
+import { Heading, Spark, Text } from '../../../atoms';
+import { Row, Col } from '../../../molecules';
 
 import { Content, TitleContainer } from './styles';
 
@@ -14,7 +12,7 @@ interface PropTypes {
   isBorder?: boolean;
 }
 
-const StepItem: FC<PropTypes> = ({ item, isBorder }) => (
+export const StepItem: FC<PropTypes> = ({ item, isBorder }) => (
   <Content isBorder={isBorder}>
     <Row>
       <Col xs={12} sm={5} md={5} lg={5} xlg={5}>
@@ -33,5 +31,3 @@ const StepItem: FC<PropTypes> = ({ item, isBorder }) => (
     </Row>
   </Content>
 );
-
-export default StepItem;

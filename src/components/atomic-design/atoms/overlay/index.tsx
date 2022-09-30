@@ -8,7 +8,7 @@ type Props = {
   onClick?: () => void;
 };
 
-const Overlay: FC<Props> = ({ isShowing = false, opacity = 0.5, onClick }) => {
+export const Overlay: FC<Props> = ({ isShowing = false, opacity = 0.5, onClick }) => {
   const disableScroll = () => (document.body.style.overflow = 'hidden');
 
   const enableScroll = () => (document.body.style.overflow = '');
@@ -25,5 +25,3 @@ const Overlay: FC<Props> = ({ isShowing = false, opacity = 0.5, onClick }) => {
     </Content>
   );
 };
-
-export default Overlay;

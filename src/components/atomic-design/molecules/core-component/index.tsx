@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
-import Icon from '../../atoms/icon';
-import Line from '../../atoms/line';
 
-import Spark from '../../atoms/spark';
-import SparkList from '../../atoms/spark/spark-list';
+import { Icon, Line, Spark, SparkList } from '../../atoms';
+
 import {
   Atom,
   AtomContent,
@@ -18,7 +16,7 @@ import {
   ThreeParticles,
 } from './styles';
 
-const Core: FC = () => {
+export const Core: FC = () => {
   return (
     <Content>
       <AtomContent>
@@ -52,5 +50,3 @@ const Core: FC = () => {
     </Content>
   );
 };
-
-export default Core;

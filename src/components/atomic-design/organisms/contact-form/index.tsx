@@ -1,12 +1,13 @@
 import React, { FC } from 'react';
 
 import { Form, Formik } from 'formik';
-import * as Yup from 'yup';
-import Button from '../../atoms/button';
-
-import FormikField from './FormikField';
-import { ButtonContainer, Content } from './styles';
 import emailjs from '@emailjs/browser';
+import * as Yup from 'yup';
+
+import { Button } from '../../atoms';
+import { FormikField } from './FormikField';
+
+import { ButtonContainer, Content } from './styles';
 
 interface ContactFormPropTypes {
   loading?: boolean;
@@ -15,7 +16,7 @@ interface ContactFormPropTypes {
   setShowSnackbar: (e: boolean) => void;
 }
 
-const ContactForm: FC<ContactFormPropTypes> = ({
+export const ContactForm: FC<ContactFormPropTypes> = ({
   loading,
   setShowLoading,
   setResponse,
@@ -107,5 +108,3 @@ const ContactForm: FC<ContactFormPropTypes> = ({
     </Formik>
   );
 };
-
-export default ContactForm;

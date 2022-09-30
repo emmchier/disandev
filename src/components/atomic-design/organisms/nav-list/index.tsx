@@ -1,12 +1,11 @@
 import React, { FC, useEffect, useState } from 'react';
 
-import List from '../../molecules/list';
-import ListItem from '../../molecules/list/item-list';
+import { navList } from '../../../../domain/nav-list';
+
+import { Selected, CustomLink } from '../../atoms';
+import { List, ListItem } from '../../molecules';
 
 import { FullNotSelected, FullSelected } from './styles';
-import { navList } from '../../../../domain/nav-list';
-import Selected from '../../atoms/selected';
-import CustomLink from '../../atoms/custom-link';
 
 type Props = {
   path?: string;
@@ -23,7 +22,7 @@ interface NavlistI {
   to: string;
 }
 
-const NavList: FC<Props> = ({
+export const NavList: FC<Props> = ({
   path = '',
   orientation = 'vertical',
   noSelected = false,
@@ -63,5 +62,3 @@ const NavList: FC<Props> = ({
     </List>
   );
 };
-
-export default NavList;

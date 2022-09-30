@@ -1,25 +1,25 @@
 import type { GetStaticProps, NextPage } from 'next';
+import Link from 'next/link';
+
 import { usePageMetadata } from '../hooks/usePageMetadata';
-import Heading from '../components/atomic-design/atoms/heading';
 import { PageInterface } from '../interfaces';
-import Page from '../components/atomic-design/atoms/page';
-import Section from '../components/atomic-design/atoms/section';
-// import { client } from '../common/contentfulClientProvider';
-import Container from '../components/atomic-design/atoms/container';
-// import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-// import { useEffect, useState } from 'react';
-import Icon from '../components/atomic-design/atoms/icon/index';
-import PageHeader from '../components/atomic-design/atoms/page-header/index';
+import { client } from '../common/contentfulClientProvider';
+
+import {
+  Heading,
+  Page,
+  Container,
+  Icon,
+  PageHeader,
+  Text,
+} from '../components/atomic-design/atoms';
+
 import {
   PageHeaderContainer,
   QualityContent,
   ValuesContent,
   MainContent,
 } from '../styles/pages/quality-policy-styles';
-import Text from '../components/atomic-design/atoms/text';
-import Link from 'next/link';
-import Button from '../components/atomic-design/atoms/button';
-import { client } from '../common/contentfulClientProvider';
 
 interface Props {
   pages: PageInterface[];

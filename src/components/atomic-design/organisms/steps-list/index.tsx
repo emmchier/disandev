@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
 
 import { StepI } from '../../../../interfaces';
-import List from '../../molecules/list';
-import StepItem from './step-item';
+import { List } from '../../molecules';
+import { StepItem } from './step-item';
+
 import { Content } from './styles';
 
 interface PropTypes {
   list?: StepI[];
 }
 
-const StepsList: FC<PropTypes> = ({ list }) => (
+export const StepsList: FC<PropTypes> = ({ list }) => (
   <Content>
     <List>
       {list?.map((item, index) => (
@@ -22,5 +23,3 @@ const StepsList: FC<PropTypes> = ({ list }) => (
     </List>
   </Content>
 );
-
-export default StepsList;

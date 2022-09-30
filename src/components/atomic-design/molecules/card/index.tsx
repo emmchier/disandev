@@ -2,10 +2,7 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 
-import Heading from '../../atoms/heading';
-import SparkList from '../../atoms/spark/spark-list';
-import Text from '../../atoms/text';
-import Button from '../../atoms/button';
+import { Heading, SparkList, Text, Button } from '../../atoms';
 
 import {
   TitleContent,
@@ -38,7 +35,7 @@ interface PropTypes {
   imgWidth?: string;
 }
 
-const Card: FC<PropTypes> = ({
+export const Card: FC<PropTypes> = ({
   img = '',
   title = '',
   description = '',
@@ -79,7 +76,6 @@ const Card: FC<PropTypes> = ({
         <Image src={img} alt={alt} width={width} height={height} layout="responsive" priority />
       </span>
     </HoverContainer>
-
     <TitleContent isLower={isLower}>
       <Heading variant="h4" weight="bold" cap={cap}>
         {title}
@@ -96,5 +92,3 @@ const Card: FC<PropTypes> = ({
     </DescContent>
   </CardContent>
 );
-
-export default Card;

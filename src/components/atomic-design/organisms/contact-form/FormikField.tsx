@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-
 import { useField } from 'formik';
-import Input from '../../molecules/input';
-import Textarea from '../../atoms/textarea';
+
+import { Input } from '../../molecules';
+import { Textarea } from '../../atoms';
 import { Error, ContentField, TextareaContainer } from './styles';
 
 interface PropTypes {
@@ -13,7 +13,7 @@ interface PropTypes {
   [x: string]: any;
 }
 
-const FormikField: FC<PropTypes> = ({ label = '', textarea = false, ...props }) => {
+export const FormikField: FC<PropTypes> = ({ label = '', textarea = false, ...props }) => {
   const [field, meta] = useField(props);
 
   return (
@@ -32,5 +32,3 @@ const FormikField: FC<PropTypes> = ({ label = '', textarea = false, ...props }) 
     </ContentField>
   );
 };
-
-export default FormikField;

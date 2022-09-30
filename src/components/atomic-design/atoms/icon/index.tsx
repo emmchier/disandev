@@ -29,7 +29,7 @@ interface IconI {
   direction?: string;
 }
 
-const Icon: FC<IconI> = ({
+export const Icon: FC<IconI> = ({
   ariaLabel = '',
   icon = '',
   variant = '',
@@ -105,5 +105,3 @@ const Icon: FC<IconI> = ({
 
   return <Content direction={direction}>{getIcon()}</Content>;
 };
-
-export default Icon;

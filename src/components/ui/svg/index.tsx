@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
-import { setVariant } from '../../../helpers/functions';
 
+import { setVariant } from '../../../helpers/functions';
 import { theme } from '../../../styles/theme';
 
 interface IconI {

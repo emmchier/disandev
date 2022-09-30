@@ -2,8 +2,9 @@ import React, { FC } from 'react';
 
 import { ServiceI } from '../../../../interfaces';
 
-import SectionHeader from '../../atoms/section-header';
-import ServiceList from '../service-list';
+import { SectionHeader } from '../../atoms';
+import { ServiceList } from '../../organisms';
+
 import { Content } from './styles';
 
 interface PropTypes {
@@ -11,7 +12,7 @@ interface PropTypes {
   offsetColumn?: boolean;
 }
 
-const ServiceSection: FC<PropTypes> = ({ list, offsetColumn = false }) => (
+export const ServiceSection: FC<PropTypes> = ({ list, offsetColumn = false }) => (
   <Content>
     <SectionHeader>
       What we do?<b>.</b>
@@ -19,5 +20,3 @@ const ServiceSection: FC<PropTypes> = ({ list, offsetColumn = false }) => (
     <ServiceList list={list} offsetColumn={offsetColumn} />
   </Content>
 );
-
-export default ServiceSection;

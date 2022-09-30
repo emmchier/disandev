@@ -1,10 +1,8 @@
 import React, { FC } from 'react';
 
-import Heading from '../../atoms/heading';
-import Selected from '../../atoms/selected';
+import { Heading, Selected, CustomLink } from '../../atoms';
 
 import { Content, InnerContent } from './styles';
-import CustomLink from '../../atoms/custom-link/index';
 
 type Props = {
   title?: string | React.ReactNode;
@@ -13,7 +11,7 @@ type Props = {
   isLink?: boolean;
 };
 
-const CallToAction: FC<Props> = ({ title, buttonTitle, to = '', isLink = true }) => (
+export const CallToAction: FC<Props> = ({ title, buttonTitle, to = '', isLink = true }) => (
   <Content>
     <InnerContent>
       <Heading variant="h3" weight="light">
@@ -35,5 +33,3 @@ const CallToAction: FC<Props> = ({ title, buttonTitle, to = '', isLink = true })
     </InnerContent>
   </Content>
 );
-
-export default CallToAction;

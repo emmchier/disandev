@@ -1,19 +1,17 @@
 import React, { FC, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
-import Button from '../button';
+import { Button, Heading, Text } from '../../atoms';
+import { ContactGlove } from '../../../ui/svg';
 
 import { Content, AnimationContainer, SendedMessage } from './styles';
-import { useRouter } from 'next/router';
-import { ContactGlove } from '../../../ui/svg';
-import Heading from '../heading';
-import Text from '../text';
 
 interface PropTypes {
   onShowing?: boolean;
   onFinish: number;
 }
 
-const Loading: FC<PropTypes> = ({ onShowing, onFinish }) => {
+export const Loading: FC<PropTypes> = ({ onShowing, onFinish }) => {
   const router = useRouter();
   const [show, setShow] = useState(false);
   const setIsShowing = () => (onShowing === true ? setShow(true) : setShow(false));
@@ -52,5 +50,3 @@ const Loading: FC<PropTypes> = ({ onShowing, onFinish }) => {
     </Content>
   );
 };
-
-export default Loading;

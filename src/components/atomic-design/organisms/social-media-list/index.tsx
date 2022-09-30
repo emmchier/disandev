@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 
 import { SocialMedia } from '../../../../interfaces';
-import Icon from '../../atoms/icon';
-import List from '../../molecules/list';
-import ListItem from '../../molecules/list/item-list';
-import { Content } from './styles';
 import { socialMediaList } from '../../../../domain/social-media-list';
-import CustomLink from '../../atoms/custom-link';
 
-const SocialMediaList: FC = () => (
+import { Icon, CustomLink } from '../../atoms';
+import { List, ListItem } from '../../molecules';
+
+import { Content } from './styles';
+
+export const SocialMediaList: FC = () => (
   <Content>
     <List orientation="horizontal" alignItems="end">
       {socialMediaList?.map((item: SocialMedia) => (
@@ -21,5 +21,3 @@ const SocialMediaList: FC = () => (
     </List>
   </Content>
 );
-
-export default SocialMediaList;

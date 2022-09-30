@@ -14,7 +14,7 @@ interface InputI {
   disabled?: boolean;
 }
 
-const Input: FC<InputI> = ({
+export const Input: FC<InputI> = ({
   label,
   required,
   type,
@@ -42,5 +42,3 @@ const Input: FC<InputI> = ({
     </Content>
   );
 };
-
-export default Input;

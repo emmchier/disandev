@@ -8,10 +8,11 @@ interface DinamicContentTypes {
   alignItems?: string;
 }
 
-const DinamicContent: FCC<DinamicContentTypes> = ({ children, alignItems = 'flex-start' }) => (
+export const DinamicContent: FCC<DinamicContentTypes> = ({
+  children,
+  alignItems = 'flex-start',
+}) => (
   <Container alignItems={alignItems}>
     <Content>{children}</Content>
   </Container>
 );
-
-export default DinamicContent;

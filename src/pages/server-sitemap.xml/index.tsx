@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import { getServerSideSitemap, ISitemapField } from 'next-sitemap';
 import { client } from '../../common/contentfulClientProvider';
-import { ProjectI } from '../../interfaces/index';
+import { ProjectI } from '../../interfaces';
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const projects = await client.getEntries({ content_type: 'proyectos' });

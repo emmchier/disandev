@@ -1,11 +1,21 @@
 import type { NextPage, GetStaticProps } from 'next';
+import Image from 'next/image';
+
 import { usePageMetadata } from '../hooks/usePageMetadata';
 import { MemberI, PageInterface } from '../interfaces';
 import { client } from '../common/contentfulClientProvider';
 
-import Page from '../components/atomic-design/atoms/page';
-import Section from '../components/atomic-design/atoms/section';
-import Image from 'next/image';
+import {
+  Page,
+  Section,
+  PageHeader,
+  Icon,
+  SectionHeader,
+  Text,
+} from '../components/atomic-design/atoms';
+import { Row, Col, CallToAction } from '../components/atomic-design/molecules';
+import { TeamList } from '../components/atomic-design/organisms';
+
 import {
   MembersContent,
   OurValuesContent,
@@ -13,14 +23,6 @@ import {
   PageHeaderContainer,
   TeamCallToAction,
 } from '../styles/pages/the-team-styles';
-import PageHeader from '../components/atomic-design/atoms/page-header';
-import Icon from '../components/atomic-design/atoms/icon';
-import SectionHeader from '../components/atomic-design/atoms/section-header';
-import Row from '../components/atomic-design/molecules/grid/row';
-import Col from '../components/atomic-design/molecules/grid/col';
-import Text from '../components/atomic-design/atoms/text';
-import CallToAction from '../components/atomic-design/molecules/call-to-action';
-import TeamList from '../components/atomic-design/organisms/team-list';
 
 interface Props {
   pages: PageInterface[];

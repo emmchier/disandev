@@ -1,4 +1,4 @@
-import { KeywordInterface, PageInterface, ProjectI, SocialMedia } from '../interfaces/index';
+import { KeywordInterface, PageInterface, ProjectI, SocialMedia } from '../interfaces';
 import { theme } from '../styles/theme';
 
 export const getPage = (list: PageInterface[], slug: string) =>

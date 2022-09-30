@@ -1,13 +1,13 @@
 import React from 'react';
-import Icon from '../../icon';
+
+import { Icon } from '../../../atoms';
+
 import { Content } from './styles';
 
-const SkelletonHeader = () => {
+export const SkelletonHeader = () => {
   return (
     <Content>
       <Icon icon="iso" ariaLabel="Disandev logo" />
     </Content>
   );
 };
-
-export default SkelletonHeader;

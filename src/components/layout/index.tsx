@@ -1,15 +1,12 @@
 import { useState } from 'react';
-
 import { useRouter } from 'next/router';
 
-import ScrollToTop from '../atomic-design/atoms/scroll-to-top';
-import Footer from '../atomic-design/molecules/footer';
-import Navbar from '../atomic-design/molecules/navbar';
-import Sidenav from '../atomic-design/molecules/sidenav';
-import CookiesSnackbar from '../atomic-design/molecules/cookies-snackbar';
+import { FCC } from '../../types';
+
+import { ScrollToTop } from '../atomic-design/atoms';
+import { Navbar, Footer, Sidenav, CookiesSnackbar } from '../atomic-design/molecules';
 
 import { Main } from './styles';
-import { FCC } from '../../types';
 
 interface Layouttypes {
   path?: string;

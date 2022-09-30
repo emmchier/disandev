@@ -1,13 +1,13 @@
 import React from 'react';
-import Icon from '../../icon';
+
+import { Icon } from '../../../atoms';
+
 import { Content } from './styles';
 
-const SkelletonHero = () => {
+export const SkelletonHero = () => {
   return (
     <Content>
       <Icon icon="hero" ariaLabel="Skelleton hero pulse animation" />
     </Content>
   );
 };
-
-export default SkelletonHero;

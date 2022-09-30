@@ -7,8 +7,6 @@ interface PropTypes {
   size?: number;
 }
 
-const Spark: FC<PropTypes> = ({ color = 'primary', size = 1 }) => (
+export const Spark: FC<PropTypes> = ({ color = 'primary', size = 1 }) => (
   <Content color={color} size={size} />
 );
-
-export default Spark;

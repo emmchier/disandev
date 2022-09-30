@@ -1,18 +1,18 @@
 import React, { FC } from 'react';
 
-import { theme } from '../../../../styles/theme';
-import Card from '../../molecules/card';
 import { ServiceI } from '../../../../interfaces';
+
+import { Card, Row, Col } from '../../molecules';
+
+import { theme } from '../../../../styles/theme';
 import { Content } from './styles';
-import Row from '../../molecules/grid/row';
-import Col from '../../molecules/grid/col';
 
 interface Props {
   list: ServiceI[];
   offsetColumn?: boolean;
 }
 
-const ServiceList: FC<Props> = ({ list, offsetColumn = false }) => (
+export const ServiceList: FC<Props> = ({ list, offsetColumn = false }) => (
   <Content offsetColumn={offsetColumn}>
     <Row gap={8}>
       {list?.map((item: ServiceI) => (
@@ -35,5 +35,3 @@ const ServiceList: FC<Props> = ({ list, offsetColumn = false }) => (
     </Row>
   </Content>
 );
-
-export default ServiceList;

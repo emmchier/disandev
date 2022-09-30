@@ -1,16 +1,14 @@
 import type { NextPage, GetStaticProps } from 'next';
+
 import { usePageMetadata } from '../hooks/usePageMetadata';
 import { client } from '../common/contentfulClientProvider';
 import { PageInterface, ProjectI } from '../interfaces';
 
-import Page from '../components/atomic-design/atoms/page';
-import Section from '../components/atomic-design/atoms/section';
-import PageHeader from '../components/atomic-design/atoms/page-header';
-import ProjectList from '../components/atomic-design/organisms/project-list';
+import { Page, Section, PageHeader, Icon } from '../components/atomic-design/atoms';
+import { CallToAction } from '../components/atomic-design/molecules';
+import { ProjectList } from '../components/atomic-design/organisms';
 
 import { PageHeaderContainer, ProjectsContent } from '../styles/pages/projects-styles';
-import CallToAction from '../components/atomic-design/molecules/call-to-action';
-import Icon from '../components/atomic-design/atoms/icon';
 
 interface Props {
   pages: PageInterface[];

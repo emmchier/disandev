@@ -11,7 +11,7 @@ interface ListTypes {
   spaceY?: string;
 }
 
-const List: FCC<ListTypes> = ({
+export const List: FCC<ListTypes> = ({
   children,
   orientation = 'vertical',
   alignItems = 'start',
@@ -29,5 +29,3 @@ const List: FCC<ListTypes> = ({
     {children}
   </ContainerList>
 );
-
-export default List;

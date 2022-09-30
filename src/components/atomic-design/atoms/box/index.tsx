@@ -14,7 +14,7 @@ interface BoxTypes {
   padding?: string;
 }
 
-const Box: FCC<BoxTypes> = ({
+export const Box: FCC<BoxTypes> = ({
   children,
   display = 'block',
   alignItems = 'start',
@@ -38,5 +38,3 @@ const Box: FCC<BoxTypes> = ({
     {children}
   </Content>
 );
-
-export default Box;
