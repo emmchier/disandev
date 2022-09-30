@@ -1,14 +1,9 @@
-import { FC } from 'react';
-
 import { ThemeProvider as MyStyledThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../styles/globalStyles';
 import { theme } from '../styles/theme';
+import { FCC } from '../types';
 
-interface Proptypes {
-  children: React.ReactNode;
-}
-
-export const StyledThemeProvider: FC<Proptypes> = ({ children }) => (
+export const StyledThemeProvider: FCC = ({ children }) => (
   <MyStyledThemeProvider theme={theme}>
     <GlobalStyles />
     {children}
