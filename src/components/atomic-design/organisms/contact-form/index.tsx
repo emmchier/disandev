@@ -23,16 +23,24 @@ export const ContactForm: FC<ContactFormPropTypes> = ({
   setShowSnackbar,
 }) => {
   const initialState = {
-    name: '',
-    email: '',
-    message: '',
+    userName: '',
+    userEmail: '',
+    userMessage: '',
   };
 
-  const validateFillInputs = (name: string, email: string, message: string) =>
-    loading !== true ? (name !== '' && email !== '' && message !== '' ? false : true) : true;
+  const validateFillInputs = (userName: string, userEmail: string, userMessage: string) =>
+    loading !== true
+      ? userName !== '' && userEmail !== '' && userMessage !== ''
+        ? false
+        : true
+      : true;
 
-  const validateSomeFillInputs = (name: string, email: string, message: string) =>
-    loading !== true ? (name !== '' || email !== '' || message !== '' ? false : true) : true;
+  const validateSomeFillInputs = (userName: string, userEmail: string, userMessage: string) =>
+    loading !== true
+      ? userName !== '' || userEmail !== '' || userMessage !== ''
+        ? false
+        : true
+      : true;
 
   return (
     <Formik
@@ -65,17 +73,17 @@ export const ContactForm: FC<ContactFormPropTypes> = ({
         }
       }}
       validationSchema={Yup.object({
-        name: Yup.string().required('Name is required'),
-        email: Yup.string().email('Email is not valid').required('Email is required'),
-        message: Yup.string().required('Message is required'),
+        userName: Yup.string().required('Name is required'),
+        userEmail: Yup.string().email('Email is not valid').required('Email is required'),
+        userMessage: Yup.string().required('Message is required'),
       })}
     >
       {(formik) => (
         <Content>
           <Form>
-            <FormikField label="Your name / company name" name="name" />
-            <FormikField label="Your E-mail" name="email" />
-            <FormikField textarea label="Tell us about your Idea or Project" name="message" />
+            <FormikField label="Your name / company name" name="userName" />
+            <FormikField label="Your E-mail" name="userEmail" />
+            <FormikField textarea label="Tell us about your Idea or Project" name="userMessage" />
             <ButtonContainer>
               <Button
                 type="submit"
@@ -83,9 +91,9 @@ export const ContactForm: FC<ContactFormPropTypes> = ({
                 ariaLabel="send message"
                 iconRight={true}
                 disabled={validateFillInputs(
-                  formik.values.name,
-                  formik.values.email,
-                  formik.values.message
+                  formik.values.userName,
+                  formik.values.userEmail,
+                  formik.values.userMessage
                 )}
               >
                 Send
@@ -94,9 +102,9 @@ export const ContactForm: FC<ContactFormPropTypes> = ({
                 onClick={formik.resetForm}
                 ariaLabel="reset form"
                 disabled={validateSomeFillInputs(
-                  formik.values.name,
-                  formik.values.email,
-                  formik.values.message
+                  formik.values.userName,
+                  formik.values.userEmail,
+                  formik.values.userMessage
                 )}
               >
                 Clear
