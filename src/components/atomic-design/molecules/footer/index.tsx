@@ -70,9 +70,7 @@ export const Footer: FC<Props> = ({ path }) => (
     <Copyright>
       <Container>
         <CopyrightContainer>
-          <Text>
-            {new Date().getFullYear()} © Disandev <div>|</div> <span>somos.disandev@gmail.com</span>
-          </Text>
+          <Text>{new Date().getFullYear()} © Disandev</Text>
           <SocialMediaList />
         </CopyrightContainer>
       </Container>
