@@ -40,6 +40,10 @@ export const Content = styled.div`
     }
   }
 
+  p {
+    margin: 0;
+  }
+
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     h1,
     h2 {

@@ -18,6 +18,7 @@ import { TeamList } from '../components/atomic-design/organisms';
 
 import {
   MembersContent,
+  MembersHeading,
   OurValuesContent,
   OurValuesImage,
   PageHeaderContainer,
@@ -51,6 +52,15 @@ const TeamPage: NextPage<Props> = ({ pages, members }) => {
 
       <MembersContent>
         <Section>
+          <MembersHeading>
+            <SectionHeader>
+              Here, a small part
+              <p>
+                of the team
+                <b>.</b>
+              </p>
+            </SectionHeader>
+          </MembersHeading>
           <TeamList list={members} />
         </Section>
       </MembersContent>
