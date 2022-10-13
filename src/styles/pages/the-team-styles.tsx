@@ -56,6 +56,22 @@ export const MembersContent = styled.div`
   }
 `;
 
+export const MembersHeading = styled.div`
+  p {
+    margin-bottom: ${({ theme }) => theme.spacing(15)};
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    h3 {
+      margin-bottom: ${({ theme }) => theme.spacing(10)} !important;
+      p {
+        display: inline;
+        margin-left: ${({ theme }) => theme.spacing(2)} !important;
+      }
+    }
+  }
+`;
+
 export const OurValuesContent = styled.div`
   background: ${({ theme }) => theme.color.gradient.primary};
   padding: ${({ theme }) => theme.spacing(20)} 0 ${({ theme }) => theme.spacing(30)};

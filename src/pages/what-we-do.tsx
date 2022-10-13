@@ -65,7 +65,11 @@ const WhatWeDoPage: NextPage<Props> = ({ pages, services, steps, techs }) => {
       <TechsContent>
         <Section>
           <SectionHeader>
-            Technologies we work with<b>.</b>
+            Technologies
+            <p>
+              we work with
+              <b>.</b>
+            </p>
           </SectionHeader>
           <TechList list={orderedTechList} />
         </Section>
