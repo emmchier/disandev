@@ -27,7 +27,6 @@ export const TextareaField = styled.textarea`
   &:focus {
     border-bottom: 2px solid ${({ theme }) => theme.color.primary.main};
     background-color: ${({ theme }) => theme.color.white};
-    /* padding: ${({ theme }) => theme.spacing(3)} 0; */
     outline: none;
   }
 
@@ -54,7 +53,7 @@ export const TextareaField = styled.textarea`
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     max-height: ${({ theme }) => theme.spacing(70)};
     ::-webkit-scrollbar {
-      display: none;
+      display: inherit;
     }
   }
 `;
