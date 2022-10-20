@@ -10,7 +10,7 @@ export const Content = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  margin-top: ${({ theme }) => theme.spacing(5)};
+  padding-top: ${({ theme }) => theme.spacing(10)};
 
   button:last-child {
     background: transparent;
@@ -33,20 +33,18 @@ export const ButtonContainer = styled.div`
 
 export const ContentField = styled.div`
   position: relative;
-
-  input,
-  textarea {
-    margin-bottom: ${({ theme }) => theme.spacing(10)};
-  }
+  padding-top: ${({ theme }) => theme.spacing(10)};
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    padding-top: ${({ theme }) => theme.spacing(5)};
     label {
-      font-size: ${({ theme }) => theme.font.size.smallX};
+      font-size: ${({ theme }) => theme.font.size.small};
     }
 
     input,
     textarea {
-      margin-bottom: ${({ theme }) => theme.spacing(5)};
+      font-size: ${({ theme }) => theme.font.size.medium};
+      margin-bottom: ${({ theme }) => theme.spacing(2)};
     }
   }
 `;
@@ -58,10 +56,18 @@ export const Error = styled.p`
   right: 0;
   margin: 0;
   transform: translateY(10px);
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: ${({ theme }) => theme.font.size.smallX};
+  }
 `;
 
 export const TextareaContainer = styled.span`
   p {
     transform: translateY(20px);
+  }
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: ${({ theme }) => theme.spacing(5)};
   }
 `;
