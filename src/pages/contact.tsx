@@ -9,11 +9,19 @@ import { usePageMetadata } from '../hooks/usePageMetadata';
 import { PageInterface } from '../interfaces';
 import { client } from '../common/contentfulClientProvider';
 
-import { Heading, Page, BackButton, Loading, Container } from '../components/atomic-design/atoms';
+import {
+  Heading,
+  Page,
+  BackButton,
+  Loading,
+  Container,
+  Button,
+} from '../components/atomic-design/atoms';
 import { Row, Col } from '../components/atomic-design/molecules';
 import { ContactForm } from '../components/atomic-design/organisms';
 
 import { SendContent, TextContent, ActionBack, ContactCol } from '../styles/pages/contact-styles';
+import { copyToClipboard } from '../utils';
 
 interface Props {
   pages: PageInterface[];
@@ -31,6 +39,11 @@ const ContactPage: NextPage<Props> = ({ pages }) => {
     setLoading(false);
   }, []);
 
+  const handleCopy = () => {
+    copyToClipboard('somos.disandev@gmail.com');
+    setShowSnackbar(true);
+  };
+
   return (
     <Page title={title} description={description} keywords={keywords}>
       {loading === true && <Loading onShowing={loading} onFinish={response} />}
@@ -42,22 +55,12 @@ const ContactPage: NextPage<Props> = ({ pages }) => {
               <ActionBack>
                 <BackButton navigate={() => navigate.back()} />
               </ActionBack>
-              <TextContent>
-                <Heading variant="h3" weight="regular">
-                  Let us know what
-                  <span> you have in mind</span>
-                </Heading>
-                <Heading variant="h5" weight="bold">
-                  and let´s start making
-                  <span> your idea come true.</span>
-                </Heading>
-              </TextContent>
               <SendContent>
                 <Image
                   src={'/images/icons/contact-send.png' || '/images/default-bg.svg'}
                   alt="Our values image reference"
-                  width={150}
-                  height={150}
+                  width={200}
+                  height={200}
                   priority
                 />
               </SendContent>
@@ -65,11 +68,24 @@ const ContactPage: NextPage<Props> = ({ pages }) => {
           </Col>
           <Col xs={12} sm={4} md={6} lg={6} xlg={6}>
             <ContactCol>
-              <ContactForm
-                setShowLoading={setLoading}
-                setResponse={setResponse}
-                setShowSnackbar={setShowSnackbar}
-              />
+              <TextContent>
+                <Heading variant="h3" weight="regular">
+                  Let us know what
+                  <span> you have in mind</span>
+                </Heading>
+                <Heading variant="h3" weight="bold">
+                  and let´s start making
+                  <span> your idea come true.</span>
+                </Heading>
+                <Button
+                  onClick={handleCopy}
+                  variant="text"
+                  ariaLabel="copy email"
+                  iconRight={false}
+                >
+                  somos.disandev@gmail.com
+                </Button>
+              </TextContent>
             </ContactCol>
           </Col>
         </Row>

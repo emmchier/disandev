@@ -86,6 +86,6 @@ export const SocialMediaContent = styled.div`
   ul {
     display: flex !important;
     align-items: center !important;
-    justify-content: space-between !important;
+    justify-content: flex-start;
   }
 `;

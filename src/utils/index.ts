@@ -5,3 +5,5 @@ export const gtmVirtualPageView = () => {
       event: 'cookies-aceptadas',
     });
 };
+
+export const copyToClipboard = (text: string) => navigator.clipboard.writeText(text);

@@ -27,7 +27,7 @@ export const BackButtonContainer = styled.div`
 `;
 
 export const ActionBack = styled.div`
-  margin-bottom: ${({ theme }) => theme.spacing(10)};
+  margin-bottom: ${({ theme }) => theme.spacing(50)};
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     margin-top: ${({ theme }) => theme.spacing(15)};
@@ -36,6 +36,21 @@ export const ActionBack = styled.div`
 
 export const TextContent = styled.div`
   margin-left: ${({ theme }) => theme.spacing(10)};
+
+  button {
+    padding: 0;
+    margin: 0;
+    margin: ${({ theme }) => theme.spacing(10)} 0;
+    border: 0;
+    transform: translateX(-10px);
+    font-size: ${({ theme }) => theme.font.size.largeX} !important;
+    font-weight: ${({ theme }) => theme.font.weight.bold};
+    color: ${({ theme }) => theme.color.primary.main} !important;
+
+    &:hover {
+      color: ${({ theme }) => theme.color.primary.dark} !important;
+    }
+  }
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     margin-left: 0;
@@ -51,10 +66,17 @@ export const TextContent = styled.div`
     h5 {
       font-size: ${({ theme }) => theme.font.size.small};
       line-height: ${({ theme }) => theme.font.lineHeight.smallX};
+
       span {
         font-size: ${({ theme }) => theme.font.size.small};
         line-height: ${({ theme }) => theme.font.lineHeight.smallX};
       }
+    }
+
+    button {
+      margin: ${({ theme }) => theme.spacing(15)} 0;
+      font-size: ${({ theme }) => theme.font.size.medium} !important;
+      font-weight: ${({ theme }) => theme.font.weight.bold};
     }
   }
 `;
