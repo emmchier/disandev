@@ -4,6 +4,3 @@ export * from './project-list';
 export * from './service-list';
 export * from './service-section';
 export * from './social-media-list';
-export * from './steps-list';
-export * from './team-list';
-export * from './tech-list';

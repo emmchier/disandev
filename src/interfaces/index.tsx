@@ -31,7 +31,7 @@ export interface ProjectI {
 
 export interface ServiceI {
   [x: string]: any;
-  cover: { fields: { file: { url?: string } } };
+  image: { fields: { file: { url?: string } } };
   name?: string;
   description?: string;
   order?: number;
@@ -39,7 +39,7 @@ export interface ServiceI {
 
 export type TechI = {
   [x: string]: any;
-  technologyName?: string;
+  name?: string;
   image?: { fields: { file: { url?: string } } };
   visibleIn?: PageInterface[];
   order?: number;
@@ -65,7 +65,7 @@ export interface KeywordInterface {
 
 export interface SocialMedia {
   [x: string]: any;
-  title?: string;
+  name?: string;
   slug?: string;
   icon?: string;
   link?: string;
@@ -107,16 +107,16 @@ export interface MetaTagI {
 
 export interface MemberI {
   [x: string]: any;
-  memberImage?: { fields: { file: { url?: string } } };
-  memberName?: string;
-  memberRole?: string;
-  memberLinkedin?: string;
+  image?: { fields: { file: { url?: string } } };
+  name?: string;
+  role?: string;
+  linkedin?: string;
   order?: number;
 }
 
 export interface StepI {
   [x: string]: any;
-  stepTitle?: string;
-  stepDesc?: string;
+  name?: string;
+  description?: string;
   order?: number;
 }

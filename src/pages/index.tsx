@@ -14,7 +14,6 @@ import {
   SectionHeader,
   Button,
   Icon,
-  Box,
 } from '../components/atomic-design/atoms';
 import { Core, CallToAction } from '../components/atomic-design/molecules';
 import { ProjectList, ServiceSection } from '../components/atomic-design/organisms';
@@ -27,6 +26,7 @@ import {
   TextContent,
   ServiceContainer,
 } from '../styles/pages/home-styles';
+import { useMemo } from 'react';
 
 interface Props {
   pages: PageInterface[];
@@ -35,11 +35,21 @@ interface Props {
 }
 
 const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
-  const { title, description, keywords } = usePageMetadata(pages, 'home');
-  const filteredProjectList = getItemsByPage(projects, 'home');
-  const filteredServicesList = getItemsByPage(services, 'home');
-  const orderedProjectList = filteredProjectList.sort((a, b) => a.fields.order - b.fields.order);
-  const orderedServiceList = filteredServicesList.sort((a, b) => a.fields.order - b.fields.order);
+  const { title, description, keywords } = useMemo(() => {
+    return usePageMetadata(pages, 'home');
+  }, [pages]);
+  const filteredProjectList = useMemo(() => {
+    return getItemsByPage(projects, 'home');
+  }, [projects]);
+  const filteredServicesList = useMemo(() => {
+    return getItemsByPage(services, 'home');
+  }, [services]);
+  const orderedProjectList = useMemo(() => {
+    return filteredProjectList.sort((a, b) => a.fields.order - b.fields.order);
+  }, [filteredProjectList]);
+  const orderedServiceList = useMemo(() => {
+    return filteredServicesList.sort((a, b) => a.fields.order - b.fields.order);
+  }, [filteredServicesList]);
 
   const handleAnchor = () => {
     window.scrollTo({ top: 680, behavior: 'smooth' });
@@ -57,12 +67,6 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
                   to make an impression
                   <b>.</b>
                 </SectionHeader>
-                <Button onClick={handleAnchor} variant="text" ariaLabel="ancla a section 2">
-                  <Heading variant="h4" weight="bold">
-                    Know Us
-                  </Heading>
-                  <Icon ariaLabel="arrow to bottom" icon="arrow" direction="down" />
-                </Button>
               </TextContent>
             </HomeContent>
           </Content>
@@ -93,13 +97,6 @@ const HomePage: NextPage<Props> = ({ pages, projects, services }) => {
       <Section>
         <ServiceContainer>
           <ServiceSection list={orderedServiceList} />
-          <Box width="100%" display="flex" justifyContent="center">
-            <CustomLink to="/what-we-do">
-              <Button variant="outlined" ariaLabel="button" iconRight={true}>
-                See more services
-              </Button>
-            </CustomLink>
-          </Box>
         </ServiceContainer>
       </Section>
 

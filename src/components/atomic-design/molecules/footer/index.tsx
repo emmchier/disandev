@@ -58,8 +58,7 @@ export const Footer: FC<Props> = ({ path }) => (
                 <Heading variant="h6" weight="medium" cap="upper">
                   We are in
                 </Heading>
-                <Text>Buenos Aires, Argentina</Text>
-                <Text>Barcelona, Spain</Text>
+                <Text>La Plata, Argentina</Text>
               </InfoContent>
             </DinamicContent>
           </Col>

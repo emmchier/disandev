@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 interface SnackbarProps {
-  position: string;
+  position: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight' | 'bottomFull';
   show: boolean;
   background: string;
 }
@@ -26,7 +26,22 @@ const positionStyles = (position: string) =>
     bottomRight: css`
       bottom: 0;
       right: 0;
-      max-width: ${({ theme }) => theme.spacing(200)};
+      max-width: ${({ theme }) => theme.spacing(700)} !important;
+
+      p {
+        max-width: 100% !important;
+      }
+
+      @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+        width: 100% !important;
+        height: 4rem !important;
+        margin: 0;
+        box-sizing: border-box;
+
+        p {
+          margin: 0 !important;
+        }
+      }
     `,
     bottomFull: css`
       bottom: 0;
@@ -73,7 +88,10 @@ const backgroundStyles = (background: string) =>
     `,
     dark: css`
       background-color: ${({ theme }) => theme.color.black} !important;
-      color: ${({ theme }) => theme.color.white} !important;
+
+      p {
+        color: ${({ theme }) => theme.color.white} !important;
+      }
     `,
   }[background]);
 
