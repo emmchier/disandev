@@ -40,6 +40,7 @@ export const CookiesSnackbar: FC<PropTypes> = ({ show, setShow }) => {
           </Text>
         }
         background="light"
+        showAction={true}
         action={
           <CookiesActions>
             <a
