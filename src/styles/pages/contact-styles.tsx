@@ -17,6 +17,7 @@ export const ContactCol = styled.div`
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     height: auto;
+    display: block;
   }
 `;
 
@@ -31,6 +32,7 @@ export const ActionBack = styled.div`
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
     margin-top: ${({ theme }) => theme.spacing(15)};
+    margin-bottom: ${({ theme }) => theme.spacing(10)};
   }
 `;
 
@@ -57,25 +59,28 @@ export const TextContent = styled.div`
 
     h3 {
       font-weight: ${({ theme }) => theme.font.weight.light};
+
       span {
-        display: inline;
         font-weight: ${({ theme }) => theme.font.weight.light};
+        display: inline;
       }
     }
 
     h5 {
       font-size: ${({ theme }) => theme.font.size.small};
       line-height: ${({ theme }) => theme.font.lineHeight.smallX};
+      display: inline;
 
       span {
         font-size: ${({ theme }) => theme.font.size.small};
         line-height: ${({ theme }) => theme.font.lineHeight.smallX};
+        display: inline;
       }
     }
 
     button {
       margin: ${({ theme }) => theme.spacing(15)} 0;
-      font-size: ${({ theme }) => theme.font.size.medium} !important;
+      font-size: ${({ theme }) => theme.font.size.smallX} !important;
       font-weight: ${({ theme }) => theme.font.weight.bold};
     }
   }
@@ -89,12 +94,11 @@ export const SendContent = styled.div`
   transform: translateX(-150px);
 
   @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
-    transform: translateX(-30px);
-    margin-top: ${({ theme }) => theme.spacing(8)};
     margin-bottom: ${({ theme }) => theme.spacing(15)};
 
     img {
       height: ${({ theme }) => theme.spacing(25)} !important;
+      width: ${({ theme }) => theme.spacing(25)} !important;
     }
   }
 `;

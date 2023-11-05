@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
-import { Container, DinamicContent, Heading, Icon, Text } from '../../atoms';
-import { Row, Col } from '../../molecules';
+import { Container, CustomLink, DinamicContent, Heading, Icon, Selected, Text } from '../../atoms';
+import { Row, Col, List, ListItem } from '../../molecules';
 import { NavList, SocialMediaList } from '../../organisms';
 
 import {
@@ -38,15 +38,19 @@ export const Footer: FC<Props> = ({ path }) => (
               <Col xs={12} sm={12} md={6} lg={6} xlg={6}>
                 <DinamicContent>
                   <NavLeft>
-                    <NavList path={path} noSelected={true} />
+                    <List alignItems="start">
+                      <ListItem>
+                        <CustomLink to="/projects">
+                          <Selected noSelected={true}>Projects</Selected>
+                        </CustomLink>
+                      </ListItem>
+                      <ListItem>
+                        <CustomLink to="/contact">
+                          <Selected noSelected={true}>Contact</Selected>
+                        </CustomLink>
+                      </ListItem>
+                    </List>
                   </NavLeft>
-                </DinamicContent>
-              </Col>
-              <Col xs={12} sm={12} md={6} lg={6} xlg={6}>
-                <DinamicContent>
-                  <NavRight>
-                    <NavList path={path} noSelected={true} showPolicy={true} showContact={true} />
-                  </NavRight>
                 </DinamicContent>
               </Col>
             </Row>

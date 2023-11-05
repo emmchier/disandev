@@ -96,3 +96,17 @@ export const Content = styled.div<NavbarProps>`
     }
   }
 `;
+
+export const Navigation = styled.div`
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
+`;
+
+export const Burger = styled.div`
+  display: none;
+
+  @media only screen and (${({ theme }) => theme.breakpoints.mobile}) {
+    display: block;
+  }
+`;

@@ -1,10 +1,12 @@
 import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 
-import { ButtonContact, Icon, Overlay } from '../../atoms';
+import { ButtonContact, CustomLink, Icon, Overlay, Selected } from '../../atoms';
 import { NavList, SocialMediaList } from '../../organisms';
 
 import { MenuContent, Content, CloseBtn, SocialMediaContent } from './styles';
+import { List } from '../list';
+import { ListItem } from '../list/item-list';
 
 interface PropTypes {
   path?: string;
@@ -28,8 +30,18 @@ export const Sidenav: FC<PropTypes> = ({ path, show, showSidebar }) => {
         </CloseBtn>
         <Content>
           <div>
-            <NavList path={path} showSidebar={showSidebar} />
-            <ButtonContact onClick={handleContact} />
+            <List alignItems="start">
+              <ListItem onClick={showSidebar}>
+                <CustomLink to="/projects">
+                  <Selected>Projects</Selected>
+                </CustomLink>
+              </ListItem>
+              <ListItem onClick={showSidebar}>
+                <CustomLink to="/contact">
+                  <Selected>Contact</Selected>
+                </CustomLink>
+              </ListItem>
+            </List>
             <SocialMediaContent>
               <SocialMediaList />
             </SocialMediaContent>

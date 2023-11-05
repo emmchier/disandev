@@ -132,7 +132,7 @@ const ProjectDetail: NextPage<Props> = ({ pages, project }) => {
                 </span>
               </DescriptionLeft>
             </Col>
-            <Col xs={12} sm={7} md={7} lg={7} xlg={7}>
+            <Col xs={12} sm={12} md={7} lg={7} xlg={7}>
               <DescriptionRight>
                 <Text>{documentToReactComponents(project?.fields?.description)}</Text>
                 <span>

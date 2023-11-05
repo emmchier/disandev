@@ -18,7 +18,6 @@ import {
   Button,
 } from '../components/atomic-design/atoms';
 import { Row, Col } from '../components/atomic-design/molecules';
-import { ContactForm } from '../components/atomic-design/organisms';
 
 import { SendContent, TextContent, ActionBack, ContactCol } from '../styles/pages/contact-styles';
 import { copyToClipboard } from '../utils';
@@ -39,8 +38,13 @@ const ContactPage: NextPage<Props> = ({ pages }) => {
     setLoading(false);
   }, []);
 
-  const handleCopy = () => {
-    copyToClipboard('somos.disandev@gmail.com');
+  const handleCopyEmma = () => {
+    copyToClipboard('emmchierchie@gmail.com');
+    setShowSnackbar(true);
+  };
+
+  const handleCopySofi = () => {
+    copyToClipboard('sofiigrasso@gmail.com');
     setShowSnackbar(true);
   };
 
@@ -78,12 +82,20 @@ const ContactPage: NextPage<Props> = ({ pages }) => {
                   <span> your idea come true.</span>
                 </Heading>
                 <Button
-                  onClick={handleCopy}
+                  onClick={handleCopyEmma}
                   variant="text"
                   ariaLabel="copy email"
                   iconRight={false}
                 >
-                  somos.disandev@gmail.com
+                  emmchierchie@gmail.com
+                </Button>
+                <Button
+                  onClick={handleCopySofi}
+                  variant="text"
+                  ariaLabel="copy email"
+                  iconRight={false}
+                >
+                  sofiigrasso@gmail.com
                 </Button>
               </TextContent>
             </ContactCol>

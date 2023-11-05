@@ -14,6 +14,7 @@ type Props = {
   showPolicy?: boolean;
   showContact?: boolean;
   showSidebar?: () => any;
+  gap?: string;
 };
 
 interface NavlistI {
@@ -28,6 +29,7 @@ export const NavList: FC<Props> = ({
   noSelected = false,
   showPolicy = false,
   showContact = false,
+  gap,
   showSidebar,
 }) => {
   const [mounted, setMounted] = useState(false);
@@ -41,7 +43,7 @@ export const NavList: FC<Props> = ({
       : navList;
 
   return (
-    <List alignItems="start" orientation={orientation}>
+    <List spaceY={gap} alignItems="start" orientation={orientation}>
       {getFilteredList()?.map((item: NavlistI) => (
         <ListItem key={item.label} onClick={showSidebar}>
           <CustomLink to={item.to}>

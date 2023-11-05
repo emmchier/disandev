@@ -83,6 +83,7 @@ export const Content = styled.div`
 `;
 
 export const SocialMediaContent = styled.div`
+  margin-top: ${({ theme }) => theme.spacing(10)};
   ul {
     display: flex !important;
     align-items: center !important;
